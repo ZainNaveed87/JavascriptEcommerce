@@ -27,7 +27,7 @@ var userFound = existingUsers.find(function(user) {
 
 if (userFound) {
     alert(`Your Passowrd is:  ${userFound.password}`)
-    window.location.href = "./Login.html";
+    window.location.href = "./login.html";
 }
 else {
 email_label.innerHTML = "Email not found"

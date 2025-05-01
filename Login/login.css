@@ -122,6 +122,11 @@ z-index: 1;
     color: #FFFFFF;
     font-family: poppins;
     text-decoration: none;
+
+}
+forgot:hover
+{
+    text-decoration: underline;
 }
 button
 {
