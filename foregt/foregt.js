@@ -13,7 +13,7 @@ function forgot()
     else if (forget_email.value == "admin@gmail.com")
     {
         alert("Don't Try to hack the system")
-        window.location.href = "./Login.html";
+        window.location.href = "./login.html";
     }
 else
 {
