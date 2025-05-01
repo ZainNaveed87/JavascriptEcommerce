@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="registration.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+<div class="box">
+    <h3>Registeration</h3>
+    <label for="" id="user_label"></label>
+    <input id="Username" type="text" placeholder="Username" required>
+    <i class="fa-solid fa-user" id="user"></i>
+
+    <label for="" id="email_label"></label>
+    <input id="email" type="email" placeholder="Email" required>
+    <i class="fa-solid fa-envelope" id="envilope"></i>
+
+
+    <label for="" id="pass_label"></label>
+    <input id="pass" type="password" placeholder="Password" required>
+    <i class="fa-solid fa-lock" id="lock"></i>
+
+
+    <input type="checkbox" name="" id="checkbox">
+    <div class="one-line">
+    <p class="Remember">Remember me</p>
+<a href="#" class="forgot">Forgot Password?</a>
+</div>
+<button onclick="registration()">Registration</button>
+<p class="Remember3">Have An Account &nbsp;<strong><a href="../login.html" class="login">Login</a></strong> </p>
+
+</div>
+<script src="registration.js"></script>
+</body>
+</html>
