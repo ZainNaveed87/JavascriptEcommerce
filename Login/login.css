@@ -124,7 +124,7 @@ z-index: 1;
     text-decoration: none;
 
 }
-forgot:hover
+.forgot:hover
 {
     text-decoration: underline;
 }
@@ -177,14 +177,15 @@ button:hover {
     color: #FFFFFF;
     font-size: 20px;
 }
-#lock
-{
+
+#eye_icon{
     z-index: 1;
     position: absolute;
     top: 218px;
     right: 80px;
     color: #FFFFFF;
     font-size: 20px;
+    cursor: pointer;
 }
 #email_label
 {
