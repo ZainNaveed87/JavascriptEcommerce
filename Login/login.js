@@ -35,13 +35,18 @@ function login() {
 
     else if (email.value == admin_email && password.value == admin_password) {
 var code = "123456789"
+var name1 = "zain"
+var name2 = "brhamdagh"
 var input_code = prompt("Enter The Code Of Admin Panel")
-if( code == input_code)
-{
+var input_name = prompt("Enter The Name Of Admin Panel")
 
-        alert("Login successful as admin!");
-        window.location.href = "./admin.html";
-    }
+if (code == input_code && (name1 == input_name || name2 == input_name)) {
+    localStorage.setItem("adminName", input_name);
+    alert("Login successful as admin!");
+    window.location.href = "./admin.html";
+    
+}
+
     else
     {
         alert("Itna Assan Nhi He Jani Hack Krna")
@@ -78,3 +83,5 @@ function Change_icon() {
         icon.classList.add("fa-eye");
     }
 }
+
+

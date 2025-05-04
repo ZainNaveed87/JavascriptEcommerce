@@ -26,7 +26,6 @@
 
 }
 
-/* dark theme */
 .dark-theme-variables {
     --clr-color-background: #181a1e;
     --clr-white: #202528;
@@ -54,7 +53,7 @@ body {
     font-size: 0.88rem;
     user-select: none;
     overflow-x: hidden;
-    background: url('../image.png');
+    background: url('./image.png');
 
 }
 
@@ -210,9 +209,9 @@ aside .sidebar a:last-child {
     width: 100%;
 }
 
+
 aside .sidebar a:hover {
     color: var(--clr-primary);
-    /* Change text color on hover */
 
 }
 
@@ -231,4 +230,129 @@ aside .sidebar a span.msg_count {
     padding: 2px 5px;
     font-size: 11px;
     border-radius: var(--border-radius-1);
+}
+.cards
+{
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    justify-content: center;
+    align-items: start; 
+    padding: 20px;
+    margin: 0 auto;
+    width: 90%; 
+
+   
+
+}
+.card {
+    width: 300px; 
+    height: 400px; 
+    background-color: transparent;
+    border: 3px solid #ffffff;
+    color: #000000;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center; 
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); 
+}
+.user_image
+{
+    width: 100px;
+    position: absolute;
+left: 90px;
+top: 20px;
+}
+.user_name
+{
+    position: absolute;
+    top: 140px;
+    left: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+}
+.user_gender
+{
+    position: absolute;
+    top: 180px;
+    left: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+}
+.user_region
+{
+    position: absolute;
+    top: 220px;
+    left: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+}
+.user_status
+{
+    position: absolute;
+    top: 260px;
+    left: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+}
+.User_delete
+{
+    background-color: var(--clr-danger);
+    width: 100px;
+    padding: 10px 10px;
+    border-radius: 20px;
+    box-shadow: #797979 0px 5px 10px;
+    position: absolute;
+    top: 320px;
+    left: 20px;
+}
+.User_delete:hover
+{
+    background-color: rgb(247, 58, 58);
+    width: 100px;
+    padding: 10px 10px;
+    border-radius: 20px;
+    box-shadow: #797979 0px 5px 10px;
+    position: absolute;
+    top: 320px;
+    left: 20px;
+    transition: 0.5s;
+    cursor: pointer;
+
+}
+.User_edit
+{
+    background-color: var(--clr-primary);
+    width: 100px;
+    padding: 10px 10px;
+    border-radius: 20px;
+    box-shadow: #797979 0px 5px 10px;
+    position: absolute;
+    top: 320px;
+    left: 150px;
+}
+.User_edit:hover
+{
+    background-color: rgb(53, 67, 253);
+    transition: 0.5s;
+    cursor: pointer;
+
+}
+#email
+{
+    font-size: 17px;
 }
