@@ -36,7 +36,7 @@ function login() {
     else if (email.value == admin_email && password.value == admin_password) {
 var code = "123456789"
 var name1 = "zain"
-var name2 = "brhamdagh"
+var name2 = "Barhamdagh"
 var input_code = prompt("Enter The Code Of Admin Panel")
 var input_name = prompt("Enter The Name Of Admin Panel")
 

@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
-    <link rel="stylesheet" href="../sub_categories/users/users.css">
+    <link rel="stylesheet" href="./manager/manager.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=close" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
@@ -24,14 +26,14 @@
             </div>
 
             <div class="sidebar">
-                <a href="./admin/sub_categories/users.html">
+                <a href="./users.html">
                     <span class="material-symbols-outlined">person_outline</span>
                     <h3>Users</h3>
                 </a>
 
                 <a href="./manager.html" class="active">
                     <span class="material-symbols-outlined">person_outline</span>
-                    <h3>Add Manager</h3>
+                    <h3>Add Managers</h3>
                 </a>
                 <a href="./manager/manager_fetch.html">
                     <span class="material-symbols-outlined">person_outline</span>
@@ -70,29 +72,37 @@
                     <h3>Add Products</h3>
                 </a>
 
-                <a href="#" onclick="userLogout()">
+                <a href="#" onclick="logout()">
                     <span class="material-symbols-outlined">logout</span>
                     <h3>Logout</h3>
                 </a>
             </div>
         </aside>
         <main>
- <div class="cards" id="cards"> 
-<!-- <img src="./user.png" class="user_image" alt="">
-<h2 class="user_name">Name : <span>Zain</span></h2>
-<h2 class="user_gender">Gender : <span>N/A</span></h2>
-<h2 class="user_region">Region : <span>Pakistan</span></h2>
-<h2 class="user_status">Status : <span>Active</span></h2>
-<button class="User_delete">Delete</button>
-<button class="User_edit">Edit</button> -->
-
-
-
-
-
-            </div>  
-
+            <div class="box">
+                <h3 id="heading3">Add Manager</h3>
+                <label for="" id="user_label"></label>
+                <input id="Username" type="text" placeholder="Username" required>
+                <i class="fa-solid fa-user" id="user"></i>
             
+                <label for="" id="email_label"></label>
+                <input id="email" type="email" placeholder="Email" required>
+                <i class="fa-solid fa-envelope" id="envilope"></i>
+            
+            
+                <label for="" id="pass_label"></label>
+                <input id="pass" type="password" placeholder="Password" required>
+                <i class="fa-solid fa-lock" id="lock"></i>
+            
+            
+                <input type="checkbox" name="" id="checkbox">
+                <div class="one-line">
+                <p class="Remember">Remember me</p>
+            </div>
+            <button onclick="Add_Manager()">Add Manager</button>
+            
+            
+            </div>
         </main>
     </div>
 
