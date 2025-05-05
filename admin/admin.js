@@ -79,11 +79,21 @@ window.onload = function () {
    
 };
 function logout() {
-    localStorage.removeItem("adminName");
-    window.location.href = "login.html";
+    var confirmLogout = confirm("Are you sure you want to logout?");
+    if (confirmLogout) {
+        localStorage.removeItem("adminName");
+        window.location.href = "login.html";
+    }
+
+    return false; 
 }
 
 function userLogout() {
-    localStorage.removeItem("userName");
-    window.location.href = "https://zainnaveed87.github.io/JavascriptEcommerce/login.html";
+    var confirmLogout = confirm("Are you sure you want to logout?");
+    if (confirmLogout) {
+        localStorage.removeItem("adminName");
+        window.location.href = "https://zainnaveed87.github.io/JavascriptEcommerce/login.html";
+    }
+    return false;
+
 }
