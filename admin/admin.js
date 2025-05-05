@@ -68,8 +68,10 @@ window.onload = function () {
                 localStorage.setItem("user", JSON.stringify(users));
                 alert("User updated successfully!");
                 location.reload();
+                return;
             } else {
                 alert("Edit cancelled or empty value.");
+                return;
             }
         });
     }
