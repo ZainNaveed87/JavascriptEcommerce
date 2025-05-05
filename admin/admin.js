@@ -75,4 +75,15 @@ window.onload = function () {
             }
         });
     }
+
+   
 };
+function logout() {
+    localStorage.removeItem("adminName");
+    window.location.href = "login.html";
+}
+
+function userLogout() {
+    localStorage.removeItem("userName");
+    window.location.href = "https://zainnaveed87.github.io/JavascriptEcommerce/login.html";
+}
