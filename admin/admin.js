@@ -29,7 +29,6 @@ window.onload = function () {
         }
     }
 
-    // Add Delete Button Functionality
     var deleteButtons = document.getElementsByClassName("User_delete");
     for (var j = 0; j < deleteButtons.length; j++) {
         deleteButtons[j].addEventListener("click", function () {
@@ -42,7 +41,6 @@ window.onload = function () {
         });
     }
 
-    // Add Edit Button Functionality
     var editButtons = document.getElementsByClassName("User_edit");
     for (var k = 0; k < editButtons.length; k++) {
         editButtons[k].addEventListener("click", function () {
@@ -64,7 +62,6 @@ window.onload = function () {
         });
     }
 
-    // Update User Count
     var usercount = users.length;
     var user_counts = document.getElementById("user_count");
     if (user_counts) {
@@ -73,7 +70,6 @@ window.onload = function () {
         console.log("Element with id 'user_count' not found in the DOM.");
     }
 
-    // Update Manager Count
     var get_manager_for_count = JSON.parse(localStorage.getItem("manager")) || [];
     var manager_count = get_manager_for_count.length;
     var manager_counts = document.getElementById("manager_count");
