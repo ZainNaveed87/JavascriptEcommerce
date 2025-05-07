@@ -1,40 +1,35 @@
 window.onload = function () {
-    var adminName = localStorage.getItem("adminName");
-    if (adminName) {
-        document.getElementById("admin_name").innerHTML = `Hello ${adminName}`;
-    }
-
+    // Render User Cards
     var users = JSON.parse(localStorage.getItem("user")) || [];
     var cards = document.getElementById("cards");
 
     if (!cards) {
-        console.error("Element with id 'cards' not found in the DOM.");
-        return;
+        console.log("Element with id 'cards' not found in the DOM.");
+    } else {
+        if (users.length === 0) {
+            cards.innerHTML = "<p>No users found.</p>";
+        } else {
+            for (var i = 0; i < users.length; i++) {
+                var user = users[i];
+                var card = document.createElement("div");
+                card.className = "card";
+                card.innerHTML = `
+                    <div class="cards">
+                        <img src="./user.png" class="user_image" alt=""> <br>
+                        <h2 class="user_name">Name : <span>${user.username}</span></h2><br>
+                        <h2 class="user_gender">Gender : <span>${user.gender || "N/A"}</span></h2><br>
+                        <h2 class="user_region">Email : <span>${user.email || "N/A"}</span></h2><br>
+                        <h2 class="user_status">Status : <span>${user.status || "Active"}</span></h2><br>
+                        <button class="User_delete" data-index="${i}">Delete</button><br>
+                        <button class="User_edit" data-index="${i}">Edit</button>
+                    </div>
+                `;
+                cards.appendChild(card);
+            }
+        }
     }
 
-    if (users.length === 0) {
-        cards.innerHTML = "<p>No users found.</p>";
-        return;
-    }
-
-    for (var i = 0; i < users.length; i++) {
-        var user = users[i];
-        var card = document.createElement("div");
-        card.className = "card";
-        card.innerHTML = `
-            <div class="cards">
-                <img src="./user.png" class="user_image" alt=""> <br>
-                <h2 class="user_name">Name : <span>${user.username}</span></h2><br>
-                <h2 class="user_gender">Gender : <span>${user.gender || "N/A"}</span></h2><br>
-                <h2 class="user_region">Email : <span>${user.email || "N/A"}</span></h2><br>
-                <h2 class="user_status">Status : <span>${user.status || "Active"}</span></h2><br>
-                <button class="User_delete" data-index="${i}">Delete</button><br>
-                <button class="User_edit" data-index="${i}">Edit</button>
-            </div>
-        `;
-        cards.appendChild(card);
-    }
-
+    // Add Delete Button Functionality
     var deleteButtons = document.getElementsByClassName("User_delete");
     for (var j = 0; j < deleteButtons.length; j++) {
         deleteButtons[j].addEventListener("click", function () {
@@ -43,11 +38,11 @@ window.onload = function () {
                 users.splice(index, 1);
                 localStorage.setItem("user", JSON.stringify(users));
                 location.reload();
-                return;
             }
         });
     }
 
+    // Add Edit Button Functionality
     var editButtons = document.getElementsByClassName("User_edit");
     for (var k = 0; k < editButtons.length; k++) {
         editButtons[k].addEventListener("click", function () {
@@ -63,16 +58,32 @@ window.onload = function () {
                 localStorage.setItem("user", JSON.stringify(users));
                 alert("User updated successfully!");
                 location.reload();
-                return;
             } else {
                 alert("Edit cancelled or empty value.");
-                return;
             }
         });
     }
 
-   
+    // Update User Count
+    var usercount = users.length;
+    var user_counts = document.getElementById("user_count");
+    if (user_counts) {
+        user_counts.innerHTML = usercount;
+    } else {
+        console.log("Element with id 'user_count' not found in the DOM.");
+    }
+
+    // Update Manager Count
+    var get_manager_for_count = JSON.parse(localStorage.getItem("manager")) || [];
+    var manager_count = get_manager_for_count.length;
+    var manager_counts = document.getElementById("manager_count");
+    if (manager_counts) {
+        manager_counts.innerHTML = manager_count;
+    } else {
+        console.log("Element with id 'manager_count' not found in the DOM.");
+    }
 };
+
 function logout() {
     var confirmLogout = confirm("Are you sure you want to logout?");
     if (confirmLogout) {
@@ -80,7 +91,7 @@ function logout() {
         window.location.href = "login.html";
     }
 
-    return false; 
+    return false;
 }
 
 function userLogout() {
@@ -98,8 +109,7 @@ var password = document.getElementById("pass");
 var email_label = document.getElementById("email_label");
 var username_label = document.getElementById("user_label");
 var password_label = document.getElementById("pass_label");
-function Add_Manager()
-{
+function Add_Manager() {
     if (username.value == "" && password.value == "" && email.value == "") {
         username_label.innerHTML = "Please enter a Username";
         username_label.style.color = "red";
@@ -158,29 +168,26 @@ function Add_Manager()
             email: email.value,
             password: password.value
         };
-       
-        var IsEmailExist = existingUsers.some(function(existingUsers)
-        {
+
+        var IsEmailExist = existingUsers.some(function (existingUsers) {
             return existingUsers.email === user.email
         }
-    )
-       
+        )
 
-        if(IsEmailExist)
-        {
+
+        if (IsEmailExist) {
             email_label.innerHTML = "Email already exists";
-            email_label.style.color = "red"; 
+            email_label.style.color = "red";
         }
-        else
-        {
+        else {
 
-        
+
 
             existingUsers.push(user);
             localStorage.setItem("manager", JSON.stringify(existingUsers));
             alert("Registration successful");
             window.location.href = "manager.html";
-            
+
+        }
     }
-}
 }

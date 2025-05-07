@@ -41,7 +41,7 @@ window.onload = function () {
             var index = this.getAttribute("data-index");
             if (confirm("Are you sure you want to delete this user?")) {
                 users.splice(index, 1);
-                localStorage.setItem("user", JSON.stringify(users));
+                localStorage.setItem("manager", JSON.stringify(users));
                 location.reload();
                 return;
             }

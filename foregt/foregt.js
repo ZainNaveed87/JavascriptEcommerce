@@ -17,6 +17,8 @@ function forgot()
     }
 else
 {
+  
+
 
 var existingUsers = JSON.parse(localStorage.getItem("user")) || [];
 var userFound = existingUsers.find(function(user) {

@@ -212,7 +212,6 @@ aside .sidebar a:last-child {
 
 aside .sidebar a:hover {
     color: var(--clr-primary);
-    /* Change text color on hover */
 
 }
 
@@ -231,4 +230,85 @@ aside .sidebar a span.msg_count {
     padding: 2px 5px;
     font-size: 11px;
     border-radius: var(--border-radius-1);
+}
+
+.user_count {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    width: 300px;
+    height: 120px;
+    position: absolute;
+    top: 90px;
+    left: 440px;
+    transform: translateX(-50%);
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.user_count:hover {
+    transform: translateX(-50%) scale(1.05);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+.user_count p {
+    color: rgb(255, 255, 255);
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+}
+
+.user_count span {
+    color: var(--clr-primary);
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+
+.manager_count {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    width: 300px;
+    height: 120px;
+    position: absolute;
+    top: 90px;
+    left: 780px;
+    transform: translateX(-50%);
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.manager_count:hover {
+    transform: translateX(-50%) scale(1.05);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+.manager_count p {
+    color: rgb(255, 255, 255);
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+}
+
+.manager_count span {
+    color: var(--clr-primary);
+    font-size: 2rem;
+    font-weight: 800;
 }
