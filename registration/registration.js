@@ -64,12 +64,29 @@ function registration() {
             email: email.value,
             password: password.value
         };
+       
+        var IsEmailExist = existingUsers.some(function(existingUsers)
+        {
+            return existingUsers.email === user.email
+        }
+    )
+       
 
-        existingUsers.push(user);
+        if(IsEmailExist)
+        {
+            email_label.innerHTML = "Email already exists";
+            email_label.style.color = "red"; 
+        }
+        else
+        {
 
-        localStorage.setItem("user", JSON.stringify(existingUsers));
+        
 
-        alert("Registration successful");
-        window.location.href = "login.html";
+            existingUsers.push(user);
+            localStorage.setItem("user", JSON.stringify(existingUsers));
+            alert("Registration successful");
+            window.location.href = "login.html";
+            
     }
+}
 }

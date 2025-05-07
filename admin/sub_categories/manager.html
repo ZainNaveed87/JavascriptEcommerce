@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
-    <link rel="stylesheet" href="./admin/admin.css">
+    <link rel="stylesheet" href="./manager/manager.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=close" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
@@ -16,7 +18,7 @@
         <aside>
             <div class="top">
                 <div class="logo">
-                 <a href="#" >  <h1 id="admin_name">Hello Admin</h1></a> 
+                    <a href="https://zainnaveed87.github.io/JavascriptEcommerce/admin.html"> <h1 id="admin_name">Hello Admin</h1></a>
                 </div>
                 <div class="close">
                     <span class="material-symbols-outlined">close </span>
@@ -24,16 +26,16 @@
             </div>
 
             <div class="sidebar">
-                <a href="./admin/sub_categories/users.html">
+                <a href="./users.html">
                     <span class="material-symbols-outlined">person_outline</span>
                     <h3>Users</h3>
                 </a>
 
-                <a href="./admin/sub_categories/manager.html" class="active">
+                <a href="./manager.html" class="active">
                     <span class="material-symbols-outlined">person_outline</span>
                     <h3>Add Managers</h3>
                 </a>
-                <a href="./admin/sub_categories/manager/manager_fetch.html">
+                <a href="./manager/manager_fetch.html">
                     <span class="material-symbols-outlined">person_outline</span>
                     <h3>Fetch Manager</h3>
                 </a>
@@ -77,18 +79,34 @@
             </div>
         </aside>
         <main>
-            <div class="user_count" >
-                <p>Total Users: <span id="user_count">123</span></p>
+            <div class="box">
+                <h3 id="heading3">Add Manager</h3>
+                <label for="" id="user_label"></label>
+                <input id="Username" type="text" placeholder="Username" required>
+                <i class="fa-solid fa-user" id="user"></i>
+            
+                <label for="" id="email_label"></label>
+                <input id="email" type="email" placeholder="Email" required>
+                <i class="fa-solid fa-envelope" id="envilope"></i>
+            
+            
+                <label for="" id="pass_label"></label>
+                <input id="pass" type="password" placeholder="Password" required>
+                <i class="fa-solid fa-lock" id="lock"></i>
+            
+            
+                <input type="checkbox" name="" id="checkbox">
+                <div class="one-line">
+                <p class="Remember">Remember me</p>
             </div>
-
-            <div class="manager_count" >
-                <p>Total Managers: <span id="manager_count">123</span></p>
+            <button onclick="Add_Manager()">Add Manager</button>
+            
+            
             </div>
         </main>
     </div>
 
-    <script src="./admin/admin.js"></script>
-    <script src="./Login/login.js"></script>
+    <script src="../admin.js"></script>
 </body>
 
 </html>
