@@ -9,7 +9,7 @@ window.onload = function () {
         console.log("Element with id 'cards' not found in the DOM.");
     } else {
         if (users.length === 0) {
-            cards.innerHTML = "<p>No users found.</p>";
+            // cards.innerHTML = "<p>No users found.</p>";
         } else {
             for (var i = 0; i < users.length; i++) {
                 var user = users[i];
@@ -66,17 +66,17 @@ window.onload = function () {
 
     // seller cards
 
-    var users = JSON.parse(localStorage.getItem("seller")) || [];
+    var seller = JSON.parse(localStorage.getItem("seller")) || [];
     var cards = document.getElementById("cards");
 
     if (!cards) {
         console.log("Element with id 'cards' not found in the DOM.");
     } else {
-        if (users.length === 0) {
+        if (seller.length === 0) {
             cards.innerHTML = "<p>No users found.</p>";
         } else {
-            for (var i = 0; i < users.length; i++) {
-                var user = users[i];
+            for (var i = 0; i < seller.length; i++) {
+                var user = seller[i];
                 var card = document.createElement("div");
                 card.className = "card";
                 card.innerHTML = `
@@ -101,8 +101,9 @@ window.onload = function () {
             var index = this.getAttribute("data-index");
             if (confirm("Are you sure you want to delete this user?")) {
                 users.splice(index, 1);
-                localStorage.setItem("seller", JSON.stringify(users));
+                localStorage.setItem("seller", JSON.stringify(seller));
                 location.reload();
+                return false;
             }
         });
     }
@@ -112,14 +113,14 @@ window.onload = function () {
         editButtons[k].addEventListener("click", function () {
             var index = this.getAttribute("data-index");
 
-            var newUsername = prompt("Enter new username:", users[index].username);
-            var newEmail = prompt("Enter new email:", users[index].email);
+            var newUsername = prompt("Enter new username:", seller[index].username);
+            var newEmail = prompt("Enter new email:", seller[index].email);
 
             if (newUsername !== null && newEmail !== null) {
-                users[index].username = newUsername;
-                users[index].email = newEmail;
+                seller[index].username = newUsername;
+                seller[index].email = newEmail;
 
-                localStorage.setItem("seller", JSON.stringify(users));
+                localStorage.setItem("seller", JSON.stringify(seller));
                 alert("User updated successfully!");
                 location.reload();
             } else {
