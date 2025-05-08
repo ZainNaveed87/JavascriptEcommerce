@@ -15,17 +15,34 @@ function forgot()
         alert("Don't Try to hack the system")
         window.location.href = "./login.html";
     }
+
 else
 {
   
 
+
+var existingUsers = JSON.parse(localStorage.getItem("seller")) || [];
+var userFound = existingUsers.find(function(user) {
+    return user.email === forget_email.value ;
+});
+
+}
+
+if (userFound) {
+    alert(`Your Passowrd is:  ${userFound.password}`)
+    window.location.href = "./login.html";
+}
+else {
+email_label.innerHTML = "Email not found"
+email_label.style.color = "red"
+}
 
 var existingUsers = JSON.parse(localStorage.getItem("user")) || [];
 var userFound = existingUsers.find(function(user) {
     return user.email === forget_email.value ;
 });
 
-}
+
 
 if (userFound) {
     alert(`Your Passowrd is:  ${userFound.password}`)

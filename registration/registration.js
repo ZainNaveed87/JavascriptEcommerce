@@ -57,12 +57,16 @@ function registration() {
         username_label.style.color = "red";
     }
     else {
+        let seller_or_buyer = prompt("Are you a seller or buyer? (Enter 'seller' or 'buyer')").toLowerCase();
+        if(seller_or_buyer == "buyer")
+        {
         var existingUsers = JSON.parse(localStorage.getItem("user")) || [];
 
         var user = {
             username: username.value,
             email: email.value,
-            password: password.value
+            password: password.value,
+            seller_or_buyer: seller_or_buyer
         };
        
         var IsEmailExist = existingUsers.some(function(existingUsers)
@@ -89,4 +93,60 @@ function registration() {
             
     }
 }
+else if(seller_or_buyer == "seller")
+{
+    
+    let seller_or_buyer = prompt("Are you a seller or buyer? (Enter 'seller' or 'buyer')").toLowerCase();
+    if(seller_or_buyer == "seller")
+    {
+    var existingUsers = JSON.parse(localStorage.getItem("seller")) || [];
+
+    var user = {
+        username: username.value,
+        email: email.value,
+        password: password.value,
+        seller_or_buyer: seller_or_buyer
+    };
+   
+    var IsEmailExist = existingUsers.some(function(existingUsers)
+    {
+        return existingUsers.email === user.email
+    }
+)
+   
+
+    if(IsEmailExist)
+    {
+        email_label.innerHTML = "Email already exists";
+        email_label.style.color = "red"; 
+    }
+    else
+    {
+
+    
+
+        existingUsers.push(user);
+        localStorage.setItem("seller", JSON.stringify(existingUsers));
+        alert("Registration successful");
+        window.location.href = "login.html";
+        
+}
+}
+
+}
+    }
+}
+function Change_icon() {
+    var password = document.getElementById("pass");
+    var icon = document.getElementById("eye_icon");
+
+    if (password.type === "password") {
+        password.type = "text";
+        icon.classList.remove("fa-eye");
+        icon.classList.add("fa-eye-slash");
+    } else {
+        password.type = "password";
+        icon.classList.remove("fa-eye-slash");
+        icon.classList.add("fa-eye");
+    }
 }
