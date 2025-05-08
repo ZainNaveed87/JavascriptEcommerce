@@ -138,8 +138,8 @@ window.onload = function () {
         console.log("Admin name not found in localStorage.");
     }
 
-
-    var usercount = users.length;
+//total count
+    var usercount = users.length + seller.length;
     var user_counts = document.getElementById("user_count");
     if (user_counts) {
         user_counts.innerHTML = usercount;
@@ -147,6 +147,29 @@ window.onload = function () {
         console.log("Element with id 'user_count' not found in the DOM.");
     }
 
+    // buyer count 
+    var usercount = users.length ;
+    var user_counts = document.getElementById("Buyer_count");
+    if (user_counts) {
+        user_counts.innerHTML = usercount;
+    } else {
+        console.log("Element with id 'user_count' not found in the DOM.");
+    }
+
+
+//seller count
+var usercount = seller.length ;
+var user_counts = document.getElementById("seller_count");
+if (user_counts) {
+    user_counts.innerHTML = usercount;
+} else {
+    console.log("Element with id 'user_count' not found in the DOM.");
+}
+
+
+
+
+//manager count
     var get_manager_for_count = JSON.parse(localStorage.getItem("manager")) || [];
     var manager_count = get_manager_for_count.length;
     var manager_counts = document.getElementById("manager_count");
