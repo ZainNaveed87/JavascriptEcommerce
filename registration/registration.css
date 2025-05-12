@@ -231,13 +231,119 @@ button:hover {
 
 
 
-@media screen and (max-width: 768px) {
-    body {
-        background-image: url(../image.png); 
-        background-size: cover;
-        background-position: center; 
-        background-repeat: no-repeat; 
-        height: 100vh; 
-        width: 100%; 
+@media screen and (max-width: 640px) {
+
+    .box{
+        width: 70%;
+        height: 90%;
+        top: 10px;
+        left: 5%;
     }
+    h3{
+        font-size: 24px;
+        top: 20px;
+    }
+
+    #user {
+        left: 80%;
+    }
+
+    #envilope {
+        left: 80%; 
+    }
+
+    #lock {
+        left: 80%; 
+    }
+
+    #checkbox {
+       width: 15px;
+       top: 360px;
+    }
+
+    .Remember {
+        font-size: 12px; 
+        left: 75px; 
+        top: 360px;
+    }
+
+     button {
+        width: 20%; 
+        margin: 20px auto;
+        display: block;
+        top: 380px; 
+    }
+
+    
+    .Remember3 {
+        font-size: 8px; 
+        text-align: center;
+    }
+
+    .login {
+        display: inline-block;
+        text-align: center;
+        top: 400px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    
+    .box{
+        width: 70%;
+        height: 90%;
+        top: 10px;
+        left: 5%;
+    }
+    h3{
+        font-size: 24px;
+        top: 20px;
+    }
+
+    #user {
+        left: 80%;
+    }
+
+    #envilope {
+        left: 80%; 
+    }
+
+    #lock {
+        left: 80%; 
+    }
+
+    #checkbox {
+       width: 15px;
+       top: 360px;
+    }
+
+    .Remember {
+        font-size: 13px; 
+        left: 75px; 
+        top: 360px;
+    }
+
+     button {
+        width: 50%; 
+        margin: 20px auto;
+        display: block;
+        top: 360px; 
+    }
+
+    
+    .Remember3 {
+        font-size: 15px; 
+        margin: 0 auto;
+        display: inline-block;
+        text-align: center;
+        top: 450px;
+    }
+
+    .login {
+        margin: 0 auto;
+        display: inline-block;
+        top: 400px;
+    }
+
 }
