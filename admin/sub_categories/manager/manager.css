@@ -428,7 +428,15 @@ button:hover {
     text-align: left;
     width: 400px; 
 }
-
+#eye_icon{
+    z-index: 1;
+    position: absolute;
+    top: 318px;
+    right: 80px;
+    color: #FFFFFF;
+    font-size: 20px;
+    cursor: pointer;
+}
 
 
 @media screen and (max-width: 768px) {

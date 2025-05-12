@@ -13,7 +13,7 @@ function forgot()
     else if (forget_email.value == "admin@gmail.com")
     {
         alert("Don't Try to hack the system")
-        window.location.href = "./login.html";
+        window.location.href = "./manager_forget.html";
     }
 
 else
@@ -21,23 +21,9 @@ else
   
 
 
-var existingUsers = JSON.parse(localStorage.getItem("seller")) || [];
-var userFound = existingUsers.find(function(user) {
-    return user.email === forget_email.value ;
-});
 
-}
 
-if (userFound) {
-    alert(`Your Passowrd is:  ${userFound.password}`)
-    window.location.href = "./login.html";
-}
-else {
-email_label.innerHTML = "Email not found"
-email_label.style.color = "red"
-}
-
-var existingUsers = JSON.parse(localStorage.getItem("user")) || [];
+var existingUsers = JSON.parse(localStorage.getItem("manager")) || [];
 var userFound = existingUsers.find(function(user) {
     return user.email === forget_email.value ;
 });
@@ -46,10 +32,11 @@ var userFound = existingUsers.find(function(user) {
 
 if (userFound) {
     alert(`Your Passowrd is:  ${userFound.password}`)
-    window.location.href = "./login.html";
+    window.location.href = "./users.html";
 }
 else {
 email_label.innerHTML = "Email not found"
 email_label.style.color = "red"
+}
 }
 }

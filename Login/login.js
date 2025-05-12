@@ -73,22 +73,47 @@ function login() {
                 return;
             }
         }
-    } else {
+    } 
+    
+    
+    else {
         alert("Manager does not exist or invalid credentials.");
     }
 
-    var existingUsers = JSON.parse(localStorage.getItem("user")) || [];
+    var existingUsers = JSON.parse(localStorage.getItem("seller")) || [];
     var userFound = existingUsers.some(function (user) {
         return user.email === email.value && user.password === password.value;
     });
 
     if (userFound) {
         alert("Login successful!");
-        window.location.href = "./index.html";
+        window.location.href = "./seller.html";
     } else {
         alert("Invalid email or password. Please try again.");
     }
+
+    var existingUsers = JSON.parse(localStorage.getItem("user")) || [];
+    var userFound = existingUsers.find(function (user) {
+        return user.email === email.value && user.password === password.value;
+    });
+
+    if (userFound) {
+        
+
+       
+
+
+            
+                alert("Login successful as buyer!");
+                window.location.href = "./index.html";
+            } 
+          
 }
+     
+    
+    
+   
+
 
 function Change_icon() {
     var password = document.getElementById("pass");
@@ -103,5 +128,6 @@ function Change_icon() {
         icon.classList.remove("fa-eye-slash");
         icon.classList.add("fa-eye");
     }
-}
 
+
+}
