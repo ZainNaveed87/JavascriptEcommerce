@@ -178,7 +178,20 @@ if (user_counts) {
     } else {
         console.log("Element with id 'manager_count' not found in the DOM.");
     }
+
+    //Category count
+    var get_manager_for_count = JSON.parse(localStorage.getItem("categories")) || [];
+    var manager_count = get_manager_for_count.length;
+    var manager_counts = document.getElementById("Categories_count");
+    if (manager_counts) {
+        manager_counts.innerHTML = manager_count;
+    } else {
+        console.log("Element with id 'manager_count' not found in the DOM.");
+    }
 };
+
+
+
 
 function logout() {
     var confirmLogout = confirm("Are you sure you want to logout?");
