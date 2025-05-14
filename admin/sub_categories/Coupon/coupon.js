@@ -18,14 +18,12 @@ function Add_Coupon() {
         email_label.innerHTML = "Coupon already exists";
         email_label.style.color = "red";
     } else {
-        // Prompt for discount percentage
         var discount = prompt("Enter discount percentage for this coupon:");
         if (!discount || isNaN(discount) || discount <= 0) {
             alert("Invalid discount percentage. Please try again.");
             return;
         }
 
-        // Add new coupon to the list
         var newCoupon = {
             couponName: coupon.value.trim().toLowerCase(),
             discount: discount.trim() + "%"
@@ -34,18 +32,16 @@ function Add_Coupon() {
         existingCoupons.push(newCoupon);
         localStorage.setItem("coupons", JSON.stringify(existingCoupons));
         alert("Coupon added successfully!");
-        coupon.value = ""; // Clear input field
-        email_label.innerHTML = ""; // Clear error message
+        coupon.value = ""; 
+        email_label.innerHTML = ""; 
 
-        // Re-render the table
         renderTable();
     }
 }
 
-// Function to render table rows
 function renderTable() {
     const tableBody = document.querySelector("#category_table tbody");
-    tableBody.innerHTML = ""; // Clear existing rows
+    tableBody.innerHTML = ""; 
 
     var existingCoupons = JSON.parse(localStorage.getItem("coupons")) || [];
 
@@ -66,7 +62,6 @@ function renderTable() {
     });
 }
 
-// Function to edit a coupon
 function editRow(index) {
     var existingCoupons = JSON.parse(localStorage.getItem("coupons")) || [];
     var couponToEdit = existingCoupons[index];
@@ -85,7 +80,6 @@ function editRow(index) {
     }
 }
 
-// Function to delete a coupon
 function deleteRow(index) {
     var existingCoupons = JSON.parse(localStorage.getItem("coupons")) || [];
 
@@ -97,5 +91,4 @@ function deleteRow(index) {
     }
 }
 
-// Initial render
 renderTable();

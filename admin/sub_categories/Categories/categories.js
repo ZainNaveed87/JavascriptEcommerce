@@ -1,8 +1,8 @@
 function Add_Category() {
     var category = document.getElementById("category");
-    var email_label = document.getElementById("email_label"); // Ensure this element exists
+    var email_label = document.getElementById("email_label"); 
 
-    // Validate input
+
     if (!category.value.trim()) {
         alert("Please enter a valid category.");
         return;
@@ -11,7 +11,7 @@ function Add_Category() {
     var existingCategories = JSON.parse(localStorage.getItem("categories")) || [];
 
     var user = {
-        category: category.value.trim().toLowerCase(), // Normalize input
+        category: category.value.trim().toLowerCase(), 
     };
 
     var IsCategoryExist = existingCategories.some(function (existingCategory) {
@@ -25,18 +25,17 @@ function Add_Category() {
         existingCategories.push(user);
         localStorage.setItem("categories", JSON.stringify(existingCategories));
         alert("Category added successfully!");
-        category.value = ""; // Clear input field
-        email_label.innerHTML = ""; // Clear error message
+        category.value = ""; 
+        email_label.innerHTML = ""; 
 
-        // Re-render the table
+        
         renderTable();
     }
 }
 
-// Function to render table rows
 function renderTable() {
     const tableBody = document.querySelector("#category_table tbody");
-    tableBody.innerHTML = ""; // Clear existing rows
+    tableBody.innerHTML = "";
 
     var existingCategories = JSON.parse(localStorage.getItem("categories")) || [];
 
@@ -56,7 +55,6 @@ function renderTable() {
     });
 }
 
-// Function to edit a category
 function editRow(index) {
     var existingCategories = JSON.parse(localStorage.getItem("categories")) || [];
     var categoryToEdit = existingCategories[index];
@@ -73,7 +71,6 @@ function editRow(index) {
     }
 }
 
-// Function to delete a category
 function deleteRow(index) {
     var existingCategories = JSON.parse(localStorage.getItem("categories")) || [];
 
@@ -85,5 +82,4 @@ function deleteRow(index) {
     }
 }
 
-// Initial render
 renderTable();
