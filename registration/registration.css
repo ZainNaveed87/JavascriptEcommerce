@@ -348,6 +348,18 @@ button:hover {
 
 }
 
+
+
+#eye_icon{
+    z-index: 1;
+    position: absolute;
+    top: 318px;
+    right: 80px;
+    color: #FFFFFF;
+    font-size: 20px;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 480px) and (max-height: 800px) {
     .box {
         width: 96vw;
@@ -360,14 +372,4 @@ button:hover {
         margin: 6px auto;
         height: auto;
     }
-}
-
-#eye_icon{
-    z-index: 1;
-    position: absolute;
-    top: 318px;
-    right: 80px;
-    color: #FFFFFF;
-    font-size: 20px;
-    cursor: pointer;
 }
