@@ -230,31 +230,32 @@ aside .sidebar a span.msg_count {
     font-size: 11px;
     border-radius: var(--border-radius-1);
 }
-.box
-{
+
+.box {
     width: 500px;
-    height: 500px;
+    min-height: 600px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    gap: 14px;
+    margin: 60px auto 0 auto;
     background-color: transparent;
-    position: relative;
-    margin: 0 auto;
-    top: 60px;
     border-radius: 40px;
     border: 1px solid #FFFFFF;
     backdrop-filter: blur(10px);
-
+    box-sizing: border-box;
+    padding: 32px 0;
 }
-#heading3{
+
+#heading3 {
     color: #FFFFFF;
     position: absolute;
     top: 40px;
     font-size: 30px;
     font-family: poppins;
 }
-#Username
-{
+
+#Username {
     width: 400px;
     height: 50px;
     border-radius: 20px;
@@ -269,12 +270,12 @@ aside .sidebar a span.msg_count {
     color: #FFFFFF;
 
 }
-input::placeholder
-{
+
+input::placeholder {
     color: #FFFFFF;
 }
-#email
-{
+
+#email {
     width: 400px;
     height: 50px;
     border-radius: 20px;
@@ -289,8 +290,8 @@ input::placeholder
     color: #FFFFFF;
 
 }
-#pass
-{
+
+#pass {
     width: 400px;
     height: 50px;
     border-radius: 20px;
@@ -299,33 +300,32 @@ input::placeholder
     font-size: 18px;
     font-family: poppins;
     position: absolute;
-    top: 300px; 
+    top: 300px;
     border: 3px solid #FFFFFF;
     background-color: transparent;
     color: #FFFFFF;
 
 }
-#user
-{
-z-index: 1;
+
+#user {
+    z-index: 1;
     position: absolute;
     top: 118px;
     right: 80px;
     color: #FFFFFF;
     font-size: 20px;
-    
+
 }
 
-#checkbox
-{
+#checkbox {
     position: absolute;
     top: 368px;
     left: 50px;
     width: 18px;
     height: 18px;
 }
-.Remember
-{
+
+.Remember {
     position: absolute;
     top: 367px;
     left: 78px;
@@ -334,8 +334,7 @@ z-index: 1;
     font-family: poppins;
 }
 
-.forgot
-{
+.forgot {
     position: absolute;
     top: 367px;
     left: 330px;
@@ -344,8 +343,8 @@ z-index: 1;
     font-family: poppins;
     text-decoration: none;
 }
-button
-{
+
+button {
     width: 400px;
     height: 50px;
     border-radius: 20px;
@@ -353,20 +352,19 @@ button
     font-size: 18px;
     font-family: poppins;
     position: absolute;
-    top: 400px; 
+    top: 400px;
     border: 1px solid #FFFFFF;
     cursor: pointer;
-    transition: all 0.3s ease; 
+    transition: all 0.3s ease;
 
 }
 
 button:hover {
-    background-color: rgba(255, 255, 255, 0.2); 
-    color: #FFFFFF; 
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #FFFFFF;
 }
-    
-.Remember3
-{
+
+.Remember3 {
     position: absolute;
     top: 460px;
     left: 170px;
@@ -374,8 +372,8 @@ button:hover {
     color: #FFFFFF;
     font-family: poppins;
 }
-#envilope
-{
+
+#envilope {
     z-index: 1;
     position: absolute;
     top: 218px;
@@ -383,8 +381,8 @@ button:hover {
     color: #FFFFFF;
     font-size: 20px;
 }
-#lock
-{
+
+#lock {
     z-index: 1;
     position: absolute;
     top: 318px;
@@ -392,40 +390,41 @@ button:hover {
     color: #FFFFFF;
     font-size: 20px;
 }
-#user_label
-{
+
+#user_label {
     position: absolute;
     top: 80px;
     left: 60px;
     font-size: 13px;
-    color: red; 
+    color: red;
     font-family: poppins;
     text-align: left;
-    width: 400px; 
+    width: 400px;
 }
-#email_label
-{
+
+#email_label {
     position: absolute;
     top: 180px;
     left: 60px;
     font-size: 13px;
-    color: red; 
+    color: red;
     font-family: poppins;
     text-align: left;
-    width: 400px; 
+    width: 400px;
 }
-#pass_label
-{
+
+#pass_label {
     position: absolute;
     top: 280px;
     left: 60px;
     font-size: 13px;
-    color: red; 
+    color: red;
     font-family: poppins;
     text-align: left;
-    width: 400px; 
+    width: 400px;
 }
-#eye_icon{
+
+#eye_icon {
     z-index: 1;
     position: absolute;
     top: 318px;
@@ -438,11 +437,97 @@ button:hover {
 
 @media screen and (max-width: 768px) {
     body {
-        background-image: url(../../image.png); 
+        background-image: url(../../image.png);
         background-size: cover;
-        background-position: center; 
-        background-repeat: no-repeat; 
-        height: 100vh; 
-        width: 100%; 
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        width: 100%;
+    }
+}
+
+/* Align form box content vertically with proper spacing */
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    /* Uniform gap between all elements */
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+/* All input fields full width and aligned */
+.box input[type="text"],
+.box input[type="number"],
+.box input[type="textarea"] {
+    width: 400px;
+    height: 50px;
+    border-radius: 20px;
+    border: 3px solid #FFFFFF;
+    background: transparent;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-family: poppins;
+    padding-left: 20px;
+    margin-bottom: 0;
+    box-sizing: border-box;
+    align-self: center;
+    /* Center align in the box */
+}
+
+.box input::placeholder {
+    color: #FFFFFF;
+}
+
+/* Dropdown full width and aligned */
+.dropdown {
+    width: 100%;
+    position: relative;
+}
+
+#dropdownSearch {
+    width: 400px;
+    height: 50px;
+    border-radius: 20px;
+    border: 3px solid #FFFFFF;
+    background: transparent;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-family: poppins;
+    padding-left: 20px;
+    box-sizing: border-box;
+    align-self: center;
+}
+
+.dropdown-list {
+    width: 400px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+/* Checkbox and Remember line aligned horizontally */
+.one-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* Button full width and aligned */
+.box button {
+    width: 100%;
+    margin-top: 8px;
+}
+
+/* Responsive: box width on small screens */
+@media (max-width: 600px) {
+    .box {
+        max-width: 98vw;
+        padding-left: 2vw;
+        padding-right: 2vw;
     }
 }
