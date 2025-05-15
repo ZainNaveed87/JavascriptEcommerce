@@ -432,13 +432,22 @@ button:hover {
         margin: 0 auto;
         color: #fff;
     }
+    #eye_icon{
+    z-index: 1;
+    position: absolute;
+    top: 318px;
+    right: 93px;
+    color: #FFFFFF;
+    font-size: 20px;
+    cursor: pointer;
+}
 }
 
 #eye_icon{
     z-index: 1;
     position: absolute;
     top: 318px;
-    right: 93px;
+    right: 80px;
     color: #FFFFFF;
     font-size: 20px;
     cursor: pointer;
