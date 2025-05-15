@@ -288,6 +288,19 @@ button:hover {
 
 }
 
+@media screen and (max-width: 720px) and (max-height: 1560px) {
+    .box {
+        width: 98vw;
+        max-width: 99vw;
+        padding: 8px 2px;
+        border-radius: 10px;
+        top: 2px;
+        left: 0;
+        margin: 2px auto;
+        height: auto;
+    }
+}
+
 @media screen and (max-width: 768px) {
     
     .box{
@@ -348,6 +361,8 @@ button:hover {
 
 }
 
+
+
 #eye_icon{
     z-index: 1;
     position: absolute;
@@ -356,4 +371,18 @@ button:hover {
     color: #FFFFFF;
     font-size: 20px;
     cursor: pointer;
+}
+
+@media screen and (max-width: 480px) and (max-height: 800px) {
+    .box {
+        width: 96vw;
+        min-width: unset;
+        max-width: 99vw;
+        padding: 12px 4px;
+        border-radius: 12px;
+        top: 6px;
+        left: 0;
+        margin: 6px auto;
+        height: auto;
+    }
 }
