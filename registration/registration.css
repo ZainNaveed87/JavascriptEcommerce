@@ -288,6 +288,20 @@ button:hover {
 
 }
 
+@media screen and (max-width: 720px) and (max-height: 1560px) {
+    .box {
+        width: 90vw;
+        min-width: unset;
+        max-width: 98vw;
+        padding: 20px 8px;
+        border-radius: 18px;
+        top: 12px;
+        left: 0;
+        margin: 12px auto;
+        height: auto;
+    }
+}
+
 @media screen and (max-width: 768px) {
     
     .box{
