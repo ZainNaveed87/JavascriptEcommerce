@@ -10,50 +10,9 @@
 }
 
 body {
-    background-color: #fffbf4;
-}
-
-nav {
-    font-family: poppins;
-    position: sticky;
-    margin-left: 10px;
-
-}
-
-nav ul {
-    display: flex;
-    cursor: pointer;
-    font-size: 1.2rem;
-    flex-direction: column;
-    height: 100vh;
-    border: 1px solid white;
-    margin-top: 10px;
-    border-radius: 15px;
-    align-items: center;
-    padding: 30px;
-    list-style: none;
-    color: #000000;
-}
-
-nav ul li {
-    padding: 40px;
-    font-weight: bolder;
-}
-
-nav ul li:hover {
-    transition: all 0.4s ease-in-out;
-    color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 0 5px #000000;
-    transform: scale(1.1);
-    cursor: pointer;
-}
-
-body {
     height: 200vh;
     background-color: #000;
     color: #ffffff;
-    display: flex;
     width: 100%;
     padding: 0;
     margin: 0;
@@ -64,13 +23,37 @@ body {
     backdrop-filter: blur(10px);
 }
 
-#banner1 {
-    margin-top: 10px;
-    margin-left: 2px;
-    border-radius: 20px;
-    width: 136%;
-    height: 50vh;
+#logo{
+    width: 200px;
 }
+
+#search{
+    width: 500px;
+    height: 50px;
+    font-family: poppins;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #000000;
+}
+
+nav {
+    font-family: poppins;
+    display: flex;
+    align-items: center;
+    justify-content: space-around; 
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    padding: 10px;
+    color: inherit;
+}
+
+nav a:hover {
+    color: #0312a0;
+}
+
 
 #rgb-h1 {
     font-size: 48px;
@@ -82,7 +65,7 @@ body {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: gradientShift  3s ease infinite;
+    animation: gradientShift 3s ease infinite;
 }
 
 
