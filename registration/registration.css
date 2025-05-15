@@ -288,19 +288,6 @@ button:hover {
 
 }
 
-@media screen and (max-width: 720px) and (max-height: 1560px) {
-    .box {
-        width: 98vw;
-        max-width: 99vw;
-        padding: 8px 2px;
-        border-radius: 10px;
-        top: 2px;
-        left: 0;
-        margin: 2px auto;
-        height: auto;
-    }
-}
-
 @media screen and (max-width: 768px) {
     
     .box{
@@ -362,6 +349,99 @@ button:hover {
 }
 
 
+@media screen and (max-width: 720px) and (max-height: 1560px) {
+    .box {
+        width: 80vw;
+        max-width: 98vw;
+        min-width: unset;
+        padding: 16px 4px;
+        border-radius: 14px;
+        margin: 8px auto;
+        height: auto;
+        min-height: 650px; 
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    h3 {
+        font-size: 22px;
+        margin-bottom: 12px;
+        text-align: center;
+        position: static;
+        top: unset;
+    }
+
+    /* Input and icon styling for mobile */
+    .input-group {
+        position: relative;
+        width: 88vw;
+        max-width: 96vw;
+        margin: 10px auto;
+    }
+
+    .input-group input {
+        width: 100%;
+        padding-right: 30px; /* space for icon */
+        font-size: 1rem;
+        box-sizing: border-box;
+        margin: 0;
+        height: 48px; /* Set a consistent height */
+        position: static;
+    }
+
+    .input-group i {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #fff;
+        font-size: 20px;
+        cursor: pointer;
+        z-index: 2;
+    }
+
+    .forgot {
+        position: static;
+        display: block;
+        margin: 10px auto 0 auto;
+        font-size: 13px;
+        color: #FFFFFF;
+        text-align: right;
+        width: 88vw;
+        max-width: 96vw;
+    }
+
+    button {
+        width: 50vw;
+        max-width: 96vw;
+        font-size: 1rem;
+        margin-top : 60%;
+        display: block;
+        position: static;
+        height: 48px; 
+    }
+
+    .login {
+        font-size: 12px;
+        text-align: center;
+        align-items: center;
+        display: inline-block;
+        margin: 0 auto;
+        color: #fff;
+    }
+    #eye_icon{
+    z-index: 1;
+    position: absolute;
+    top: 318px;
+    right: 93px;
+    color: #FFFFFF;
+    font-size: 20px;
+    cursor: pointer;
+}
+}
 
 #eye_icon{
     z-index: 1;
@@ -371,18 +451,4 @@ button:hover {
     color: #FFFFFF;
     font-size: 20px;
     cursor: pointer;
-}
-
-@media screen and (max-width: 480px) and (max-height: 800px) {
-    .box {
-        width: 96vw;
-        min-width: unset;
-        max-width: 99vw;
-        padding: 12px 4px;
-        border-radius: 12px;
-        top: 6px;
-        left: 0;
-        margin: 6px auto;
-        height: auto;
-    }
 }
