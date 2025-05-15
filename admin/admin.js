@@ -181,6 +181,19 @@ if (user_counts) {
     } else {
         console.log("Element with id 'manager_count' not found in the DOM.");
     }
+
+
+ var get_coupon_for_count = JSON.parse(localStorage.getItem("coupons")) || [];
+    var coupon_count = get_coupon_for_count.length;
+    var coupon_counts = document.getElementById("Coupon_count");
+    if (coupon_counts) {
+        coupon_counts.innerHTML = coupon_count;
+    } else {
+        console.log("Element with id 'manager_count' not found in the DOM.");
+    }
+
+
+
 };
 
 

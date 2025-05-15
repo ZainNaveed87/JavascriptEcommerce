@@ -338,19 +338,16 @@ input {
     }
 }
 
-/* Align form box content vertically with proper spacing */
 .box {
     display: flex;
     flex-direction: column;
     align-items: stretch;
     gap: 14px;
-    /* Uniform gap between all elements */
     width: 100%;
     max-width: 420px;
     margin: 0 auto;
 }
 
-/* All input fields full width and aligned */
 .box input[type="text"],
 .box input[type="number"],
 .box input[type="textarea"] {
@@ -366,14 +363,12 @@ input {
     margin-bottom: 0;
     box-sizing: border-box;
     align-self: center;
-    /* Center align in the box */
 }
 
 .box input::placeholder {
     color: #FFFFFF;
 }
 
-/* Dropdown full width and aligned */
 .dropdown {
     width: 100%;
     position: relative;
@@ -400,7 +395,6 @@ input {
     margin: 0 auto;
 }
 
-/* Checkbox and Remember line aligned horizontally */
 .one-line {
     display: flex;
     justify-content: space-between;
@@ -409,13 +403,11 @@ input {
     margin-bottom: 0;
 }
 
-/* Button full width and aligned */
 .box button {
     width: 100%;
     margin-top: 8px;
 }
 
-/* Responsive: box width on small screens */
 @media (max-width: 600px) {
     .box {
         max-width: 98vw;

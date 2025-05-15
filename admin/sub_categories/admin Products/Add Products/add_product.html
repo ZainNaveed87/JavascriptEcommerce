@@ -94,8 +94,18 @@
                     <input type="number" id="Product_Quantity" name="Product Quantity" required
                         placeholder="Product Quantity">
 
+                    <div class="custom-category-dropdown" id="customCategoryDropdown">
+                        <input type="text" id="Product_Category" name="Product Category" required
+                            placeholder="Product_Category" autocomplete="off" onfocus="expandCategoryInput()"
+                            oninput="filterCategoryDropdown()" />
+                        <div id="categoryDropdown" class="dropdown-content" style="display:none;"></div>
+                    </div>
+
+                    <h3 class="forget">Forget Password?</h3>
+                    <button class="product-added">Add Product</button>
                     <input type="text" id="Product_Category" name="Product Category" required
                         placeholder="Product Category">
+
 
 
                     <label for="Product_Image" id="product-image-label">Product Image</label>
@@ -111,13 +121,16 @@
 
     <script>
         function toggleDropdown() {
-            document.getElementById("dropdownItems").style.display = "block";
+            const dropdown = document.getElementById("dropdownItems");
+            if (dropdown) dropdown.style.display = "block";
         }
 
         function filterDropdown() {
             const input = document.getElementById("dropdownSearch");
-            const filter = input.value.toUpperCase();
             const dropdown = document.getElementById("dropdownItems");
+            if (!input || !dropdown) return;
+
+            const filter = input.value.toUpperCase();
             const items = dropdown.getElementsByTagName("div");
 
             for (let i = 0; i < items.length; i++) {
@@ -127,18 +140,85 @@
         }
 
         function selectItem(element) {
-            document.getElementById("dropdownSearch").value = element.textContent;
-            document.getElementById("dropdownItems").style.display = "none";
+            const input = document.getElementById("dropdownSearch");
+            const dropdown = document.getElementById("dropdownItems");
+            if (input && dropdown) {
+                input.value = element.textContent;
+                dropdown.style.display = "none";
+            }
         }
 
         window.onclick = function (e) {
-            if (!e.target.matches('#dropdownSearch')) {
-                document.getElementById("dropdownItems").style.display = "none";
+            const dropdown = document.getElementById("dropdownItems");
+            const input = document.getElementById("dropdownSearch");
+            if (!dropdown || !input) return;
+
+            if (!dropdown.contains(e.target) && e.target !== input) {
+                dropdown.style.display = "none";
+            }
+        };
+
+        async function fetchCategories() {
+            let data = JSON.parse(localStorage.getItem("categories"));
+            if (Array.isArray(data)) {
+                return data.map(item => item.category);
+            } else if (data && Array.isArray(data.categories)) {
+                return data.categories;
+            } else {
+                return [];
             }
         }
+
+        let allCategories = [];
+
+        async function expandCategoryInput() {
+            const wrapper = document.getElementById("customCategoryDropdown");
+            const dropdown = document.getElementById("categoryDropdown");
+            const input = document.getElementById("Product_Category");
+            if (!wrapper || !dropdown || !input) return;
+
+            wrapper.classList.add("expanded");
+
+            if (allCategories.length === 0) {
+                allCategories = await fetchCategories();
+            }
+
+            dropdown.innerHTML = "";
+            allCategories.forEach(cat => {
+                const div = document.createElement("div");
+                div.textContent = cat;
+                div.onclick = function () {
+                    input.value = cat;
+                    dropdown.style.display = "none";
+                    wrapper.classList.remove("expanded");
+                };
+                dropdown.appendChild(div);
+            });
+            dropdown.style.display = "block";
+        }
+
+        function filterCategoryDropdown() {
+            const input = document.getElementById("Product_Category");
+            const dropdown = document.getElementById("categoryDropdown");
+            if (!input || !dropdown) return;
+            const filter = input.value.toLowerCase();
+            Array.from(dropdown.children).forEach(div => {
+                div.style.display = div.textContent.toLowerCase().includes(filter) ? "" : "none";
+            });
+        }
+
+        document.addEventListener("click", function (e) {
+            const wrapper = document.getElementById("customCategoryDropdown");
+            const dropdown = document.getElementById("categoryDropdown");
+            const input = document.getElementById("Product_Category");
+            if (!wrapper || !dropdown || !input) return;
+            if (!wrapper.contains(e.target)) {
+                dropdown.style.display = "none";
+                wrapper.classList.remove("expanded");
+            }
+        });
     </script>
 
-    <script src="../admin.js"></script>
 </body>
 
 </html>
