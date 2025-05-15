@@ -348,6 +348,20 @@ button:hover {
 
 }
 
+@media screen and (max-width: 480px) and (max-height: 800px) {
+    .box {
+        width: 96vw;
+        min-width: unset;
+        max-width: 99vw;
+        padding: 12px 4px;
+        border-radius: 12px;
+        top: 6px;
+        left: 0;
+        margin: 6px auto;
+        height: auto;
+    }
+}
+
 #eye_icon{
     z-index: 1;
     position: absolute;
