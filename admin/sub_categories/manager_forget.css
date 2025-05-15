@@ -73,7 +73,6 @@ button
     font-family: poppins;
     position: absolute;
     top: 180px;
-    /* color: #FFFFFF; */
     border: 1px solid #FFFFFF;
     cursor: pointer;
     transition: all 0.3s ease; 

@@ -9,7 +9,6 @@ window.onload = function () {
         console.log("Element with id 'cards' not found in the DOM.");
     } else {
         if (users.length === 0) {
-            // cards.innerHTML = "<p>No users found.</p>";
         } else {
             for (var i = 0; i < users.length; i++) {
                 var user = users[i];
@@ -64,7 +63,6 @@ window.onload = function () {
         });
     }
 
-    // seller cards
 
     var seller = JSON.parse(localStorage.getItem("seller")) || [];
     var cards = document.getElementById("cards");
@@ -138,7 +136,6 @@ window.onload = function () {
         console.log("Admin name not found in localStorage.");
     }
 
-//total count
     var usercount = users.length + seller.length;
     var user_counts = document.getElementById("user_count");
     if (user_counts) {
@@ -147,7 +144,6 @@ window.onload = function () {
         console.log("Element with id 'user_count' not found in the DOM.");
     }
 
-    // buyer count 
     var usercount = users.length ;
     var user_counts = document.getElementById("Buyer_count");
     if (user_counts) {
@@ -157,7 +153,6 @@ window.onload = function () {
     }
 
 
-//seller count
 var usercount = seller.length ;
 var user_counts = document.getElementById("seller_count");
 if (user_counts) {
@@ -169,7 +164,6 @@ if (user_counts) {
 
 
 
-//manager count
     var get_manager_for_count = JSON.parse(localStorage.getItem("manager")) || [];
     var manager_count = get_manager_for_count.length;
     var manager_counts = document.getElementById("manager_count");
@@ -178,7 +172,19 @@ if (user_counts) {
     } else {
         console.log("Element with id 'manager_count' not found in the DOM.");
     }
+
+    var get_manager_for_count = JSON.parse(localStorage.getItem("categories")) || [];
+    var manager_count = get_manager_for_count.length;
+    var manager_counts = document.getElementById("Categories_count");
+    if (manager_counts) {
+        manager_counts.innerHTML = manager_count;
+    } else {
+        console.log("Element with id 'manager_count' not found in the DOM.");
+    }
 };
+
+
+
 
 function logout() {
     var confirmLogout = confirm("Are you sure you want to logout?");
