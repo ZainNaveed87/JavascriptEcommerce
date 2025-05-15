@@ -81,77 +81,58 @@
         </aside>
         <main>
             <div class="box">
-                <h3 id="heading3">Add Products</h3>
-                <label for="" id="product_name_label"></label>
-                <input id="product_name" type="text" placeholder="Product Name" required>
+                <h1 class="add_product">Add Produce</h1>
+                <form>
+                    <input type="text" id="Product_Name" name="Product_Name" required placeholder="Product Name">
 
-                <label for="" id="price_label"></label>
-                <input id="price" type="number" placeholder="Product Price" required>
+                    <input type="number" id="Product_Price" name="Product_Price" required placeholder="Product Price">
 
+                    <input type="text" id="Product_Description" name="Product Description" required
+                        placeholder="Product_Description">
 
-                <label for="" id="desc_label"></label>
-                <input id="desc" type="textarea" placeholder="Product Description" required>
+                    <input type="number" id="Product_Quantity" name="Product Quantity" required
+                        placeholder="Product_Quantity">
 
-                <label for="" id="quantity_label"></label>
-                <input id="quantity" type="number" placeholder="Stock Quantity" required>
-
-                <label for="" id="category_label"></label>
-                <div class="dropdown">
-                    <input type="text" id="dropdownSearch" placeholder="Search category..." onkeyup="filterDropdown()"
-                        onclick="toggleDropdown()" autocomplete="off">
-                    <div id="dropdownItems" class="dropdown-list">
-                        <div onclick="selectItem(this)">Electronics</div>
-                        <div onclick="selectItem(this)">Fashion</div>
-                        <div onclick="selectItem(this)">Books</div>
-                        <div onclick="selectItem(this)">Home & Kitchen</div>
-                        <div onclick="selectItem(this)">Grocery</div>
-                        <div onclick="selectItem(this)">Toys</div>
-                    </div>
-                </div>
+                    <input type="text" id="Product_Category" name="Product Category" required
+                        placeholder="Product_Category">
+                    <h3 class="forget">Forget Password?</h3>
+                    <button class="product-added">Add Product</button>
 
 
-                <input type="checkbox" name="" id="checkbox">
-                <div class="one-line">
-                    <p class="Remember">Remember me</p>
-                    <a href="./add_product.js" class="forgot">Forgot Password?</a>
-
-                </div>
-                <button onclick="Add_Manager()">Add Manager</button>
-
-
+                </form>
             </div>
         </main>
     </div>
 
 
     <script>
-  function toggleDropdown() {
-    document.getElementById("dropdownItems").style.display = "block";
-  }
+        function toggleDropdown() {
+            document.getElementById("dropdownItems").style.display = "block";
+        }
 
-  function filterDropdown() {
-    const input = document.getElementById("dropdownSearch");
-    const filter = input.value.toUpperCase();
-    const dropdown = document.getElementById("dropdownItems");
-    const items = dropdown.getElementsByTagName("div");
+        function filterDropdown() {
+            const input = document.getElementById("dropdownSearch");
+            const filter = input.value.toUpperCase();
+            const dropdown = document.getElementById("dropdownItems");
+            const items = dropdown.getElementsByTagName("div");
 
-    for (let i = 0; i < items.length; i++) {
-      const txtValue = items[i].textContent || items[i].innerText;
-      items[i].style.display = txtValue.toUpperCase().includes(filter) ? "" : "none";
-    }
-  }
+            for (let i = 0; i < items.length; i++) {
+                const txtValue = items[i].textContent || items[i].innerText;
+                items[i].style.display = txtValue.toUpperCase().includes(filter) ? "" : "none";
+            }
+        }
 
-  function selectItem(element) {
-    document.getElementById("dropdownSearch").value = element.textContent;
-    document.getElementById("dropdownItems").style.display = "none";
-  }
+        function selectItem(element) {
+            document.getElementById("dropdownSearch").value = element.textContent;
+            document.getElementById("dropdownItems").style.display = "none";
+        }
 
-  window.onclick = function(e) {
-    if (!e.target.matches('#dropdownSearch')) {
-      document.getElementById("dropdownItems").style.display = "none";
-    }
-  }
-</script>
+        window.onclick = function (e) {
+            if (!e.target.matches('#dropdownSearch')) {
+                document.getElementById("dropdownItems").style.display = "none";
+            }
+        }
+    </script>
 
     <script src="../admin.js"></script>
 </body>
