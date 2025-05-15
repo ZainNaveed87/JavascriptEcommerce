@@ -290,14 +290,13 @@ button:hover {
 
 @media screen and (max-width: 720px) and (max-height: 1560px) {
     .box {
-        width: 90vw;
-        min-width: unset;
-        max-width: 98vw;
-        padding: 20px 8px;
-        border-radius: 18px;
-        top: 12px;
+        width: 98vw;
+        max-width: 99vw;
+        padding: 8px 2px;
+        border-radius: 10px;
+        top: 2px;
         left: 0;
-        margin: 12px auto;
+        margin: 2px auto;
         height: auto;
     }
 }
