@@ -233,6 +233,7 @@ aside .sidebar a span.msg_count {
 /* form styling started */
 
 main {
+    margin-top: 100px;
     justify-content: center;
 }
 
