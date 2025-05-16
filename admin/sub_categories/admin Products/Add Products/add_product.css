@@ -61,8 +61,10 @@ body {
     display: grid;
     width: 96%;
     gap: 1.9rem;
-    grid-template-columns: 14rem auto;
+    grid-template-columns: 14rem auto; /* 14rem sidebar, rest for main */
     margin: 0 auto;
+    align-items: stretch; /* Ensure sidebar and main are same height */
+    min-height: 100vh;    /* Make sidebar full height */
 }
 
 a {
@@ -132,6 +134,7 @@ b {
 
 aside {
     height: 100vh;
+    min-width: 14rem;
 }
 
 aside .top {
