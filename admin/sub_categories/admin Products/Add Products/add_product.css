@@ -61,8 +61,10 @@ body {
     display: grid;
     width: 96%;
     gap: 1.9rem;
-    grid-template-columns: 14rem auto;
+    grid-template-columns: 14rem auto; /* 14rem sidebar, rest for main */
     margin: 0 auto;
+    align-items: stretch; /* Ensure sidebar and main are same height */
+    min-height: 100vh;    /* Make sidebar full height */
 }
 
 a {
@@ -132,6 +134,7 @@ b {
 
 aside {
     height: 100vh;
+    min-width: 14rem;
 }
 
 aside .top {
@@ -233,7 +236,7 @@ aside .sidebar a span.msg_count {
 /* form styling started */
 
 main {
-    margin-top: 50px;
+    margin-top: 100px;
     justify-content: center;
 }
 
@@ -278,13 +281,12 @@ input {
     border-radius: 24px;
     text-align: center;
     font-weight: bold;
-    background-color: var(--clr-info-light);
-    ;
+    background-color: var(--clr-info-light)
 }
 
 .product-added:hover {
     cursor: pointer;
-    background: linear-gradient(90deg, #8e44ad, #0312a0);
+    background: linear-gradient(90deg, #ffffff, #9193a5);
     background-size: 200% 100%;
     -webkit-background-clip: text;
     background-clip: text;
@@ -536,7 +538,7 @@ input {
         width: 100%;
         height: 100vh;
         display: flex;
-        align-items: flex-start; /* Align to top */
+        align-items: flex-start; 
         justify-content: center;
         margin: 10px;
     }
@@ -548,11 +550,84 @@ input {
         border-radius: 32px;
         box-shadow: 0 8px 32px rgba(0,0,0,0.2);
         background-color: rgba(255,255,255,0.08);
-        margin: 40px 0 0 0; /* Add some space from the very top */
+        margin: 40px 0 0 0; 
         display: flex;
         flex-direction: column;
         align-items: stretch;
         justify-content: center;
     }
- 
+
+}
+
+@media screen and (max-width: 640px) and (max-height: 768px) {
+    html, body {
+        height: 100%;
+        min-height: 100%;
+        padding: 0;
+        margin: 0;
+        overflow-x: hidden;
+        box-sizing: border-box;
+    }
+
+    .container {
+        display: grid;
+        width: 98vw;
+        gap: 1rem;
+        grid-template-columns: 12rem auto;
+        margin: 0 auto;
+        align-items: start; 
+        min-height: unset;  
+        height: 100vh;      
+        }
+
+    aside {
+        min-width: 12rem;
+        height: 100vh;
+    }
+
+    main {
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: flex-start;
+        margin-top: 20px;
+        justify-content: center;
+    }
+
+    .box {
+        max-width: 80vw;
+        width: 100%;
+        padding: 4px 2px;
+        border-radius: 12px;
+        margin: 6px auto;
+        box-sizing: border-box;
+        min-height: unset;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .box input[type="text"],
+    .box input[type="number"],
+    .box input[type="textarea"],
+    #dropdownSearch,
+    #product-image-label,
+    .product-added {
+        height: 32px;
+        width: 60vw;
+        max-width: 85vw;
+        min-width: 0;
+        margin: 0 auto 4px auto;
+        box-sizing: border-box;
+        font-size: 0.95rem;
+    }
+
+    .dropdown-list {
+        width: 80vw;
+        max-width: 85vw;
+        margin: 0 auto;
+    }
 }

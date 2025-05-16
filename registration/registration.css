@@ -443,6 +443,44 @@ button:hover {
 }
 }
 
+@media screen and (max-width: 360px) and (max-height: 648px) {
+    .box {
+        width: 98vw;
+        max-width: 99vw;
+        min-width: unset;
+        padding: 8px 2px;
+        border-radius: 10px;
+        margin: 4px auto;
+        height: auto;
+        min-height: 500px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        box-sizing: border-box; /* Ensure padding is included in width */
+    }
+
+    .input-group {
+        position: relative;
+        width: 100%; /* Full width of .box */
+        max-width: 100%;
+        margin: 6px 0;
+        box-sizing: border-box;
+    }
+
+    .input-group input {
+        width: 100%;
+        padding-right: 28px;
+        font-size: 0.9rem;
+        box-sizing: border-box;
+        margin: 0;
+        height: 32px;
+        position: static;
+        border-radius: 8px;
+    }
+}
+
 #eye_icon{
     z-index: 1;
     position: absolute;

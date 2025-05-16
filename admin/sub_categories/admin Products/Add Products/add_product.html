@@ -94,6 +94,32 @@
     <label for="Product_Image" id="product-image-label">Product Image</label>
     <input type="file" id="Product_Image" name="Product_Image" required placeholder="Product Image URL">
 <button class="product-added" type="submit">Add Product</button></form>
+
+                <form>
+                    <input type="text" id="Product_Name" name="Product_Name" required placeholder="Product Name">
+
+                    <input type="number" id="Product_Price" name="Product_Price" required placeholder="Product Price">
+
+
+                    <input type="text" id="Product_Description" name="Product Description" required
+                        placeholder="Product Description">
+
+                    <input type="number" id="Product_Quantity" name="Product Quantity" required
+                        placeholder="Product Quantity" min="0">
+
+                    <div class="custom-category-dropdown" id="customCategoryDropdown">
+                        <input type="text" id="Product_Category" name="Product Category" required
+                            placeholder="Product_Category" autocomplete="off" onfocus="expandCategoryInput()"
+                            oninput="filterCategoryDropdown()" />
+                        <div id="categoryDropdown" class="dropdown-content" style="display:none;"></div>
+                    </div>
+
+                    <label for="Product_Image" id="product-image-label">Product Image</label>
+                    <input type="file" id="Product_Image" name="Product_Image" required placeholder="Product Image URL">
+
+                    <button class="product-added">Add Product</button>
+
+                </form>
             </div>
         </main>
     </div>
