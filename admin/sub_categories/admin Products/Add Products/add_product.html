@@ -58,9 +58,9 @@
                     <h3>Add Products</h3>
                 </a>
 
-                <a href="#">
-                    <span class="material-symbols-outlined">report_gmailerrorred</span>
-                    <h3>Reports</h3>
+                    <a href="../fetch products/fetch_product.html">
+                    <span class="material-symbols-outlined">person_outline</span>
+                    <h3>Fetch Product</h3>
                 </a>
 
                 <a href="#">
@@ -82,38 +82,18 @@
         <main>
             <div class="box">
                 <h1 class="add_product">Add Produce</h1>
-                <form>
-                    <input type="text" id="Product_Name" name="Product_Name" required placeholder="Product Name">
-
-                    <input type="number" id="Product_Price" name="Product_Price" required placeholder="Product Price">
-
-
-                    <input type="text" id="Product_Description" name="Product Description" required
-                        placeholder="Product Description">
-
-                    <input type="number" id="Product_Quantity" name="Product Quantity" required
-                        placeholder="Product Quantity">
-
-                    <div class="custom-category-dropdown" id="customCategoryDropdown">
-                        <input type="text" id="Product_Category" name="Product Category" required
-                            placeholder="Product_Category" autocomplete="off" onfocus="expandCategoryInput()"
-                            oninput="filterCategoryDropdown()" />
-                        <div id="categoryDropdown" class="dropdown-content" style="display:none;"></div>
-                    </div>
-
-                    <h3 class="forget">Forget Password?</h3>
-                    <button class="product-added">Add Product</button>
-                    <input type="text" id="Product_Category" name="Product Category" required
-                        placeholder="Product Category">
-
-
-
-                    <label for="Product_Image" id="product-image-label">Product Image</label>
-                    <input type="file" id="Product_Image" name="Product_Image" required placeholder="Product Image URL">
-
-                    <button class="product-added">Add Product</button>
-
-                </form>
+               <form id="addProductForm">
+    <input type="text" id="Product_Name" name="Product_Name" required placeholder="Product Name">
+    <input type="number" id="Product_Price" name="Product_Price" required placeholder="Product Price">
+    <input type="text" id="Product_Description" name="Product_Description" required placeholder="Product Description">
+    <input type="number" id="Product_Quantity" name="Product_Quantity" required placeholder="Product Quantity">
+    <div class="custom-category-dropdown" id="customCategoryDropdown">
+        <input type="text" id="Product_Category" name="Product_Category" required placeholder="Product_Category" autocomplete="off" onfocus="expandCategoryInput()" oninput="filterCategoryDropdown()" />
+        <div id="categoryDropdown" class="dropdown-content" style="display:none;"></div>
+    </div>
+    <label for="Product_Image" id="product-image-label">Product Image</label>
+    <input type="file" id="Product_Image" name="Product_Image" required placeholder="Product Image URL">
+<button class="product-added" type="submit">Add Product</button></form>
             </div>
         </main>
     </div>
@@ -218,6 +198,8 @@
             }
         });
     </script>
+
+    <script src="./add_product.js"></script>
 
 </body>
 

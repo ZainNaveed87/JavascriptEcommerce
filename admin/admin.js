@@ -193,6 +193,15 @@ if (user_counts) {
     }
 
 
+var get_products_for_count = JSON.parse(localStorage.getItem("products")) || [];
+var products_count = get_products_for_count.length;
+var products_counts = document.getElementById("product_count");
+if (products_counts) {
+    products_counts.innerHTML = products_count;
+} else {
+    console.log("Element with id 'Product_count' not found in the DOM.");
+}
+
 
 };
 
