@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins&display=swap');
+
+
+:root {
+    --clr-primary: #7380ec;
+    --clr-danger: #ff7782;
+    --clr-success: #41f1b6;
+    --clr-white: #fff;
+    --clr-info-dark: #7d8da1;
+    --clr-info-light: #dce1eb;
+    --clr-dark: #363949;
+    --clr-warnig: #ff4edc;
+    --clr-light: rgba(132, 139, 200, 0.18);
+    --clr-primary-variant: #111e88;
+    --clr-dark-variant: #677483;
+    --clr-color-background: #f6f6f9;
+
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 0.8rem;
+    --border-radius-3: 1.2rem;
+
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+    --box-shadow: 0 2rem 3rem var(--clr-light);
+
+}
+
+.dark-theme-variables {
+    --clr-color-background: #181a1e;
+    --clr-white: #202528;
+    --clr-light: rgba(0, 0, 0, 0.4);
+    --clr-dark: #edeffd;
+    --clr-dark-variant: #677483;
+    --box-shadow: 0 2rem 3rem var(--clr-light)
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: 0;
+    list-style: none;
+    appearance: none;
+
+}
+
+body {
+    font-family: 'poppins', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    font-size: 0.88rem;
+    user-select: none;
+    overflow-x: hidden;
+    background: url('../../image.png');
+
+}
+
+.container {
+    display: grid;
+    width: 96%;
+    gap: 1.9rem;
+    grid-template-columns: 14rem auto;
+    margin: 0 auto;
+}
+
+a {
+    color: var(--clr-dark);
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 1.8rem;
+}
+
+h2 {
+    font-size: 1.4rem;
+}
+
+h3 {
+    font-size: 0.87rem;
+}
+
+h4 {
+    font-size: 0.8rem;
+}
+
+h5 {
+    font-size: 0.77rem;
+}
+
+small {
+    font-size: 0.75rem;
+}
+
+.profile-photo {
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.text-muted {
+    color: var(--clr-info-dark);
+
+}
+
+p {
+    color: var(--clr-dark-variant);
+}
+
+b {
+    color: var(--clr-dark);
+}
+
+.primary {
+    color: var(--clr-primary);
+}
+
+.sucess {
+    color: var(--clr-success);
+}
+
+.danger {
+    color: var(--clr-danger);
+}
+
+.warninng {
+    color: var(--clr-warnig);
+}
+
+aside {
+    height: 100vh;
+}
+
+aside .top {
+
+    background-color: transparent;
+    border: 3px solid var(--clr-white);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1.4rem;
+}
+
+aside .logo {
+    position: relative;
+    display: flex;
+    gap: 1rem;
+    color: rgb(160, 157, 157);
+    text-align: center;
+}
+
+aside .logo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: -1;
+    border-radius: 10px;
+}
+
+aside .sidebar {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    height: 86vh;
+    position: relative;
+    top: 1rem;
+    border-radius: 10px;
+    border: 2px solid white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+aside h3 {
+    font-weight: 500;
+}
+
+aside .sidebar a {
+    display: flex;
+    color: rgb(160, 157, 157);
+    margin-left: 2rem;
+    gap: 1rem;
+    align-items: center;
+    height: 3.2rem;
+    transition: all 0.1s ease-in;
+}
+
+aside .sidebar a span {
+    font-size: 1.6rem;
+    transition: all .1s ease-in;
+
+
+
+}
+
+aside .sidebar a:last-child {
+    position: absolute;
+    bottom: 1rem;
+    width: 100%;
+}
+
+aside .sidebar a:hover {
+    color: var(--clr-primary);
+
+}
+
+aside .sidebar a:hover span {
+    margin-left: 1rem;
+    transition: 0.4s ease;
+    background: var(--clr-white);
+    color: var(--clr-primary);
+    margin-left: 20px;
+    border-left: 5px solid var(--clr-primary);
+}
+
+aside .sidebar a span.msg_count {
+    background-color: var(--clr-danger);
+    color: var(--clr-white);
+    padding: 2px 5px;
+    font-size: 11px;
+    border-radius: var(--border-radius-1);
+}
+.product-card {
+    background: rgba(255,255,255,0.18);
+    border: none;
+    border-radius: 22px;
+    box-shadow: 0 6px 32px rgba(25, 118, 210, 0.13), 0 1.5px 6px rgba(0,0,0,0.07);
+    padding: 0 0 22px 0;
+    margin: 22px 14px;
+    width: 320px;
+    color: #222;
+    font-family: 'Poppins', sans-serif;
+    transition: box-shadow 0.22s, transform 0.22s;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    box-shadow: 0 12px 40px rgba(25, 118, 210, 0.19), 0 2px 8px rgba(0,0,0,0.10);
+    transform: translateY(-6px) scale(1.035);
+}
+
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 22px 22px 0 0;
+    display: block;
+    background: #f4f4f4;
+    margin-bottom: 0;
+}
+
+.product-card-content {
+    padding: 20px 22px 0 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-card h3 {
+    margin: 16px 0 10px 0;
+    font-size: 1.25rem;
+    color: #1976d2;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.product-card .product-desc {
+    margin: 0 0 10px 0;
+    font-size: 0.98rem;
+    color: #444;
+    text-align: center;
+    min-height: 38px;
+}
+
+.product-card .product-category {
+    background: #e3f0fc;
+    color: #1976d2;
+    font-size: 0.92rem;
+    border-radius: 8px;
+    padding: 2px 12px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.product-card .product-qty {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.product-card .product-price {
+    font-size: 1.15rem;
+    color: #fff;
+    background: linear-gradient(90deg, #1976d2 60%, #41f1b6 100%);
+    border-radius: 8px;
+    padding: 6px 18px;
+    font-weight: 700;
+    margin-top: 8px;
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.10);
+    letter-spacing: 0.5px;
+}
