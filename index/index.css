@@ -73,22 +73,26 @@ body {
     height: 50px;
 }
 
-nav {
+#nav-1 {
+    backdrop-filter: blur(10px);     
+    -webkit-backdrop-filter: blur(10px); 
     font-family: poppins;
     display: flex;
     align-items: center;
     justify-content: space-around; 
     gap: 20px;
+    border-radius: 18px; 
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08); 
 }
 
-nav a {
+#nav-1 a {
     text-decoration: none;
     padding: 20px;
     font-size: 1.2rem;
     color: inherit;
 }
 
-nav a:hover {
+#nav-1 a:hover {
     color: #0312a0;
 }
 
