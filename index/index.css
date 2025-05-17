@@ -27,6 +27,12 @@ body {
     width: 200px;
 }
 
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #search{
     width: 500px;
     height: 50px;
@@ -41,7 +47,7 @@ body {
     height: 80vh;
     display: flex;
     justify-content: center;
-    margin-left: 8px;
+    margin-left: 9px;
     border: 1px solid #0000ff;
     border-radius: 14px;
     align-items: center;
@@ -54,7 +60,7 @@ body {
     height: 50px;
     background-color: #688cee;
     color: #000000;
-    border-radius: 20px;
+    border-radius: 6px;
     border: none;
     margin-right: 50px;
     cursor: pointer;
@@ -67,21 +73,26 @@ body {
     height: 50px;
 }
 
-nav {
+#nav-1 {
+    backdrop-filter: blur(10px);     
+    -webkit-backdrop-filter: blur(10px); 
     font-family: poppins;
     display: flex;
     align-items: center;
     justify-content: space-around; 
     gap: 20px;
+    border-radius: 18px; 
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08); 
 }
 
-nav a {
+#nav-1 a {
     text-decoration: none;
-    padding: 10px;
+    padding: 20px;
+    font-size: 1.2rem;
     color: inherit;
 }
 
-nav a:hover {
+#nav-1 a:hover {
     color: #0312a0;
 }
 
@@ -160,3 +171,47 @@ nav a:hover {
     border-radius: 20px;
 }
 
+.nav-links {
+    display: flex;
+    gap: 18px;
+}
+
+.nav-links a {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-links i {
+    font-size: 1.5rem;
+}
+
+.badge {
+    position: absolute;
+    top: 4px;
+    right: 1px;
+    width: 19px;
+    height: 19px;
+    background: transparent;
+    color: #fff;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    font-weight: bold;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.badge-signal {
+    background: transparent;
+}
+
+.badge-heart {
+    background: transparent;
+}
+
+.badge-cart {
+    background: transparent;
+}
