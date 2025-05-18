@@ -86,16 +86,17 @@ renderTable();
 function Logout() {
     var confirmLogout = confirm("Are you sure you want to logout?");
     if (confirmLogout) {
+        localStorage.removeItem("currentManager"); // Sirf session hatayein
         window.location.href = "../../../login.html";
     }
     return false;
-
 }
- var managers = JSON.parse(localStorage.getItem("manager")) || [];
-    var adminNameElement = document.getElementById("admin_name");
 
-    if (managers.length > 0 && managers[0].username) {
-        adminNameElement.innerHTML = `Hello, ${managers[0].username}`;
-    } else {
-        adminNameElement.innerHTML = "Hello, Manager";
-    }
+   var currentManager = JSON.parse(localStorage.getItem("currentManager")) || null;
+var adminNameElement = document.getElementById("admin_name");
+
+if (currentManager && currentManager.username) {
+    adminNameElement.innerHTML = `Hello, ${currentManager.username}`;
+} else {
+    adminNameElement.innerHTML = "Hello, Manager";
+}

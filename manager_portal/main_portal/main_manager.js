@@ -127,14 +127,14 @@ window.onload = function () {
         });
     }
 
-    var managers = JSON.parse(localStorage.getItem("manager")) || [];
-    var adminNameElement = document.getElementById("admin_name");
+   var currentManager = JSON.parse(localStorage.getItem("currentManager")) || null;
+var adminNameElement = document.getElementById("admin_name");
 
-    if (managers.length > 0 && managers[0].username) {
-        adminNameElement.innerHTML = `Hello, ${managers[0].username}`;
-    } else {
-        adminNameElement.innerHTML = "Hello, Manager";
-    }
+if (currentManager && currentManager.username) {
+    adminNameElement.innerHTML = `Hello, ${currentManager.username}`;
+} else {
+    adminNameElement.innerHTML = "Hello, Manager";
+}
 
     var usercount = users.length + seller.length;
     var user_counts = document.getElementById("user_count");
@@ -211,20 +211,21 @@ window.onload = function () {
 function logout() {
     var confirmLogout = confirm("Are you sure you want to logout?");
     if (confirmLogout) {
+        localStorage.removeItem("currentManager"); // Sirf session hatayein
         window.location.href = "../../login.html";
     }
-
     return false;
 }
 
 function userLogout() {
     var confirmLogout = confirm("Are you sure you want to logout?");
     if (confirmLogout) {
+        localStorage.removeItem("currentManager");
         window.location.href = "../../login.html";
     }
     return false;
-
 }
+
 var username = document.getElementById("Username");
 var email = document.getElementById("email");
 var password = document.getElementById("pass");

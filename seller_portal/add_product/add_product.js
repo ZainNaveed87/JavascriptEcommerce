@@ -13,15 +13,20 @@ document.addEventListener("DOMContentLoaded", function () {
         const imageInput = document.getElementById("Product_Image");
         let image = "";
 
+        // Get current seller
+        const currentSeller = JSON.parse(localStorage.getItem("currentSeller")) || {};
+        console.log(currentSeller); // Debug
+        console.log(currentSeller.username); // Debug
+
         if (imageInput && imageInput.files && imageInput.files[0]) {
             const reader = new FileReader();
             reader.onload = function (event) {
                 image = event.target.result;
-                saveProduct({ name, price, description, quantity, category, image });
+                saveProduct({ name, price, description, quantity, category, image, sellerName: currentSeller.username });
             };
             reader.readAsDataURL(imageInput.files[0]);
         } else {
-            saveProduct({ name, price, description, quantity, category, image });
+            saveProduct({ name, price, description, quantity, category, image, sellerName: currentSeller.username });
         }
     });
 
@@ -33,20 +38,19 @@ document.addEventListener("DOMContentLoaded", function () {
         form.reset();
     }
 });
-function Logout() {
-    var confirmLogout = confirm("Are you sure you want to logout?");
-    if (confirmLogout) {
-        localStorage.removeItem("currentManager"); // Sirf session hatayein
+
+ // Show current seller name in header
+    var currentSeller = JSON.parse(localStorage.getItem("currentSeller")) || {};
+    var adminNameElement = document.getElementById("admin_name");
+    if (currentSeller && currentSeller.username) {
+        adminNameElement.innerHTML = `Hello, ${currentSeller.username}`;
+    } else {
+        adminNameElement.innerHTML = "Hello, Seller";
+    }
+
+      function logout() {
+    if (confirm("Are you sure you want to logout?")) {
+        localStorage.removeItem("currentSeller");
         window.location.href = "../../login.html";
     }
-    return false;
-}
-
-   var currentManager = JSON.parse(localStorage.getItem("currentManager")) || null;
-var adminNameElement = document.getElementById("admin_name");
-
-if (currentManager && currentManager.username) {
-    adminNameElement.innerHTML = `Hello, ${currentManager.username}`;
-} else {
-    adminNameElement.innerHTML = "Hello, Manager";
 }
