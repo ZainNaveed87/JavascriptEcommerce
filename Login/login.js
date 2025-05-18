@@ -58,7 +58,7 @@ function login() {
 
     if (userFound) {
         var manager_code = "123456789";
-        var manager_email = userFound.email; 
+        var manager_email = userFound.email;
 
         if (email.value === manager_email) {
             var input_code = prompt("Enter The Code Of Manager Panel");
@@ -66,28 +66,29 @@ function login() {
 
 
             if (manager_code === input_code && manager_name === userFound.username) {
+                // Yahan manager ka object currentManager key me save kar dein
+                localStorage.setItem("currentManager", JSON.stringify(userFound));
                 alert("Login successful as manager!");
-                window.location.href = "./manager.html";
+                window.location.href = "../JavascriptEcommerce/manager_portal/main_portal/main_manager.html";
             } else {
                 alert("Incorrect manager code. Access denied.");
                 return;
             }
         }
-    } 
-    
-    
-    else {
+    } else {
         alert("Manager does not exist or invalid credentials.");
     }
 
     var existingUsers = JSON.parse(localStorage.getItem("seller")) || [];
-    var userFound = existingUsers.some(function (user) {
+    var userFound = existingUsers.find(function (user) {
         return user.email === email.value && user.password === password.value;
     });
 
     if (userFound) {
+        // Yahan seller ka object currentSeller key me save kar dein
+        localStorage.setItem("currentSeller", JSON.stringify(userFound));
         alert("Login successful!");
-        window.location.href = "./seller.html";
+        window.location.href = "./seller_portal/seller.html";
     } else {
         alert("Invalid email or password. Please try again.");
     }
@@ -98,21 +99,21 @@ function login() {
     });
 
     if (userFound) {
-        
-
-       
 
 
-            
-                alert("Login successful as buyer!");
-                window.location.href = "./index.html";
-            } 
-          
+
+
+
+
+        alert("Login successful as buyer!");
+        window.location.href = "./index.html";
+    }
+
 }
-     
-    
-    
-   
+
+
+
+
 
 
 function Change_icon() {

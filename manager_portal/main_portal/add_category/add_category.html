@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="./add_category.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=close" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <a href="#">
+                        <h1 id="admin_name">Hello Manager</h1>
+                    </a>
+                </div>
+                <div class="close">
+                    <span class="material-symbols-outlined">close </span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="../fetch_user/fetch_user.html">
+                    <span class="material-symbols-outlined">person_outline</span>
+                    <h3>Users</h3>
+                </a>
+
+
+                <a href="#">
+                    <span class="material-symbols-outlined">Add</span>
+                    <h3>Add Categories</h3>
+                </a>
+
+
+                <a href="../add_coupon/add_coupon.html">
+                    <span class="material-symbols-outlined">Add</span>
+                    <h3>Coupon Codes</h3>
+                </a>
+
+                <a href="../add_product/add_product.html">
+                    <span class="material-symbols-outlined">Add</span>
+                    <h3>Add Products</h3>
+                </a>
+
+                    <a href="../fetch_product/fetch_product.html">
+                    <span class="material-symbols-outlined">person_outline</span>
+                    <h3>Fetch Product</h3>
+                </a>
+
+                <a href="#">
+                    <span class="material-symbols-outlined">settings</span>
+                    <h3>Settings</h3>
+                </a> <br>
+
+                <a href="#">
+                    <span class="material-symbols-outlined">add</span>
+                    <h3>Add Products</h3>
+                </a>
+
+                <a href="#" onclick="Logout()">
+                    <span class="material-symbols-outlined">logout</span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+        <main>
+            <div class="box">
+                <h4>Add Category</h4>
+                <label for="" id="email_label"></label>
+                <input id="category" type="text" placeholder="Category" required>
+                <i class="fa-solid fa-envelope" id="envilope"></i>
+
+                <button id="category_button" onclick="Add_Category()">Add Category</button>
+
+
+
+                <table id="category_table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Category</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Electronics</td>
+                            <td>
+                                <button class="edit" onclick="editRow(0)">Edit</button>
+                                <button class="delete" onclick="deleteRow(0)">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+        </main>
+    </div>
+
+    <script src="./add_category.js"></script>
+</body>
+
+</html>

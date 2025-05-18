@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="./add_product.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=close" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <a href="https://zainnaveed87.github.io/JavascriptEcommerce/admin.html">
+                        <h1 id="admin_name">Hello Manager</h1>
+                    </a>
+                </div>
+                <div class="close">
+                    <span class="material-symbols-outlined">close </span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="../fetch_user/fetch_user.html">
+                    <span class="material-symbols-outlined">person_outline</span>
+                    <h3>Users</h3>
+                </a>
+
+
+                <a href="../add_category/add_category.html">
+                    <span class="material-symbols-outlined">Add</span>
+                    <h3>Add Categories</h3>
+                </a>
+
+
+                <a href="../add_coupon/add_coupon.html">
+                    <span class="material-symbols-outlined">Add</span>
+                    <h3>Coupon Codes</h3>
+                </a>
+
+                <a href="#">
+                    <span class="material-symbols-outlined">Add</span>
+                    <h3>Add Products</h3>
+                </a>
+
+                    <a href="../fetch_product/fetch_product.html">
+                    <span class="material-symbols-outlined">person_outline</span>
+                    <h3>Fetch Product</h3>
+                </a>
+
+                <a href="#">
+                    <span class="material-symbols-outlined">settings</span>
+                    <h3>Settings</h3>
+                </a> <br>
+
+                <a href="#">
+                    <span class="material-symbols-outlined">add</span>
+                    <h3>Add Products</h3>
+                </a>
+
+                <a href="../../../login.html" onclick="Logout()">
+                    <span class="material-symbols-outlined">logout</span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+        <main>
+            <div class="box">
+                <h1 class="add_product">Add Produce</h1>
+               <form id="addProductForm">
+    <input type="text" id="Product_Name" name="Product_Name" required placeholder="Product Name">
+    <input type="number" id="Product_Price" name="Product_Price" required placeholder="Product Price">
+    <input type="text" id="Product_Description" name="Product_Description" required placeholder="Product Description">
+    <input type="number" id="Product_Quantity" name="Product_Quantity" required placeholder="Product Quantity">
+    <div class="custom-category-dropdown" id="customCategoryDropdown">
+        <input type="text" id="Product_Category" name="Product_Category" required placeholder="Product_Category" autocomplete="off" onfocus="expandCategoryInput()" oninput="filterCategoryDropdown()" />
+        <div id="categoryDropdown" class="dropdown-content" style="display:none;"></div>
+    </div>
+    <label for="Product_Image" id="product-image-label">Product Image</label>
+    <input type="file" id="Product_Image" name="Product_Image" required placeholder="Product Image URL">
+<button class="product-added" type="submit">Add Product</button></form>
+
+               
+            </div>
+        </main>
+    </div>
+
+
+    <script>
+        function toggleDropdown() {
+            const dropdown = document.getElementById("dropdownItems");
+            if (dropdown) dropdown.style.display = "block";
+        }
+
+        function filterDropdown() {
+            const input = document.getElementById("dropdownSearch");
+            const dropdown = document.getElementById("dropdownItems");
+            if (!input || !dropdown) return;
+
+            const filter = input.value.toUpperCase();
+            const items = dropdown.getElementsByTagName("div");
+
+            for (let i = 0; i < items.length; i++) {
+                const txtValue = items[i].textContent || items[i].innerText;
+                items[i].style.display = txtValue.toUpperCase().includes(filter) ? "" : "none";
+            }
+        }
+
+        function selectItem(element) {
+            const input = document.getElementById("dropdownSearch");
+            const dropdown = document.getElementById("dropdownItems");
+            if (input && dropdown) {
+                input.value = element.textContent;
+                dropdown.style.display = "none";
+            }
+        }
+
+        window.onclick = function (e) {
+            const dropdown = document.getElementById("dropdownItems");
+            const input = document.getElementById("dropdownSearch");
+            if (!dropdown || !input) return;
+
+            if (!dropdown.contains(e.target) && e.target !== input) {
+                dropdown.style.display = "none";
+            }
+        };
+
+        async function fetchCategories() {
+            let data = JSON.parse(localStorage.getItem("categories"));
+            if (Array.isArray(data)) {
+                return data.map(item => item.category);
+            } else if (data && Array.isArray(data.categories)) {
+                return data.categories;
+            } else {
+                return [];
+            }
+        }
+
+        let allCategories = [];
+
+        async function expandCategoryInput() {
+            const wrapper = document.getElementById("customCategoryDropdown");
+            const dropdown = document.getElementById("categoryDropdown");
+            const input = document.getElementById("Product_Category");
+            if (!wrapper || !dropdown || !input) return;
+
+            wrapper.classList.add("expanded");
+
+            if (allCategories.length === 0) {
+                allCategories = await fetchCategories();
+            }
+
+            dropdown.innerHTML = "";
+            allCategories.forEach(cat => {
+                const div = document.createElement("div");
+                div.textContent = cat;
+                div.onclick = function () {
+                    input.value = cat;
+                    dropdown.style.display = "none";
+                    wrapper.classList.remove("expanded");
+                };
+                dropdown.appendChild(div);
+            });
+            dropdown.style.display = "block";
+        }
+
+        function filterCategoryDropdown() {
+            const input = document.getElementById("Product_Category");
+            const dropdown = document.getElementById("categoryDropdown");
+            if (!input || !dropdown) return;
+            const filter = input.value.toLowerCase();
+            Array.from(dropdown.children).forEach(div => {
+                div.style.display = div.textContent.toLowerCase().includes(filter) ? "" : "none";
+            });
+        }
+
+        document.addEventListener("click", function (e) {
+            const wrapper = document.getElementById("customCategoryDropdown");
+            const dropdown = document.getElementById("categoryDropdown");
+            const input = document.getElementById("Product_Category");
+            if (!wrapper || !dropdown || !input) return;
+            if (!wrapper.contains(e.target)) {
+                dropdown.style.display = "none";
+                wrapper.classList.remove("expanded");
+            }
+        });
+    </script>
+
+    <script src="./add_product.js"></script>
+
+</body>
+
+</html>
