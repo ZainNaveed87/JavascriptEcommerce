@@ -212,16 +212,15 @@ body {
 }
 
 .herobanner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
     width: 100%;
+    margin-top: 20px;
 }
 
 .banner-row {
+    border-radius: 10px;
     display: flex;
     justify-content: center;
+    align-items: flex-start;
     gap: 20px;
     width: 100%;
 }
@@ -229,8 +228,20 @@ body {
 .banner {
     border: 1px solid transparent;
     border-radius: 30px;
+    display: block;
 }
 
+.block{
+    display: block;
+    margin-top: 20px;
+    
+}
+
+.banner-b{
+    border-radius: 10px;
+    display: block;
+    margin-top: 20px;
+}
 
 #popular {
     display: flex;
