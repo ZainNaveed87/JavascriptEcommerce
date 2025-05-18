@@ -239,29 +239,52 @@ body {
     align-items: flex-start;
     width: 100%;
     gap: 20px;
-    flex-wrap: nowrap;     
-    overflow-x: auto;       
-    padding: 10px 0;       
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 10px 0;
 }
 
-#popular-h1{
+#popular-h1 {
+    margin: 100px auto 0 auto;   
     font-size: 2.3rem;
     font-family: poppins;
-    margin-top: 100px;
-    margin-right: 30px;
     text-align: center;
     font-weight: bold;
     color: #ffffff;
+    position: relative;
+    display: block;              
+    width: max-content;          
+    left: 10%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+#popular-h1::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background: #688cee;
+    transition: all 0.4s cubic-bezier(.25,.8,.25,1);
+    border-radius: 2px;
+}
+
+#popular-h1:hover::after {
+    left: 0;
+    width: 100%;
 }
 
 
-.popular-card-image{
+.popular-card-image {
     width: 250px;
-    height: 200px;  
+    height: 200px;
     margin-top: 20px;
 }
 
-.product-head{
+.product-head {
     font-size: 1.5rem;
     margin-left: 10px;
     font-family: poppins;
@@ -270,13 +293,14 @@ body {
     color: #ffffff;
 }
 
-.product-stars{
- font-size: 1.2rem;
- margin-left: 10px;
- font-family: poppins;
+
+.product-stars {
+    font-size: 1.2rem;
+    margin-left: 10px;
+    font-family: poppins;
 }
 
-.product-para{
+.product-para {
     font-family: poppins;
     margin-left: 10px;
     font-size: 1rem;
@@ -295,15 +319,12 @@ body {
 .popular-carousel {
     display: flex;
     flex-direction: row;
-    align-items: stretch;
-    gap: 20px;
-    overflow-x: auto;
     scroll-behavior: smooth;
     width: 100%;
     min-width: 0;
     padding: 10px 0;
     scrollbar-width: none;
-    justify-content: space-around; 
+    justify-content: space-around;
 }
 
 .popular-carousel::-webkit-scrollbar {
@@ -311,7 +332,7 @@ body {
 }
 
 .carousel-btn {
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     color: #fff;
     border: none;
     border-radius: 50%;
@@ -324,7 +345,7 @@ body {
     align-items: center;
     justify-content: center;
     position: absolute;
-    transition: background 0.2s;
+    transition: background-color 0.2s;
 }
 
 .carousel-btn.left {
@@ -339,37 +360,72 @@ body {
     background: #688cee;
 }
 
-@media (max-width: 900px) {
-    #search {
-        width: 90vw;
-        max-width: 500px;
-    }
-    .popular-card-image {
-        width: 40vw;
-        min-width: 160px;
-        max-width: 250px;
-    }
+
+.recentlylaunched-h1 {
+    margin: 100px auto 0 auto;   
+    font-size: 2.3rem;
+    font-family: poppins;
+    text-align: center;
+    font-weight: bold;
+    color: #ffffff;
+    position: relative;
+    display: block;              
+    width: max-content;          
+    left: 10%;
+    transform: translateX(-50%);
+    cursor: pointer;
 }
 
-@media (max-width: 600px) {
-    #search {
-        width: 98vw;
-        max-width: 98vw;
-    }
-    .banner-row {
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
-    }
-    .popular-card-image {
-        width: 90vw;
-        min-width: 120px;
-        max-width: 98vw;
-        height: auto;
-    }
-    #popular {
-        flex-direction: column;
-        align-items: center;
-        gap: 18px;
-    }
+.recentlylaunched-h1::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background: #688cee;
+    transition: all 0.4s cubic-bezier(.25,.8,.25,1);
+    border-radius: 2px;
+}
+
+.recentlylaunched-h1:hover::after {
+    left: 0;
+    width: 100%;
+}
+
+
+.recentlylaunched-product-container {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 40px;
+}
+
+.recentlylaunched-product-image {
+    width: 200px;
+    height: 200px;
+    margin-top: 20px;
+}
+
+.recentlylaunched-product-head {
+    font-size: 1.5rem;
+    margin-left: 10px;
+    font-family: poppins;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.recentlylaunched-product-stars {
+    font-size: 1.2rem;
+    margin-left: 10px;
+    font-family: poppins;
+}
+
+.recentlylaunched-product-para {
+    font-family: poppins;
+    margin-left: 10px;
+    font-size: 1rem;
+    color: #ffffff;
 }

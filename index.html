@@ -73,10 +73,11 @@
   <button class="btn btn-primary">Shop Now</button>
 
 
-   <!-- First product list started -->
- 
-  
-  <h1 id="popular-h1">Popular Products</h1>
+  <!-- First product list started -->
+
+  <div class="popular-h1">
+    <h1 id="popular-h1">Popular Products</h1>
+  </div>
   <div class="popular-carousel-wrapper">
     <button class="carousel-btn left" onclick="scrollCarousel('popular', -1)">&lt;</button>
     <div id="popular" class="popular-carousel">
@@ -104,66 +105,146 @@
         <div class="product-stars">⭐⭐⭐⭐</div>
         <div class="product-para">Price: $499</div>
       </div>
-      70
+      <div class="popular-card">
+        <img class="popular-card-image" src="./product/women cloth.webp" alt="Women's cloth">
+        <div class="product-head">Women's Business Dress</div>
+        <div class="product-stars">⭐⭐⭐⭐</div>
+        <div class="product-para">Price: $499</div>
+      </div>
+
     </div>
     <button class="carousel-btn right" onclick="scrollCarousel('popular', 1)">&gt;</button>
   </div>
 
-   <!-- First product list ended -->
+  <!-- First product list ended -->
 
 
   <!-- second product list started -->
- 
-    <h1 id="popular-h1">New Arrival Products</h1>
-    <div class="popular-carousel-wrapper">
-      <button class="carousel-btn left" onclick="scrollCarousel('arrival', -1)">&lt;</button>
-      <div id="arrival" class="popular-carousel">
-        <div class="popular-card">
-          <img class="popular-card-image" src="./product/arrivalshoes.webp" alt="MEN Sneaker">
-          <div class="product-head">Men's Sneaker</div>
-          <div class="product-stars">⭐⭐⭐⭐</div>
-          <div class="product-para">Price: $18</div>
-        </div>
-        <div class="popular-card">
-          <img class="popular-card-image" src="./product/arricalnecklece.webp" alt="neckelse">
-          <div class="product-head">Luxury Necklace</div>
-          <div class="product-stars">⭐⭐⭐⭐⭐</div>
-          <div class="product-para">Price: $19</div>
-        </div>
-        <div class="popular-card">
-          <img class="popular-card-image" src="./product/arrivalsneaker.webp" alt="athletic sneakers">
-          <div class="product-head">Athletic Sneakers</div>
-          <div class="product-stars">⭐⭐⭐⭐⭐</div>
-          <div class="product-para">Price: $20</div>
-        </div>
-        <div class="popular-card">
-          <img class="popular-card-image" src="./product/arrivalheadphone.avif" alt="headphone">
-          <div class="product-head">Wireless Headphone</div>
-          <div class="product-stars">⭐⭐⭐⭐</div>
-          <div class="product-para">Price: $25</div>
-        </div>
-        <div class="popular-card">
-          <img class="popular-card-image" src="./product/arrivalclothe.jpg" alt="women cloth">
-          <div class="product-head">Women's Stylish Cloth</div>
-          <div class="product-stars">⭐⭐⭐⭐⭐</div>
-          <div class="product-para">Price: $50</div>
-        </div>
+
+  <h1 id="popular-h1">New Arrival Products</h1>
+  <div class="popular-carousel-wrapper">
+    <button class="carousel-btn left" onclick="scrollCarousel('arrival', -1)">&lt;</button>
+    <div id="arrival" class="popular-carousel">
+      <div class="popular-card">
+        <img class="popular-card-image" src="./product/arrivalshoes.webp" alt="MEN Sneaker">
+        <div class="product-head">Men's Sneaker</div>
+        <div class="product-stars">⭐⭐⭐⭐</div>
+        <div class="product-para">Price: $18</div>
       </div>
-      <button class="carousel-btn right" onclick="scrollCarousel('arrival', 1)">&gt;</button>
+      <div class="popular-card">
+        <img class="popular-card-image" src="./product/arricalnecklece.webp" alt="neckelse">
+        <div class="product-head">Luxury Necklace</div>
+        <div class="product-stars">⭐⭐⭐⭐⭐</div>
+        <div class="product-para">Price: $19</div>
+      </div>
+      <div class="popular-card">
+        <img class="popular-card-image" src="./product/arrivalsneaker.webp" alt="athletic sneakers">
+        <div class="product-head">Athletic Sneakers</div>
+        <div class="product-stars">⭐⭐⭐⭐⭐</div>
+        <div class="product-para">Price: $20</div>
+      </div>
+      <div class="popular-card">
+        <img class="popular-card-image" src="./product/arrivalheadphone.avif" alt="headphone">
+        <div class="product-head">Wireless Headphone</div>
+        <div class="product-stars">⭐⭐⭐⭐</div>
+        <div class="product-para">Price: $25</div>
+      </div>
+      <div class="popular-card">
+        <img class="popular-card-image" src="./product/arrivalclothe.jpg" alt="women cloth">
+        <div class="product-head">Women's Stylish Cloth</div>
+        <div class="product-stars">⭐⭐⭐⭐⭐</div>
+        <div class="product-para">Price: $50</div>
+      </div>
     </div>
+    <button class="carousel-btn right" onclick="scrollCarousel('arrival', 1)">&gt;</button>
+  </div>
 
-   <!-- second product list ended -->
+  <!-- second product list ended -->
 
-   <script>
+  <!-- recently launched of the day section started -->
+
+  <h1 class="recentlylaunched-h1">Recently Launched</h1>
+
+  <div class="recentlylaunched-product-container">
+
+   <div class="recentlylaunched-product">
+    <img src="./product/recentyadded-jewellery.webp" alt="recently added jewellery" class="recentlylaunched-product-image">
+    <div class="recentlylaunched-product-head">1920s Pearl Jewelry</div>
+    <div class="recentlylaunched-product-stars">⭐⭐⭐⭐⭐</div>
+    <div class="recentlylaunched-product-para">Price: $12</div>
+   </div>
+ 
+   <div class="recentlylaunched-product">
+    <img src="./product/recentlyadded-necklece.webp" alt="recently added neckelse" class="recentlylaunched-product-image">
+    <div class="recentlylaunched-product-head">ilvery Heart Necklace</div>
+    <div class="recentlylaunched-product-stars">⭐⭐⭐⭐</div>
+    <div class="recentlylaunched-product-para">Price: $5</div>
+   </div>
+  
+   <div class="recentlylaunched-product">
+    <img src="./product/recentlyadded-watch.webp" alt="recently added watch" class="recentlylaunched-product-image">
+    <div class="recentlylaunched-product-head">Watch & Jewelry Set</div>
+    <div class="recentlylaunched-product-stars">⭐⭐⭐⭐⭐</div>
+    <div class="recentlylaunched-product-para">Price: $15</div>
+   </div>
+
+   <div class="recentlylaunched-product">
+    <img src="./product/recentyadded-jewellery-2.webp" alt="recently added jewellery" class="recentlylaunched-product-image">
+    <div class="recentlylaunched-product-head">4pcs Jewelry Set</div>
+    <div class="recentlylaunched-product-stars">⭐⭐⭐⭐⭐</div>
+    <div class="recentlylaunched-product-para">Price: $20</div>
+   </div>
+
+  </div>
+
+  <!-- deals of the day section ended -->
+  
+  <!-- deals of the day section 2 started -->
+
+
+
+  <!-- deals of the day section 2 ended -->
+
+  <div class="recentlylaunched-product-container">
+
+   <div class="recentlylaunched-product">
+    <img src="./product/recentlyadded2-shoes" alt="recently added shoes" class="recentlylaunched-product-image">
+    <div class="recentlylaunched-product-head">Men's Basketball Shoes</div>
+    <div class="recentlylaunched-product-stars">⭐⭐⭐⭐</div>
+    <div class="recentlylaunched-product-para">Price: $16</div>
+   </div>
+   
+   <div class="recentlylaunched-product">
+    <img src="./product/recentlyadded2-shoes-2.webp" alt="recently added shoes" class="recentlylaunched-product-image">
+    <div class="recentlylaunched-product-head">Men'S Fashion Sneakers</div>
+    <div class="recentlylaunched-product-stars">⭐⭐⭐⭐</div>
+    <div class="recentlylaunched-product-para">Price: $15</div>
+   </div>
+   
+   <div class="recentlylaunched-product">
+    <img src="./product/recentlyadded2-bracelet.webp" alt="recently added bracelet" class="recentlylaunched-product-image">
+    <div class="recentlylaunched-product-head">Stunning Bracelet</div>
+    <div class="recentlylaunched-product-stars">⭐⭐⭐s⭐</div>
+    <div class="recentlylaunched-product-para">Price: $5</div>
+   </div>
+ 
+
+
+  </div>
+
+  <!-- javascript for carousel started-->
+
+  <script>
     function scrollCarousel(id, direction) {
-        const container = document.getElementById(id);
-        const card = container.querySelector('.popular-card');
-        if (!card) return;
-        const scrollAmount = card.offsetWidth + 20; // card width + gap
-        container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+      const container = document.getElementById(id);
+      const card = container.querySelector('.popular-card');
+      if (!card) return;
+      const scrollAmount = card.offsetWidth + 20; // card width + gap
+      container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
     }
-</script>
+  </script>
 
+  <!-- javascript for carousel ended-->
 </body>
 
 </html>
