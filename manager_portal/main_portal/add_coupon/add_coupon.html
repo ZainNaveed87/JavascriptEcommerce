@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coupons</title>
+    <link rel="stylesheet" href="./add_coupon.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=close" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <a href="#">
+                        <h1 id="admin_name">Hello Manager</h1>
+                    </a>
+                </div>
+                <div class="close">
+                    <span class="material-symbols-outlined">close </span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="../fetch_user/fetch_user.html">
+                    <span class="material-symbols-outlined">person_outline</span>
+                    <h3>Users</h3>
+                </a>
+
+              
+
+                <a href="../add_category/add_category.html">
+                    <span class="material-symbols-outlined">Add</span>
+                    <h3>Add Categories</h3>
+                </a>
+
+
+                <a href="#">
+                    <span class="material-symbols-outlined">Add</span>
+                    <h3>Coupon Codes</h3>
+                </a>
+
+                <a href="../add_product/add_product.html">
+                    <span class="material-symbols-outlined">Add</span>
+                    <h3>Add Products</h3>
+                </a>
+
+                    <a href="../fetch_product/fetch_product.html">
+                    <span class="material-symbols-outlined">person_outline</span>
+                    <h3>Fetch Product</h3>
+                </a>
+                <a href="#">
+                    <span class="material-symbols-outlined">settings</span>
+                    <h3>Settings</h3>
+                </a> <br>
+
+                <a href="#">
+                    <span class="material-symbols-outlined">add</span>
+                    <h3>Add Products</h3>
+                </a>
+
+                <a href="#" onclick="Logout()">
+                    <span class="material-symbols-outlined">logout</span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+        <main>
+            <div class="box">
+                <h4>Add Coupon</h4>
+                <label for="" id="email_label"></label>
+                <input id="coupon" type="text" placeholder="Enter coupon name" required>
+                <button id="category_button" onclick="Add_Coupon()">Add Coupon</button>
+            </div>
+
+            <div class="table-container">
+                <table id="category_table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Coupon Name</th>
+                            <th>Discount</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dynamic rows will be added here -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script src="./add_coupon.js"></script>
+</body>
+
+</html>

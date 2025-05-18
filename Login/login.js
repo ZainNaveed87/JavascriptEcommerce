@@ -67,7 +67,7 @@ function login() {
 
             if (manager_code === input_code && manager_name === userFound.username) {
                 alert("Login successful as manager!");
-                window.location.href = "./manager.html";
+                window.location.href = "../JavascriptEcommerce/manager_portal/main_portal/main_manager.html";
             } else {
                 alert("Incorrect manager code. Access denied.");
                 return;

@@ -54,7 +54,7 @@ body {
     font-size: 0.88rem;
     user-select: none;
     overflow-x: hidden;
-    background: url('../../image.png');
+    background: url('../../../image.png');
 
 }
 

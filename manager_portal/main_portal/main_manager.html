@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Panel</title>
+    <link rel="stylesheet" href="./main_manager.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=close" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <aside>
+            <div class="top">
+                <div class="logo">
+                 <a href="#" >  <h1 id="admin_name">Hello Manager</h1></a> 
+                </div>
+                <div class="close">
+                    <span class="material-symbols-outlined">close </span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="./fetch_user/fetch_user.html">
+                    <span class="material-symbols-outlined">person_outline</span>
+                    <h3>Users</h3>
+                </a>
+
+               
+
+                <a href="./add_category/add_category.html">
+                    <span class="material-symbols-outlined">Add</span>
+                    <h3>Categories</h3>
+                </a>
+
+
+                <a href="./add_coupon/add_coupon.html">
+                    <span class="material-symbols-outlined">Add</span>
+                    <h3>Coupon Codes</h3>
+                </a>
+                
+                <a href="./add_product/add_product.html">
+                    <span class="material-symbols-outlined">add</span>
+                    <h3>Add Products</h3>
+                </a>
+               <a href="./fetch_product/fetch_product.html">
+                    <span class="material-symbols-outlined">person_outline</span>
+                    <h3>Fetch Product</h3>
+                </a>
+
+                <a href="#">
+                    <span class="material-symbols-outlined">report_gmailerrorred</span>
+                    <h3>Reports</h3>
+                </a>
+
+                <a href="#">
+                    <span class="material-symbols-outlined">settings</span>
+                    <h3>Settings</h3>
+                </a> <br>
+
+
+                <a href="#" onclick="logout()">
+                    <span class="material-symbols-outlined">logout</span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+        <main>
+            <div class="user_count" >
+                <p>Total Users: <span id="user_count">123</span></p>
+            </div>
+
+            <div class="manager_count" >
+                <p>Total Managers: <span id="manager_count">123</span></p>
+            </div>
+
+            <div class="Buyer_count" >
+                <p>Total Buyers: <span id="Buyer_count">123</span></p>
+            </div>
+
+            <div class="seller_count" >
+                <p>Total Sellers: <span id="seller_count">123</span></p>
+            </div>
+             <div class="seller_count" >
+                <p>Total Categories: <span id="Categories_count">123</span></p>
+            </div>
+            <div class="coupon_count" >
+                <p>Total Coupons: <span id="Coupon_count">123</span></p>
+            </div>
+              <div class="product_count" >
+                <p>Total Products: <span id="product_count">123</span></p>
+            </div>
+        </main>
+    </div>
+
+    <script src="./main_manager.js"></script>
+  
+</body>
+
+</html>
