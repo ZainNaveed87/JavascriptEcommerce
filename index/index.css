@@ -283,6 +283,62 @@ body {
     color: #ffffff;
 }
 
+
+.popular-carousel-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0 auto 40px auto;
+    display: flex;
+    align-items: center;
+}
+
+.popular-carousel {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    width: 100%;
+    min-width: 0;
+    padding: 10px 0;
+    scrollbar-width: none;
+    justify-content: space-around; 
+}
+
+.popular-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-btn {
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    transition: background 0.2s;
+}
+
+.carousel-btn.left {
+    left: 0;
+}
+
+.carousel-btn.right {
+    right: 0;
+}
+
+.carousel-btn:hover {
+    background: #688cee;
+}
+
 @media (max-width: 900px) {
     #search {
         width: 90vw;
