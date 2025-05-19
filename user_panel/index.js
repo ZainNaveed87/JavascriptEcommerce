@@ -10,11 +10,11 @@ document.addEventListener("DOMContentLoaded", function () {
             popuular_products.className = "product-card";
 
 
-popuular_products.innerHTML = `
+popuular_products.innerHTML += `
 <div class="popular-card">
         <img class="popular-card-image" src="${product.image}" alt="${product.name}">
         <div class="product-head">${product.name}</div>
-        <div class="product-stars">Quanitity :${product.quantity}</div>
+        <div class="product-stars">Category :${product.category}</div>
         <div class="product-para">Price: ${product.price}</div>
       </div>`;
 
