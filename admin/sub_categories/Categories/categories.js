@@ -1,7 +1,7 @@
 function Add_Category() {
     var category = document.getElementById("category");
-    var email_label = document.getElementById("email_label"); 
-
+    var email_label = document.getElementById("email_label");
+    var imageInput = document.getElementById("Product_Image");
 
     if (!category.value.trim()) {
         alert("Please enter a valid category.");
@@ -11,7 +11,8 @@ function Add_Category() {
     var existingCategories = JSON.parse(localStorage.getItem("categories")) || [];
 
     var user = {
-        category: category.value.trim().toLowerCase(), 
+        category: category.value.trim().toLowerCase(),
+        image: "" // image property add ki
     };
 
     var IsCategoryExist = existingCategories.some(function (existingCategory) {
@@ -22,64 +23,26 @@ function Add_Category() {
         email_label.innerHTML = "Category already exists";
         email_label.style.color = "red";
     } else {
-        existingCategories.push(user);
-        localStorage.setItem("categories", JSON.stringify(existingCategories));
-        alert("Category added successfully!");
-        category.value = ""; 
-        email_label.innerHTML = ""; 
-
+        // Agar image select ki gayi hai to usko read karo
+        if (imageInput && imageInput.files && imageInput.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (event) {
+                user.image = event.target.result;
+                existingCategories.push(user);
+                localStorage.setItem("categories", JSON.stringify(existingCategories));
+                alert("Category added successfully!");
+                category.value = "";
+                imageInput.value = "";
+                email_label.innerHTML = "";
+                renderTable();
+            };
+            reader.readAsDataURL(imageInput.files[0]);
+        } else {
+            existingCategories.push(user);
+            localStorage.setItem("categories", JSON.stringify(existingCategories));
+            alert("Category added successfully!");
         
-        renderTable();
+        }
     }
 }
 
-function renderTable() {
-    const tableBody = document.querySelector("#category_table tbody");
-    tableBody.innerHTML = "";
-
-    var existingCategories = JSON.parse(localStorage.getItem("categories")) || [];
-
-    existingCategories.forEach((item, index) => {
-        const row = document.createElement("tr");
-
-        row.innerHTML = `
-            <td>${index + 1}</td>
-            <td>${item.category}</td>
-            <td>
-                <button class="edit" onclick="editRow(${index})">Edit</button>
-                <button class="delete" onclick="deleteRow(${index})">Delete</button>
-            </td>
-        `;
-
-        tableBody.appendChild(row);
-    });
-}
-
-function editRow(index) {
-    var existingCategories = JSON.parse(localStorage.getItem("categories")) || [];
-    var categoryToEdit = existingCategories[index];
-
-    var newCategory = prompt("Enter new category name:", categoryToEdit.category);
-
-    if (newCategory && newCategory.trim()) {
-        existingCategories[index].category = newCategory.trim().toLowerCase();
-        localStorage.setItem("categories", JSON.stringify(existingCategories));
-        alert("Category updated successfully!");
-        renderTable();
-    } else {
-        alert("Invalid category name.");
-    }
-}
-
-function deleteRow(index) {
-    var existingCategories = JSON.parse(localStorage.getItem("categories")) || [];
-
-    if (confirm("Are you sure you want to delete this category?")) {
-        existingCategories.splice(index, 1);
-        localStorage.setItem("categories", JSON.stringify(existingCategories));
-        alert("Category deleted successfully!");
-        renderTable();
-    }
-}
-
-renderTable();

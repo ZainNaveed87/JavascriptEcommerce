@@ -44,7 +44,10 @@
                     <span class="material-symbols-outlined">Add</span>
                     <h3>Add Categories</h3>
                 </a>
-
+                <a href="./fetch_category/fetch_category.html">
+                    <span class="material-symbols-outlined">person_outline</span>
+                    <h3>Fetch Categories</h3>
+                </a>
 
                 <a href="../Coupon/coupon.html">
                     <span class="material-symbols-outlined">Add</span>
@@ -66,10 +69,7 @@
                     <h3>Settings</h3>
                 </a> <br>
 
-                <a href="#">
-                    <span class="material-symbols-outlined">add</span>
-                    <h3>Add Products</h3>
-                </a>
+            
 
                 <a href="#" onclick="logout()">
                     <span class="material-symbols-outlined">logout</span>
@@ -84,11 +84,13 @@
                 <input id="category" type="text" placeholder="Category" required>
                 <i class="fa-solid fa-envelope" id="envilope"></i>
 
+  <label for="Product_Image" id="product-image-label">Product Image</label>
+    <input type="file" id="Product_Image" name="Product_Image" required placeholder="Product Image URL">
                 <button id="category_button" onclick="Add_Category()">Add Category</button>
 
 
 
-                <table id="category_table">
+                <!-- <table id="category_table">
                     <thead>
                         <tr>
                             <th>#</th>
@@ -106,7 +108,7 @@
                             </td>
                         </tr>
                     </tbody>
-                </table>
+                </table> -->
 
         </main>
     </div>
