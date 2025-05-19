@@ -443,7 +443,7 @@ body {
 
 
 .deal-of-the-day{
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 .deal-of-the-day-sec1 {
@@ -460,9 +460,9 @@ body {
 
 .deals-head {
     text-align: center;
-    margin-bottom: 32px;
+    margin-top: 50px;
     width: 100%;
-    font-size: 2rem;
+    font-size: 1.2rem;
     font-family: poppins;
     font-weight: bold;
     color: #ffffff;
@@ -492,4 +492,49 @@ body {
 .deals-image{
     width: 250px;
     height: 250px;
+}
+
+.deals-of-the-day-head {
+    margin: 150px auto 0 auto;   
+    font-size: 2.3rem;
+    font-family: poppins;
+    text-align: center;
+    font-weight: bold;
+    color: #ffffff;
+    position: relative;
+    display: block;              
+    width: max-content;          
+    left: 10%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.deals-of-the-day-head::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background: #688cee;
+    transition: all 0.4s cubic-bezier(.25,.8,.25,1);
+    border-radius: 2px;
+}
+
+.deals-of-the-day-head:hover::after {
+    left: 0;
+    width: 100%;
+}
+
+.deals-side-banner{
+  position: relative;
+    left: 55%;
+    bottom: 435px;
+}
+
+.deals-side-banner-image{
+    width: 700px;
+    height: 300px;
+    border-radius: 10px;
 }
