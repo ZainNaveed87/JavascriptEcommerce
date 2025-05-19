@@ -231,13 +231,13 @@ body {
     display: block;
 }
 
-.block{
+.block {
     display: block;
     margin-top: 20px;
-    
+
 }
 
-.banner-b{
+.banner-b {
     border-radius: 10px;
     display: block;
     margin-top: 20px;
@@ -256,15 +256,15 @@ body {
 }
 
 #popular-h1 {
-    margin: 100px auto 0 auto;   
+    margin: 100px auto 0 auto;
     font-size: 2.3rem;
     font-family: poppins;
     text-align: center;
     font-weight: bold;
     color: #ffffff;
     position: relative;
-    display: block;              
-    width: max-content;          
+    display: block;
+    width: max-content;
     left: 10%;
     transform: translateX(-50%);
     cursor: pointer;
@@ -279,43 +279,13 @@ body {
     width: 0;
     height: 3px;
     background: #688cee;
-    transition: all 0.4s cubic-bezier(.25,.8,.25,1);
+    transition: all 0.4s cubic-bezier(.25, .8, .25, 1);
     border-radius: 2px;
 }
 
 #popular-h1:hover::after {
     left: 0;
     width: 100%;
-}
-
-
-.popular-card-image {
-    width: 250px;
-    height: 200px;
-    margin-top: 20px;
-}
-
-.product-head {
-    font-size: 1.5rem;
-    margin-left: 10px;
-    font-family: poppins;
-    margin-top: 10px;
-    font-weight: bold;
-    color: #ffffff;
-}
-
-
-.product-stars {
-    font-size: 1.2rem;
-    margin-left: 10px;
-    font-family: poppins;
-}
-
-.product-para {
-    font-family: poppins;
-    margin-left: 10px;
-    font-size: 1rem;
-    color: #ffffff;
 }
 
 
@@ -333,13 +303,144 @@ body {
     scroll-behavior: smooth;
     width: 100%;
     min-width: 0;
-    padding: 10px 0;
+    margin-top: 20px;
     scrollbar-width: none;
     justify-content: space-around;
+    gap: 20px;
+    overflow-x: auto;
+    align-items: flex-start;
 }
 
 .popular-carousel::-webkit-scrollbar {
     display: none;
+}
+
+.popular-card {
+    min-width: 250px;
+    max-width: 250px;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0;
+    margin-left: 12px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.popular-card-image {
+    width: 250px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-top: 0;
+}
+
+.product-head {
+    font-size: 1rem;
+    margin-left: 10px;
+    font-family: poppins;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+
+.product-stars {
+    font-size: 1rem;
+    margin-left: 10px;
+    font-family: poppins;
+}
+
+.product-para {
+    font-family: poppins;
+    margin-left: 10px;
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+
+.recentlylaunched-h1 {
+    margin: 100px auto 0 auto;
+    font-size: 2.3rem;
+    font-family: poppins;
+    text-align: center;
+    font-weight: bold;
+    color: #ffffff;
+    position: relative;
+    display: block;
+    width: max-content;
+    left: 10%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.recentlylaunched-h1::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background: #688cee;
+    transition: all 0.4s cubic-bezier(.25, .8, .25, 1);
+    border-radius: 2px;
+}
+
+.recentlylaunched-h1:hover::after {
+    left: 0;
+    width: 100%;
+}
+
+
+.recentlylaunched-carousel-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0 auto 40px auto;
+    display: flex;
+    align-items: center;
+}
+
+.recentlylaunched-product-container {
+    display: flex;
+    flex-direction: row;
+    scroll-behavior: smooth;
+    width: 100%;
+    min-width: 0;
+    scrollbar-width: none;
+    margin-top: 40px;
+    justify-content: space-around;
+    gap: 20px;
+    overflow-x: auto;
+    align-items: flex-start;
+}
+
+.recentlylaunched-product-container::-webkit-scrollbar {
+    display: none;
+}
+
+.recentlylaunched-product {
+    min-width: 250px;
+    max-width: 250px;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0;
+    margin-left: 12px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.recentlylaunched-product-image {
+    width: 250px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-top: 0;
 }
 
 .carousel-btn {
@@ -356,6 +457,8 @@ body {
     align-items: center;
     justify-content: center;
     position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     transition: background-color 0.2s;
 }
 
@@ -372,138 +475,16 @@ body {
 }
 
 
-.recentlylaunched-h1 {
-    margin: 100px auto 0 auto;   
-    font-size: 2.3rem;
-    font-family: poppins;
-    text-align: center;
-    font-weight: bold;
-    color: #ffffff;
-    position: relative;
-    display: block;              
-    width: max-content;          
-    left: 10%;
-    transform: translateX(-50%);
-    cursor: pointer;
-}
-
-.recentlylaunched-h1::after {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    width: 0;
-    height: 3px;
-    background: #688cee;
-    transition: all 0.4s cubic-bezier(.25,.8,.25,1);
-    border-radius: 2px;
-}
-
-.recentlylaunched-h1:hover::after {
-    left: 0;
-    width: 100%;
-}
-
-
-.recentlylaunched-product-container {
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-    margin-top: 40px;
-}
-
-.recentlylaunched-product-image {
-    width: 200px;
-    height: 200px;
-    margin-top: 20px;
-}
-
-.recentlylaunched-product-head {
-    font-size: 1.5rem;
-    margin-left: 10px;
-    font-family: poppins;
-    margin-top: 10px;
-    font-weight: bold;
-    color: #ffffff;
-}
-
-.recentlylaunched-product-stars {
-    font-size: 1.2rem;
-    margin-left: 10px;
-    font-family: poppins;
-}
-
-.recentlylaunched-product-para {
-    font-family: poppins;
-    margin-left: 10px;
-    font-size: 1rem;
-    color: #ffffff;
-}
-
-
-.deal-of-the-day{
-    margin-top: 50px;
-}
-
-.deal-of-the-day-sec1 {
-    width: 50vw;
-    border: 2px solid #688cee;
-    border-radius: 10px;
-    margin-left: 60px;
-    padding: 15px 5px;
-    background: rgba(255,255,255,0.04);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.deals-head {
-    text-align: center;
-    margin-top: 50px;
-    width: 100%;
-    font-size: 1.2rem;
-    font-family: poppins;
-    font-weight: bold;
-    color: #ffffff;
-}
-
-.deals-row {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    width: 100%;
-    justify-content: center;
-}
-
-.deals-sec1 {
-    border-radius: 10px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.discount{
-    text-decoration: line-through #ffffff;
-    padding: 10px;
-}
-
-.deals-image{
-    width: 250px;
-    height: 250px;
-}
-
 .deals-of-the-day-head {
-    margin: 150px auto 0 auto;   
+    margin: 100px auto 0 auto;
     font-size: 2.3rem;
     font-family: poppins;
     text-align: center;
     font-weight: bold;
     color: #ffffff;
     position: relative;
-    display: block;              
-    width: max-content;          
+    display: block;
+    width: max-content;
     left: 10%;
     transform: translateX(-50%);
     cursor: pointer;
@@ -518,7 +499,7 @@ body {
     width: 0;
     height: 3px;
     background: #688cee;
-    transition: all 0.4s cubic-bezier(.25,.8,.25,1);
+    transition: all 0.4s cubic-bezier(.25, .8, .25, 1);
     border-radius: 2px;
 }
 
@@ -527,14 +508,55 @@ body {
     width: 100%;
 }
 
-.deals-side-banner{
-  position: relative;
-    left: 55%;
-    bottom: 435px;
+.deal-of-the-day-sec1{
+    border: 1px solid #ffffff;
+    margin-top: 40px;
+    border-radius: 20px;
+    width: 50%;
+}
+
+.deals-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.deals-head{
+    font-size: 1.5rem;
+    font-family: poppins;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.discount{
+    text-decoration: line-through;
+    font-family: poppins;
+    text-align: center;
+}
+
+.deals-image{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.deals-head-2{
+    font-size: 1.2rem;
+    font-family: poppins;
+    margin-top: 5px;
 }
 
 .deals-side-banner-image{
     width: 700px;
     height: 300px;
-    border-radius: 10px;
+}
+
+.deals-side-banner{
+    position: relative;
+    left: 50%;
+    bottom: 1300px;
+    bottom: 50%;
 }
