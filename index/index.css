@@ -441,7 +441,9 @@ body {
     color: #ffffff;
 }
 
-
+.deal-of-the-day {
+    margin-top: 100px;
+}
 .deal-of-the-day{
     margin-top: 50px;
 }
@@ -460,6 +462,8 @@ body {
 
 .deals-head {
     text-align: center;
+    margin-bottom: 32px;
+    font-size: 2rem;
     margin-top: 50px;
     width: 100%;
     font-size: 1.2rem;
