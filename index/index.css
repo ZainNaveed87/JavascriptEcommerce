@@ -212,16 +212,15 @@ body {
 }
 
 .herobanner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
     width: 100%;
+    margin-top: 20px;
 }
 
 .banner-row {
+    border-radius: 10px;
     display: flex;
     justify-content: center;
+    align-items: flex-start;
     gap: 20px;
     width: 100%;
 }
@@ -229,8 +228,20 @@ body {
 .banner {
     border: 1px solid transparent;
     border-radius: 30px;
+    display: block;
 }
 
+.block{
+    display: block;
+    margin-top: 20px;
+    
+}
+
+.banner-b{
+    border-radius: 10px;
+    display: block;
+    margin-top: 20px;
+}
 
 #popular {
     display: flex;
@@ -428,4 +439,57 @@ body {
     margin-left: 10px;
     font-size: 1rem;
     color: #ffffff;
+}
+
+
+.deal-of-the-day{
+    margin-top: 100px;
+}
+
+.deal-of-the-day-sec1 {
+    width: 50vw;
+    border: 2px solid #688cee;
+    border-radius: 10px;
+    margin-left: 60px;
+    padding: 15px 5px;
+    background: rgba(255,255,255,0.04);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.deals-head {
+    text-align: center;
+    margin-bottom: 32px;
+    width: 100%;
+    font-size: 2rem;
+    font-family: poppins;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.deals-row {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+}
+
+.deals-sec1 {
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.discount{
+    text-decoration: line-through #ffffff;
+    padding: 10px;
+}
+
+.deals-image{
+    width: 250px;
+    height: 250px;
 }
