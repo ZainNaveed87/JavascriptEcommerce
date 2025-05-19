@@ -79,46 +79,34 @@
   <!-- First product list started -->
 
   <div class="popular-h1">
-    <h1 id="popular-h1">Popular Products</h1>
+    <h1 id="popular-h1">Popular Categories</h1>
   </div>
   <div class="popular-carousel-wrapper">
     <button class="carousel-btn left" onclick="scrollCarousel('popular', -1)">&lt;</button>
     <div id="popular" class="popular-carousel">
       <div class="popular-card">
         <img class="popular-card-image" src="./product/rolex.webp" alt="">
-        <div class="product-head">Rolex</div>
-        <div class="product-stars">⭐⭐⭐⭐⭐</div>
-        <div class="product-para">Price: $5,000</div>
+        <div class="product-head">Watches</div>
       </div>
       <div class="popular-card">
         <img class="popular-card-image" src="./product/s-l1200.jpg" alt="">
-        <div class="product-head">Air Jordan 11</div>
-        <div class="product-stars">⭐⭐⭐⭐⭐</div>
-        <div class="product-para">Price: $100,000</div>
+        <div class="product-head">Shoes</div>
       </div>
       <div class="popular-card">
         <img class="popular-card-image" src="./product/neckelse.png" alt="necklace">
-        <div class="product-head"> Celestial Glow</div>
-        <div class="product-stars">⭐⭐⭐⭐</div>
-        <div class="product-para">Price: $7,200</div>
+        <div class="product-head"> jewellery</div>
       </div>
       <div class="popular-card">
         <img class="popular-card-image" src="./product/bose hedphone.webp" alt="bose headphone">
-        <div class="product-head">Bose Headphones</div>
-        <div class="product-stars">⭐⭐⭐⭐</div>
-        <div class="product-para">Price: $499</div>
+        <div class="product-head">Electronics</div>
       </div>
       <div class="popular-card">
         <img class="popular-card-image" src="./product/women cloth.webp" alt="Women's cloth">
-        <div class="product-head">Women's Business Dress</div>
-        <div class="product-stars">⭐⭐⭐⭐</div>
-        <div class="product-para">Price: $499</div>
+        <div class="product-head">Women's Dress</div>
       </div>
       <div class="popular-card">
-        <img class="popular-card-image" src="./product/women cloth.webp" alt="Women's cloth">
-        <div class="product-head">Women's Business Dress</div>
-        <div class="product-stars">⭐⭐⭐⭐</div>
-        <div class="product-para">Price: $499</div>
+        <img class="popular-card-image" src="./product/purse.jpg" alt="Women's purse">
+        <div class="product-head">Handbags</div>
       </div>
 
     </div>
@@ -214,45 +202,106 @@
   <div class="deal-of-the-day">
     <div class="deal-of-the-day-sec1">
       <h1 class="deals-head">Deals Of The Day</h1>
-      <div class="deals-row">
-        <div class="deals-sec1">
-          <!-- card 1 content -->
+      <div class="deals-carousel-wrapper">
+        <button class="carousel-btn left" onclick="scrollCarousel('deals-row', -1)">&lt;</button>
+        <div class="deals-row" id="deals-row">
           <div class="deals-sec1">
             <img src="./product/deals-jewellery.webp" alt="jewellery" class="deals-image">
             <div class="deals-head-2">5pcs Jewelry Set</div>
             <div class="deals-stars">⭐⭐⭐⭐⭐</div>
             <div class="deals-para">Price:<span class="discount"> $30</span> $15</div>
           </div>
-        </div>
-        <div class="deals-sec1">
-          <!-- card 2 content -->
           <div class="deals-sec1">
             <img src="./product/deals-jewellery.webp" alt="jewellery" class="deals-image">
             <div class="deals-head-2">5pcs Jewelry Set</div>
             <div class="deals-stars">⭐⭐⭐⭐⭐</div>
             <div class="deals-para">Price:<span class="discount"> $30</span> $15</div>
           </div>
+          <div class="deals-sec1">
+            <img src="./product/deals-jewellery.webp" alt="jewellery" class="deals-image">
+            <div class="deals-head-2">5pcs Jewelry Set</div>
+            <div class="deals-stars">⭐⭐⭐⭐⭐</div>
+            <div class="deals-para">Price:<span class="discount"> $30</span> $15</div>
+          </div>
+          <div class="deals-sec1">
+            <img src="./product/deals-jewellery.webp" alt="jewellery" class="deals-image">
+            <div class="deals-head-2">5pcs Jewelry Set</div>
+            <div class="deals-stars">⭐⭐⭐⭐⭐</div>
+            <div class="deals-para">Price:<span class="discount"> $30</span> $15</div>
+          </div>
+          <!-- Add more .deals-sec1 as needed -->
         </div>
+        <button class="carousel-btn right" onclick="scrollCarousel('deals-row', 1)">&gt;</button>
       </div>
     </div>
 
     <div class="deals-side-banner">
       <img src="./product/deals banner.png" alt="side banner" class="deals-side-banner-image">
       <button class="side-banner-category">See Category</button>
+
+    </div>
+
+    <div class="side-banner-images">
+      <img src="./product/side-1.webp" alt="side banner" class="side-image">
+      <img src="./product/side-2.webp" alt="side banner" class="side-image">
     </div>
 
   </div>
 
   <!-- deals of the day section ended -->
 
+
+  <!-- footer started -->
+
+  <footer class="footer">
+    <div class="img">
+      <img src="./logo.png" alt="logo" class="footer-logo">
+    </div>
+    <div class="contact">
+      <h1 class="footer-contact">Contact Us:</h1>
+      <p class="footer-gmail">help@gmail.com</p>
+    </div>
+
+    <div class="apps">
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-x-twitter"></i>
+      <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-youtube"></i>
+      <i class="fa-brands fa-telegram"></i>
+    </div>
+
+    <div class="categories">
+      <h1>Categories</h1>
+      <p>Watches</p>
+      <p>Shoes</p>
+      <p>jewellery</p>
+      <p>Electronics</p>
+      <p>Women's Dress</p>
+      <p>Handbags</p>
+    </div>
+  
+    <div class="Contact-Us">
+      <h1>Contact Us</h1>
+      <p>Become A Seller</p>
+      <p>Contract Manufacturing</p>
+      <p>Terms & Condition</p>
+      <p>Career With Us</p>
+      <p>Consumer Enquiry</p>
+    </div>
+  </footer>
+
+  <!-- footer ended -->
+
   <!-- javascript for carousel started-->
 
   <script>
     function scrollCarousel(id, direction) {
       const container = document.getElementById(id);
-      const card = container.querySelector('.popular-card');
+      // Find the first direct child (card)
+      const card = container.querySelector(':scope > *');
       if (!card) return;
-      const scrollAmount = card.offsetWidth + 20; // card width + gap
+      const gap = parseInt(getComputedStyle(container).gap) || 0;
+      const scrollAmount = card.offsetWidth + gap;
       container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
     }
   </script>
