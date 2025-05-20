@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     displayCategories();
-displayProducts();
-displayDeals();
+    displayProducts();
+    displayDeals();
+    updateCartIcon(); // Cart icon update on page load
     function displayCategories() {
         const categories = JSON.parse(localStorage.getItem("categories")) || [];
         const container = document.getElementById("popular_category");
@@ -27,7 +28,7 @@ displayDeals();
         const container = document.getElementById("recentlylaunched-product-container");
         if (!container) return;
         container.innerHTML = "";
-        products.forEach((product) => {
+        products.forEach((product, index) => {
             if (product.image && product.name) {
                 const card = document.createElement("div");
                 card.className = "popular-card";
@@ -37,8 +38,7 @@ displayDeals();
                         <div class="recentlylaunched-product-head">${product.name}</div>
                         <div class="recentlylaunched-product-stars">⭐⭐⭐⭐⭐</div>
                         <div class="recentlylaunched-product-para">Price: Rs. ${product.price}</div>
-                                <button class="add-to-cart-btn" onclick="add_to_cart()">Add to Cart</button>
-
+                        <button class="add-to-cart-btn" onclick="add_to_cart(${index})">Add to Cart</button>
                     </div>
                 `;
                 container.appendChild(card);
@@ -49,15 +49,15 @@ displayDeals();
 
 
     function displayDeals() {
-    const products = JSON.parse(localStorage.getItem("discountedProducts")) || [];
-    const container = document.getElementById("deals-row");
-    if (!container) return;
-    container.innerHTML = "";
-    products.forEach((product) => {
-        if (product.image && product.name && product.discountedPrice && product.price) {
-            const card = document.createElement("div");
-            card.className = "popular-card";
-            card.innerHTML = `
+        const products = JSON.parse(localStorage.getItem("discountedProducts")) || [];
+        const container = document.getElementById("deals-row");
+        if (!container) return;
+        container.innerHTML = "";
+        products.forEach((product) => {
+            if (product.image && product.name && product.discountedPrice && product.price) {
+                const card = document.createElement("div");
+                card.className = "popular-card";
+                card.innerHTML = `
                 <div class="deals-sec1">
                     <img src="${product.image}" alt="${product.name}" class="deals-image">
                     <div class="deals-head-2">${product.name}</div>
@@ -74,10 +74,10 @@ displayDeals();
                     </div>
                 </div>
             `;
-            container.appendChild(card);
-        }
-    });
-}
+                container.appendChild(card);
+            }
+        });
+    }
 
 
 
@@ -88,18 +88,40 @@ displayDeals();
 
 
 
-function add_to_cart()
-{
-        let recentBuyers = JSON.parse(localStorage.getItem("recentbuyer")) || [];
+function add_to_cart(productIndex) {
+    let recentBuyers = JSON.parse(localStorage.getItem("recentbuyer")) || [];
+    if (recentBuyers.length == 0) {
+        alert("Please login to add items to cart");
+        window.location.href = "../../Desktop/JavascriptEcommerce/login.html";
+        return;
+    } else {
+        // Product fetch karo
+        const products = JSON.parse(localStorage.getItem("products")) || [];
+        const product = products[productIndex];
 
-        if(recentBuyers.length == 0)
-        {
-            alert("Please login to add items to cart");
-            window.location.href = "../../Desktop/JavascriptEcommerce/login.html";
-            return;
-        }
-        else
-        {
-            alert("Item added to cart");
-        }
+        // Cart array me add karo
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        cart.push({
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            image: product.image
+        });
+        localStorage.setItem("cart", JSON.stringify(cart));
+        alert("Product added to cart!");
+
+        // Cart icon update karo
+        updateCartIcon();
+    }
 }
+
+// Cart icon update function
+function updateCartIcon() {
+    var cart_icon = document.getElementById("cart-icon");
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    if (cart_icon) {
+        cart_icon.innerHTML = `${cart.length}`;
+    }
+}
+
+

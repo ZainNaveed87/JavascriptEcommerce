@@ -37,7 +37,7 @@
       </a>
       <a href="./cart.html">
         <i class="fa-solid fa-cart-shopping"></i>
-        <span class="badge badge-cart">1</span>
+        <span class="badge badge-cart" id="cart_icon">0</span>
       </a>
     </div>
   </nav>
@@ -77,29 +77,18 @@
     <div class="cart-far-hed">QUANTITY</div>
     <div class="cart-far-hed">SUBTOTAL</div>
   </div>
-  <div class="cart-product">
-    <div class="cart-product-details">
-      <img class="cart-product-image" src="./product/Air_Jordan_1_Banned.jpg" alt="product">
-      <div>
-        <h1 class="cart-product-name-head">Air Air Jordan Shoes</h1>
-        <p class="cart-product-name-para">Product Description</p>
-      </div>
-    </div>
-    <div class="cart-product-price">
-      <h1 class="cart-product-cart-price">$100.00</h1>
-    </div>
-    <div class="cart-product-quantity">
-      <button class="qty-btn" onclick="decreaseQty(this)">-</button>
-      <input type="number" value="1" min="1" max="100" class="qty-input">
-      <button class="qty-btn" onclick="increaseQty(this)">+</button>
-    </div>
-    <div class="cart-product-subtotal">
-      <h1 class="cart-subtotal">$100.00</h1>
-    </div>
+  <div class="cart-product" id="cart_products">
+
+  </div>
+  <div class="coupon_code">
+    <label for="" id="coupon_input_label"></label>
+    <input type="text" id="coupon_input" class="coupon_code_input" placeholder=" Coupon Code"> </input>
+    <button class="coupon_btn" onclick="applyCoupon()">OK</button>
   </div>
 
   <div class="clear-shopping">
-    <button class="clear-shopping-btn"><i class="fa-solid fa-trash"></i> Clear Shopping Cart</button>
+    <button class="clear-shopping-btn" onclick="clear_cart()"><i class="fa-solid fa-trash"></i> Clear Shopping
+      Cart</button>
   </div>
 
   <!-- product-cart ended -->
@@ -112,42 +101,52 @@
 
       <div class="subtotal">
         <h1 class="total-cart-subtotal">Subtotal :</h1>
-        <P class="total-cart-subtotal-para">Rs:65,000</P>
+        <P class="total-cart-subtotal-para">Rs: <span class="total-cart-subtotal-para" id="subtotal"> </span></P>
       </div>
 
-     <div class="total">
-      <h1 class="total-cart-total">TOTAL :</h1>
-      <p>Rs:6,6700</p>
-     </div>
-     <button class="checout-btn">Proceed To Checkout</button>
-     <button class="checout-btn">Continue Shopping</button>
-     </div>
+      <!-- Coupon discount row (add this) -->
+      <div class="total-cart-subtotal-para" id="coupon_discount_row" style="display:none;">
+        <h1 class="total-cart-subtotal" id="coupon_label"></h1>
+        <p class="total-cart-subtotal-para" style="text-align:right;">
+          <div class="span">
+          -Rs:<span class="total-cart-subtotal-para" id="coupon_discount"></span>
+          </div>
+        </p>
+      </div>
+
+      <div class="total">
+        <h1 class="total-cart-total">TOTAL :</h1>
+        <p class="total-cart-subtotal-para">Rs:<span class="total-cart-subtotal-para" id="full_total"> </span></p>
+      </div>
+      <button class="checout-btn">Proceed To Checkout</button>
+      <button class="checout-btn">Continue Shopping</button>
+    </div>
 
 
-      
+
   </div>
 
   <!-- .total-cart ended -->
 
-    <!-- footer started -->
+  <!-- footer started -->
 
   <footer class="footer">
     <div class="first">
-    <div class="img">
-      <img src="./logo.png" alt="logo" class="footer-logo">
-    </div>
-    <div class="contact">
-      <h1 class="footer-contact">Contact Us:</h1>
-      <p class="footer-gmail">help@gmail.com</p>
-    </div>
+      <div class="img">
+        <img src="./logo.png" alt="logo" class="footer-logo">
+      </div>
+      <div class="contact">
+        <h1 class="footer-contact">Contact Us:</h1>
+        <p class="footer-gmail">help@gmail.com</p>
+      </div>
 
-    <div class="apps">
-      <i class="fa-brands fa-facebook"></i>
-      <i class="fa-brands fa-x-twitter"></i>
-      <i class="fa-brands fa-instagram"></i>
-      <i class="fa-brands fa-youtube"></i>
-      <i class="fa-brands fa-telegram"></i>
-    </div>
+      <div class="apps">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-x-twitter"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-youtube"></i>
+        <i class="fa-brands fa-telegram"></i>
+      </div>
 
     </div>
 
@@ -160,7 +159,7 @@
       <p class="categories-para">Women's Dress</p>
       <p class="categories-para">Handbags</p>
     </div>
-  
+
     <div class="Contact-Us">
       <h1 class="contactus-head">Contact Us</h1>
       <p class="contactus-para">Become A Seller</p>
@@ -189,6 +188,7 @@
       input.value = value - 1;
     }
   </script>
+  <script src="./index/cart.js"></script>
 </body>
 
 </html>

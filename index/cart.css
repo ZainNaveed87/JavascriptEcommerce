@@ -9,7 +9,7 @@
     box-sizing: border-box;
 }
 
-body {cart age
+body {
     background-color: #000;
     color: #ffffff;
     width: 100%;
@@ -239,10 +239,25 @@ body {cart age
     margin-right: 0 !important;
 }
 
+.cart-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 16px;
+    /* Row ke beech vertical gap */
+}
+
+.cart-table td {
+    padding: 16px 12px;
+    /* Cell ke andar gap */
+    vertical-align: middle;
+    border-radius: 10px;
+}
+
 .cart-product-details {
     display: flex;
     align-items: center;
     gap: 16px;
+    /* Image aur text ke beech gap */
 }
 
 .cart-product-image {
@@ -276,6 +291,7 @@ body {cart age
     display: flex;
     align-items: center;
     gap: 8px;
+    margin-left: 80px;
 }
 
 .qty-btn {
@@ -308,13 +324,14 @@ body {cart age
     font-size: 1.2rem;
     font-weight: bolder;
     text-align: center;
+    margin-left: 100px;
 }
 
 .clear-shopping-btn {
     position: relative;
     overflow: hidden;
     width: 200px;
-    margin-left: 20%;
+    margin-left: 40%;
     height: 50px;
     background: #181852;
     color: #fff;
@@ -325,6 +342,8 @@ body {cart age
     cursor: pointer;
     z-index: 1;
     transition: background-color 0.3s;
+    bottom: 40px;
+    right: 50px;
 }
 
 .clear-shopping-btn::after {
@@ -356,7 +375,7 @@ body {cart age
 .total-cart {
     position: relative;
     left: 55%;
-    bottom: 250px;
+    bottom: 410px;
     width: 40%;
     border: 1px solid #fff;
     border-radius: 10px;
@@ -401,7 +420,7 @@ body {cart age
     color: #fff;
 }
 
-.checout-btn{
+.checout-btn {
     position: relative;
     overflow: hidden;
     height: 50px;
@@ -505,4 +524,75 @@ body {cart age
 .contactus-para:hover {
     cursor: pointer;
     text-decoration: underline;
+}
+
+.coupon_code_input {
+    width: 350px;
+    margin-left: 26px;
+    border: 1px solid #FFFFFF;
+    background: transparent;
+    height: 40px;
+    border-radius: 10px;
+    padding-left: 20px;
+    color: #FFFFFF;
+}
+
+.coupon_code_input::placeholder {
+    color: #FFFFFF;
+}
+
+.coupon_btn {
+    position: absolute;
+    left: 340px;
+    border: 1px solid #FFFFFF;
+    top: 658px;
+    height: 40px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 40px;
+    background-color: #072458;
+    color: #FFFFFF;
+}
+
+.coupon_btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 25%;
+    height: 40px;
+    background: linear-gradient(120deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.5) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    transform: skewX(-20deg);
+    transition: none;
+    pointer-events: none;
+    opacity: 0;
+    /* <-- Add this line */
+}
+
+.coupon_btn:hover::after {
+    animation: shine 0.7s forwards;
+    opacity: 1;
+    /* <-- Add this line */
+}
+
+@keyframes shine {
+    100% {
+        left: 100%;
+        opacity: 0;
+        /* Shine choti width ke hisaab se aage nikle */
+    }
+}
+.span
+{
+    margin-left: 230px;
+    color: #ff0000;
+    font-size: 1rem;
+}
+#coupon_discount
+{
+    color: #ff0000;
+
 }
