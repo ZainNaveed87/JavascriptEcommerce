@@ -10,7 +10,6 @@
 }
 
 body {
-    height: 200vh;
     background-color: #000;
     color: #ffffff;
     width: 100%;
@@ -224,8 +223,8 @@ body {
     border-bottom: 1px solid #fff;
     padding: 20px 0;
     gap: 0 10px;
-    width: 80%;
-    margin-left: 0 !important;
+    width: 50%;
+    margin-left: 30px !important;
     margin-right: 0 !important;
 }
 
@@ -235,8 +234,8 @@ body {
     border-bottom: 2px solid #fff;
     margin-bottom: 0;
     padding-bottom: 10px;
-    width: 80%;
-    margin-left: 0 !important;
+    width: 50%;
+    margin-left: 30 !important;
     margin-right: 0 !important;
 }
 
@@ -265,7 +264,7 @@ body {
 
 .cart-far-hed {
     font-size: 1.2rem;
-    margin-left: 200px;
+    margin-left: 100px;
 }
 
 .cart-product-cart-price {
@@ -305,6 +304,7 @@ body {
 }
 
 .cart-subtotal {
+    position: relative;
     font-size: 1.2rem;
     font-weight: bolder;
     text-align: center;
@@ -314,7 +314,7 @@ body {
     position: relative;
     overflow: hidden;
     width: 200px;
-    margin-left: 60%;
+    margin-left: 20%;
     height: 50px;
     background: #181852;
     color: #fff;
@@ -354,6 +354,9 @@ body {
 }
 
 .total-cart {
+    position: relative;
+    left: 55%;
+    bottom: 250px;
     width: 40%;
     border: 1px solid #fff;
     border-radius: 10px;
@@ -396,4 +399,110 @@ body {
     margin: 0;
     font-size: 1.2rem;
     color: #fff;
+}
+
+.checout-btn{
+    position: relative;
+    overflow: hidden;
+    height: 50px;
+    background: #181852;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: poppins;
+    cursor: pointer;
+    z-index: 1;
+    transition: background-color 0.3s;
+}
+
+.checout-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.5) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    transform: skewX(-20deg);
+    transition: none;
+    pointer-events: none;
+}
+
+.checout-btn:hover::after {
+    animation: shine 0.7s forwards;
+}
+
+@keyframes shine {
+    100% {
+        left: 130%;
+    }
+}
+
+.footer {
+    display: flex;
+    position: relative;
+    margin-top: 50px;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 99vw;
+    background-color: #072458;
+    color: #ffffff;
+    font-family: poppins;
+    font-size: 1.2rem;
+}
+
+.footer-logo {
+    width: 200px;
+    margin-top: 20px;
+}
+
+.footer-contact {
+    font-size: 1rem;
+}
+
+.footer-gmail {
+    font-size: 1.2rem;
+    text-decoration: underline;
+}
+
+.apps {
+    display: flex;
+    font-size: 1.2rem;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.categories-head {
+    margin-top: 40px;
+    font-size: 1.4rem;
+    text-decoration: underline;
+    padding: 20px 0;
+}
+
+.categories-para {
+    font-size: 1.2rem;
+}
+
+.categories-para:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.contactus-head {
+    font-size: 1.4rem;
+    text-decoration: underline;
+    padding: 20px 0;
+}
+
+.contactus-para {
+    font-size: 1.2rem;
+}
+
+.contactus-para:hover {
+    cursor: pointer;
+    text-decoration: underline;
 }
