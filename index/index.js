@@ -37,7 +37,7 @@ displayDeals();
                         <div class="recentlylaunched-product-head">${product.name}</div>
                         <div class="recentlylaunched-product-stars">⭐⭐⭐⭐⭐</div>
                         <div class="recentlylaunched-product-para">Price: Rs. ${product.price}</div>
-                                <button class="add-to-cart-btn">Add to Cart</button>
+                                <button class="add-to-cart-btn" onclick="add_to_cart()">Add to Cart</button>
 
                     </div>
                 `;
@@ -86,3 +86,20 @@ displayDeals();
 
 });
 
+
+
+function add_to_cart()
+{
+        let recentBuyers = JSON.parse(localStorage.getItem("recentbuyer")) || [];
+
+        if(recentBuyers.length == 0)
+        {
+            alert("Please login to add items to cart");
+            window.location.href = "../../Desktop/JavascriptEcommerce/login.html";
+            return;
+        }
+        else
+        {
+            alert("Item added to cart");
+        }
+}
