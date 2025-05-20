@@ -229,7 +229,6 @@
             <div class="deals-stars">⭐⭐⭐⭐⭐</div>
             <div class="deals-para">Price:<span class="discount"> $30</span> $15</div>
           </div>
-          <!-- Add more .deals-sec1 as needed -->
         </div>
         <button class="carousel-btn right" onclick="scrollCarousel('deals-row', 1)">&gt;</button>
       </div>
@@ -300,7 +299,6 @@
   <script>
     function scrollCarousel(id, direction) {
       const container = document.getElementById(id);
-      // Find the first direct child (card)
       const card = container.querySelector(':scope > *');
       if (!card) return;
       const gap = parseInt(getComputedStyle(container).gap) || 0;
