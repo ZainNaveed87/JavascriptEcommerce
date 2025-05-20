@@ -9,13 +9,33 @@ document.addEventListener("DOMContentLoaded", function () {
             const card = document.createElement("div");
             card.className = "product-card";
 
+            // Discounted price logic
+            let priceHtml = "";
+            if (product.discountedPrice && product.discountPercent) {
+                priceHtml = `
+                    <div class="product-price">
+                        <span style="text-decoration:line-through;color:#e53935;font-weight:500;margin-right:8px;">
+                            Rs. ${product.price}
+                        </span>
+                        <span style="color:#388e3c;font-weight:700;">
+                            Rs. ${product.discountedPrice}
+                        </span>
+                        <span style="color:#fff;background:#388e3c;padding:2px 8px;border-radius:6px;font-size:13px;margin-left:8px;">
+                            -${product.discountPercent}%
+                        </span>
+                    </div>
+                `;
+            } else {
+                priceHtml = `<div class="product-price">Rs. ${product.price}</div>`;
+            }
+
             card.innerHTML = `
     <img src="${product.image}" alt="${product.name}" />
     <div class="product-card-content">
         <h3>${product.name}</h3>
         <div class="product-desc">${product.description}</div>
         <div class="product-qty"><strong>Quantity:</strong> ${product.quantity}</div>
-        <div class="product-price">Rs. ${product.price}</div>
+        ${priceHtml}
         <div class="product-actions" style="margin-top:14px; display:flex; gap:10px; justify-content:center;">
             <button class="edit-btn" style="padding:5px 14px; border-radius:6px; border:none; background:#1976d2; color:#fff; cursor:pointer;">Edit</button>
             <button class="delete-btn" style="padding:5px 14px; border-radius:6px; border:none; background:#e53935; color:#fff; cursor:pointer;">Delete</button>
@@ -98,8 +118,7 @@ function Logout() {
     }
     return false;
 }
-
-   var currentManager = JSON.parse(localStorage.getItem("currentManager")) || null;
+ var currentManager = JSON.parse(localStorage.getItem("currentManager")) || null;
 var adminNameElement = document.getElementById("admin_name");
 
 if (currentManager && currentManager.username) {
