@@ -99,11 +99,18 @@ function login() {
     });
 
     if (userFound) {
+        // 1. Buyer array me save (agar already nahi hai to)
+        let buyers = JSON.parse(localStorage.getItem("buyer")) || [];
+        const alreadyExists = buyers.some(b => b.email === userFound.email);
+        if (!alreadyExists) {
+            buyers.push(userFound);
+            localStorage.setItem("buyer", JSON.stringify(buyers));
+        }
 
-
-
-
-
+        // 2. Recentbuyer array me hamesha add karo
+        let recentBuyers = JSON.parse(localStorage.getItem("recentbuyer")) || [];
+        recentBuyers.push(userFound);
+        localStorage.setItem("recentbuyer", JSON.stringify(recentBuyers));
 
         alert("Login successful as buyer!");
         window.location.href = "./index.html";
