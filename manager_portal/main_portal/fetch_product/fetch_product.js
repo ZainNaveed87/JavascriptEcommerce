@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function Logout() {
     var confirmLogout = confirm("Are you sure you want to logout?");
     if (confirmLogout) {
-        localStorage.removeItem("currentManager"); // Sirf session hatayein
+        localStorage.removeItem("currentManager"); 
         window.location.href = "../../../login.html";
     }
     return false;
