@@ -10,7 +10,6 @@
 }
 
 body {
-    min-height: 100vh;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -51,7 +50,6 @@ body {
     color: #000000;
     border-radius: 6px;
     border: none;
-    margin-right: 50px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
@@ -670,4 +668,64 @@ body {
 
 .carousel-btn:hover {
     background: #688cee;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #072458;
+    color: #ffffff;
+    font-family: poppins;
+    font-size: 1.2rem;
+}
+
+.footer-logo{
+    width: 200px;
+    margin-top: 20px;
+}
+
+.footer-contact{
+    font-size: 1rem;
+}
+
+.footer-gmail{
+    font-size: 1.2rem;
+    text-decoration: underline;
+}
+
+.apps{
+    display: flex;
+    font-size: 1.2rem;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.categories-head{
+    margin-top: 40px;
+    font-size: 1.2rem;
+    padding: 20px 0;
+}
+
+.categories-para{
+    font-size: 1.2rem;
+}
+
+.categories-para:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.contactus-head{
+    font-size: 1.2rem;
+    padding: 20px 0;
+}
+
+.contactus-para{
+    font-size: 1.2rem;
+}
+
+.contactus-para:hover{
+    cursor: pointer;
+    text-decoration: underline;
 }
