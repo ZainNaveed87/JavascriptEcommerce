@@ -801,3 +801,6 @@ body {
     margin-bottom: 0 !important;
     padding-bottom: 0 !important;
 }
+.deal-of-the-day {
+    min-height: 450px;
+}
