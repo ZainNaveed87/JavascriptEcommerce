@@ -9,7 +9,7 @@
         integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
 
     <title>Home Page</title>
-    <link rel="stylesheet" href="index/cart.css">
+    <link rel="stylesheet" href="index/checkout.css">
 </head>
 
 <body>
@@ -28,13 +28,7 @@
         <div class="nav-links">
             <a href="./login.html"><i class="fa-solid fa-user"></i></a>
             <a href="">
-                <i class="fa-solid fa-signal"></i>
-                <span class="badge badge-signal">2</span>
-            </a>
-            <a href="">
-                <i class="fa-solid fa-heart"></i>
-                <span class="badge badge-heart">1</span>
-            </a>
+           
             <a href="./cart.html">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <span class="badge badge-cart">1</span>
@@ -69,6 +63,31 @@
 
     <!-- cart tab ended -->
 
+    <!-- cart product section started -->
+
+    <div class="have-coupon">
+        <div class="have-coupon-head-para">
+        <h2 class="have-coupon-head">Have a coupon?</h2>
+        <p class="have-coupon-para" id="toggle-coupon">Have a coupon?</p>
+        <div class="coupon-dropdown" id="coupon-form">
+          <div class="coupon-inline">
+            <input type="text" class="coupon-input" placeholder="Enter coupon code">
+            <button class="apply-btn">Apply</button>
+          </div>
+        </div>
+    </div>
+
+    </div>
+
+    
+    <!-- cart product section ended -->
+
+    <script>
+document.getElementById('toggle-coupon').addEventListener('click', function() {
+    const form = document.getElementById('coupon-form');
+    form.style.display = (form.style.display === 'none' || form.style.display === '') ? 'block' : 'none';
+});
+</script>
 
 </body>
 
