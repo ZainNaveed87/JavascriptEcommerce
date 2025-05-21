@@ -65,27 +65,24 @@
 
     <!-- cart product section started -->
 
-    <div class="have-coupon">
+    <div class="coupon-section">
         <div class="have-coupon-head-para">
-        <h2 class="have-coupon-head">Have a coupon?</h2>
-        <p class="have-coupon-para" id="toggle-coupon">Have a coupon?</p>
+            <span class="have-coupon-head">Coupon</span>
+            <span class="have-coupon-para" id="toggle-coupon">Have a coupon?</span>
+        </div>
         <div class="coupon-dropdown" id="coupon-form">
-          <div class="coupon-inline">
-            <input type="text" class="coupon-input" placeholder="Enter coupon code">
-            <button class="apply-btn">Apply</button>
-          </div>
+            <div class="coupon-inline">
+                <input type="text" class="coupon-input" placeholder="Enter coupon code">
+                <button class="apply-btn">Apply</button>
+            </div>
         </div>
     </div>
 
-    </div>
-
-    
     <!-- cart product section ended -->
 
     <script>
 document.getElementById('toggle-coupon').addEventListener('click', function() {
-    const form = document.getElementById('coupon-form');
-    form.style.display = (form.style.display === 'none' || form.style.display === '') ? 'block' : 'none';
+    document.getElementById('coupon-form').classList.toggle('open');
 });
 </script>
 

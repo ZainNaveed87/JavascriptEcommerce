@@ -215,11 +215,9 @@ body {
 
 .have-coupon-head-para{
     display: flex;
-    justify-content: flex-start; 
-    gap: 10px;   
-    margin-top: 20px;
-    margin-left: 20px;
-  
+    align-items: center;
+    gap: 10px;
+    /* Remove margin-bottom/margin-top if you want no extra space */
 }
 
 .have-coupon-head{
@@ -319,10 +317,23 @@ body {
     outline: none;
 }
 
+.coupon-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 .coupon-dropdown {
-    display: none;
     width: 100%;
-    animation: dropdownFade 0.3s;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.coupon-dropdown.open {
+    max-height: 100px;
+    opacity: 1;
 }
 
 @keyframes dropdownFade {
