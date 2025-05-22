@@ -1,0 +1,377 @@
+@font-face {
+    font-family: "poppins";
+    src: url(../fonts/Poppins-Medium.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-image: url('../image.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    font-family: poppins;
+}
+
+#logo {
+    width: 200px;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#search {
+    width: 500px;
+    height: 50px;
+    font-family: poppins;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #000000;
+}
+
+#banner1 {
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    border: 1px solid #0000ff;
+    border-radius: 14px;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+#search-btn {
+    width: 50px;
+    height: 50px;
+    background-color: #688cee;
+    color: #000000;
+    border-radius: 6px;
+    border: none;
+    margin-right: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.search-img {
+    width: 50px;
+    border-radius: 10px;
+    height: 50px;
+}
+
+#nav-1 {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    font-family: poppins;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+    border-radius: 18px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+}
+
+#nav-1 a {
+    text-decoration: none;
+    padding: 20px;
+    font-size: 1.2rem;
+    color: inherit;
+}
+
+#nav-1 a:hover {
+    color: #0312a0;
+    animation: 1s ease-in-out;
+}
+
+#nav-2 {
+    font-family: poppins;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    margin-left: 30px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+#nav-2 a {
+    text-decoration: none;
+    text-decoration: none;
+    padding: 20px;
+    font-size: 1.2rem;
+    color: inherit;
+}
+
+#nav-2 a:hover {
+    color: #0312a0;
+    transition: 1s ease-in-out;
+}
+
+.nav-links {
+    display: flex;
+    gap: 18px;
+}
+
+.nav-links a {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-links i {
+    font-size: 1.5rem;
+}
+
+.badge {
+    position: absolute;
+    top: 4px;
+    right: 1px;
+    width: 19px;
+    height: 19px;
+    background: transparent;
+    color: #fff;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+}
+
+.badge-signal {
+    background: transparent;
+}
+
+.badge-heart {
+    background: transparent;
+}
+
+.badge-cart {
+    background: transparent;
+}
+
+
+.side-navbar{
+    border: 1px solid #ffffff;
+    border-radius: 14px;
+    width: 300px;
+   margin-top: 20px;
+   margin-left: 20px;
+}
+
+.categories-head{
+    font-family: poppins;
+    font-size: 1.3rem;
+    padding-left: 20px;
+    margin-top: 10px;
+    color: #000000;
+}
+
+#search-bar{
+   width: 150px;
+   height: 30px;
+   font-size: 0.87rem;
+   text-align: center;
+}
+
+.categories-search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#search-btn{
+    width: 30px;
+    height: 30px;
+    background-color: #688cee;
+    color: #000000;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.search-img{
+    width: 30px;
+    border-radius: 10px;
+    height: 30px;
+}
+
+.categories-list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.categories-list ,a{
+    list-style: none;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.categories-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.4em; 
+}
+
+.category-checkbox {
+    width: 14px;
+    height: 14px;
+    accent-color: #000000;
+    vertical-align: middle;
+}
+
+
+.price-head{
+    font-family: poppins;
+    font-size: 1.3rem;
+    padding-left: 18px; /* Optional: aligns the heading with the list */
+    color: #000000;
+}
+
+.price-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    list-style: none;
+    padding-left: 18px; /* Add this for a little left space */
+}
+
+.price-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+}
+
+.price-checkbox {
+    width: 14px;
+    height: 14px;
+    accent-color: #000000; 
+    vertical-align: middle;
+}
+.price-list label {
+    color: #fff;
+    font-family: poppins;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.price-min-max{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#min-price,
+#max-price {
+    width: 50px;
+    height: 30px;
+    font-size: 0.87rem;
+    text-align: center;
+    border: 1px solid #181852;
+    border-radius: 5px;
+    background: #fff;
+    color: #181852;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#min-price:focus,
+#max-price:focus {
+    border-color: #a393e0;
+    box-shadow: 0 0 0 2px #a393e033;
+}
+
+.apply-btn {
+    width: 120px;
+    height: 40px;
+    border: 1px solid #ffffff;
+    background: #181852;
+    color: #ffffff;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: poppins;
+    position: relative;
+    overflow: hidden;
+    transition: opacity 0.3s;
+    text-align: center;
+    z-index: 2;
+    padding: 0 20px;
+}
+
+.apply-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 60%;
+    background: linear-gradient(
+        120deg,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.5) 50%,
+        rgba(255,255,255,0) 100%
+    );
+    transform: translateX(-120%) skewX(-20deg);
+    opacity: 0;
+    transition: transform 0.7s, opacity 0.3s;
+    pointer-events: none;
+    z-index: 3;
+    display: block;
+}
+
+.apply-btn:hover::after {
+    transform: translateX(180%) skewX(-20deg);
+    opacity: 1;
+    transition: transform 0.7s, opacity 0.3s;
+}
+
+.rating-head {
+    font-family: poppins;
+    font-size: 1.3rem;
+    margin-top: 10px;
+    padding-left: 18px; 
+    color: #000000;
+}
+
+.rating-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    list-style: none;
+    padding-left: 18px; 
+}
+
+.rating-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+}
+
+.rating-checkbox {
+    width: 14px;
+    height: 14px;
+    accent-color: #000000; 
+    vertical-align: middle;
+}
+
+.rating-list label {
+    color: #fff;
+    font-family: poppins;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+}

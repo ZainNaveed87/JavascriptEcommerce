@@ -949,3 +949,51 @@ label {
     cursor: pointer;
     text-decoration: underline;
 }
+
+.product-order-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.product-order-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    background: transparent;
+}
+
+.product-order-table th,
+.product-order-table td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 12px 8px;
+    font-family: poppins;
+    color: #fff;
+    border-radius: 8px;
+}
+
+.product-order-table th {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px 8px 0 0;
+}
+
+.product-order-table td img.product-image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+@media (max-width: 700px) {
+    .product-order-table th,
+    .product-order-table td {
+        font-size: 0.95rem;
+        padding: 8px 2px;
+    }
+    .product-order-table td img.product-image {
+        width: 40px;
+        height: 40px;
+    }
+}

@@ -44,7 +44,7 @@
     <nav id="nav-2">
         <div class="nav-2">
             <a href="./index.html">Home</a>
-            <a href="">Shop</a>
+            <a href="./shop.html">Shop</a>
             <a href="">Contact Us</a>
 
         </div>
@@ -164,28 +164,38 @@
     <div class="order-head">
         <h1 class="order-heading">YOUR ORDER</h1>
     </div>
-    <div class="product-order-list">
-        <div class="product-order-item">
-            <div class="product-img">
-                <img src="./product/arricalnecklece.webp" alt="product image" class="product-image">
-            </div>
-            <div class="product-order-info">
-                <div class="product-name">
-                    <h1>Arrical Necklece</h1>
-                </div>
-                <div class="product-quantity-box">
-                    <button class="qty-btn qty-minus">-</button>
-                    <span class="qty-value">1</span>
-                    <button class="qty-btn qty-plus">+</button>
-                </div>
-                <div class="product-order-subtotal">
-                    <h1>Rs: 500</h1>
-                </div>
-                <div class="product-order-remove">
-                    <button class="product-order-remove-btn">Remove</button>
-                </div>
-            </div>
-        </div>
+    <div class="product-order-table-wrapper">
+        <table class="product-order-table">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <img src="./product/arricalnecklece.webp" alt="product image" class="product-image">
+                    </td>
+                    <td>Arrical Necklece</td>
+                    <td>
+                        <div class="product-quantity-box">
+                            <button class="qty-btn qty-minus">-</button>
+                            <span class="qty-value">1</span>
+                            <button class="qty-btn qty-plus">+</button>
+                        </div>
+                    </td>
+                    <td>Rs: 500</td>
+                    <td>
+                        <button class="product-order-remove-btn">Remove</button>
+                    </td>
+                </tr>
+                <!-- Add more <tr>...</tr> for more products -->
+            </tbody>
+        </table>
     </div>
     <div class="product-order-down">
         <div class="subtotal-order-down">
