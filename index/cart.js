@@ -144,3 +144,72 @@ function applyCoupon() {
     document.getElementById("full_total").textContent = total;
     alert(`Coupon applied! You got ${percent}% off.`);
 }
+
+function updateUserProfileIcon() {
+    const userContainer = document.getElementById("user-profile-container");
+    const recentBuyers = JSON.parse(localStorage.getItem("recentbuyer")) || [];
+    if (!userContainer) return;
+
+    const profileImage =
+        (recentBuyers.length > 0 && recentBuyers[0].profileImage)
+            ? recentBuyers[0].profileImage
+            : "https://ui-avatars.com/api/?name=User&background=388e3c&color=fff&rounded=true&size=64";
+
+    if (recentBuyers.length > 0) {
+        userContainer.innerHTML = `
+            <div class="profile-dropdown">
+                <img src="${profileImage}" class="profile-circle" id="profile-img" alt="Profile" />
+                <div class="logout-btn" id="logout-btn" style="display:none;">Logout</div>
+            </div>
+        `;
+
+        const dropdown = userContainer.querySelector('.profile-dropdown');
+        const logoutBtn = document.getElementById("logout-btn");
+        const profileImg = document.getElementById("profile-img");
+        let hideTimeout;
+
+        profileImg.addEventListener('click', function () {
+            window.location.href = "./index/profile/profile.html";
+        });
+
+        dropdown.addEventListener('mouseover', () => {
+            clearTimeout(hideTimeout);
+            logoutBtn.style.display = 'block';
+        });
+
+        dropdown.addEventListener('mouseout', (e) => {
+            if (!dropdown.contains(e.relatedTarget)) {
+                hideTimeout = setTimeout(() => {
+                    logoutBtn.style.display = 'none';
+                }, 3000);
+            }
+        });
+
+        logoutBtn.addEventListener('mouseover', () => {
+            clearTimeout(hideTimeout);
+            logoutBtn.style.display = 'block';
+        });
+
+        logoutBtn.addEventListener('mouseout', (e) => {
+            if (!dropdown.contains(e.relatedTarget)) {
+                hideTimeout = setTimeout(() => {
+                    logoutBtn.style.display = 'none';
+                }, 3000);
+            }
+        });
+
+        logoutBtn.addEventListener('click', () => {
+            localStorage.removeItem("recentbuyer");
+            window.location.reload();
+        });
+    } else {
+        userContainer.innerHTML = `<a href="./login.html" id="login-link"><i class="fa-solid fa-user"></i></a>`;
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    updateUserProfileIcon();
+});
+
+
+
