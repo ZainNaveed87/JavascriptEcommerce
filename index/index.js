@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
     displayProducts();
     displayDeals();
     updateCartIcon(); // Cart icon update on page load
+    updateUserProfileIcon();
+
     function displayCategories() {
         const categories = JSON.parse(localStorage.getItem("categories")) || [];
         const container = document.getElementById("popular_category");
@@ -92,7 +94,7 @@ function add_to_cart(productIndex) {
     let recentBuyers = JSON.parse(localStorage.getItem("recentbuyer")) || [];
     if (recentBuyers.length == 0) {
         alert("Please login to add items to cart");
-        window.location.href = "../../Desktop/JavascriptEcommerce/login.html";
+        window.location.href = "../../login.html";
         return;
     } else {
         // Product fetch karo
@@ -121,6 +123,71 @@ function updateCartIcon() {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     if (cart_icon) {
         cart_icon.innerHTML = `${cart.length}`;
+    }
+}
+
+function updateUserProfileIcon() {
+    const userContainer = document.getElementById("user-profile-container");
+    const recentBuyers = JSON.parse(localStorage.getItem("recentbuyer")) || [];
+    if (!userContainer) return;
+
+    // Get uploaded image from recentbuyer, fallback to dummy if not available
+    const profileImage =
+        (recentBuyers.length > 0 && recentBuyers[0].profileImage)
+            ? recentBuyers[0].profileImage
+            : "https://ui-avatars.com/api/?name=User&background=388e3c&color=fff&rounded=true&size=64";
+
+    if (recentBuyers.length > 0) {
+        userContainer.innerHTML = `
+            <div class="profile-dropdown">
+                <img src="${profileImage}" class="profile-circle" id="profile-img" alt="Profile" />
+                <div class="logout-btn" id="logout-btn" style="display:none;">Logout</div>
+            </div>
+        `;
+
+        const dropdown = userContainer.querySelector('.profile-dropdown');
+        const logoutBtn = document.getElementById("logout-btn");
+        const profileImg = document.getElementById("profile-img");
+        let hideTimeout;
+
+        // Profile image click event
+        profileImg.addEventListener('click', function () {
+            window.location.href = "./index/profile/profile.html";
+        });
+
+        // Show logout on hover
+        dropdown.addEventListener('mouseover', () => {
+            clearTimeout(hideTimeout);
+            logoutBtn.style.display = 'block';
+        });
+
+        dropdown.addEventListener('mouseout', (e) => {
+            if (!dropdown.contains(e.relatedTarget)) {
+                hideTimeout = setTimeout(() => {
+                    logoutBtn.style.display = 'none';
+                }, 3000); // 3 seconds
+            }
+        });
+
+        logoutBtn.addEventListener('mouseover', () => {
+            clearTimeout(hideTimeout);
+            logoutBtn.style.display = 'block';
+        });
+
+        logoutBtn.addEventListener('mouseout', (e) => {
+            if (!dropdown.contains(e.relatedTarget)) {
+                hideTimeout = setTimeout(() => {
+                    logoutBtn.style.display = 'none';
+                }, 3000);
+            }
+        });
+
+        logoutBtn.addEventListener('click', () => {
+            localStorage.removeItem("recentbuyer");
+            window.location.reload();
+        });
+    } else {
+        userContainer.innerHTML = `<a href="./login.html" id="login-link"><i class="fa-solid fa-user"></i></a>`;
     }
 }
 

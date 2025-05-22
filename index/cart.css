@@ -380,7 +380,6 @@ body {
     left: 55%;
     bottom: 410px;
     width: 40%;
-    border: 1px solid #fff;
     border-radius: 10px;
     margin-top: auto;
     /* Optional: width, background, etc. */
@@ -424,7 +423,16 @@ body {
     font-size: 1.2rem;
     color: #fff;
 }
+#coupon_discount
+{
+    color: #ff0000;
+}
 
+.span
+{
+    margin-left: 230px;
+    color: #ff0000;
+}
 .checout-btn {
     position: relative;
     overflow: hidden;
@@ -532,41 +540,48 @@ body {
     text-decoration: underline;
 }
 
+.coupon-row {
+    display: flex;
+    align-items: center;
+    margin-left: 26px;
+    margin-top: 20px;
+}
+
 .coupon_code_input {
     width: 350px;
-    margin-left: 26px;
     border: 1px solid #FFFFFF;
     background: transparent;
     height: 40px;
-    border-radius: 10px;
+    border-radius: 10px 0 0 10px;
     padding-left: 20px;
     color: #FFFFFF;
 }
 
-.coupon_code_input::placeholder {
-    color: #FFFFFF;
-}
-
 .coupon_btn {
-    position: fixed;
-    left: 340px;
     border: 1px solid #FFFFFF;
-    top: 434px;
     height: 40px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
-    width: 40px;
+    width: 80px;
     background-color: #072458;
     color: #FFFFFF;
+    margin-left: -1px;
+    position: static;
+    overflow: hidden;
+    z-index: 1;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    /* Shine effect ke liye zaroori properties */
+    position: relative;
 }
 
 .coupon_btn::after {
     content: "";
     position: absolute;
     top: 0;
-    left: 10%;
-    width: 25%;
-    height: 40px;
+    left: -75%;
+    width: 50%;
+    height: 100%;
     background: linear-gradient(120deg,
             rgba(255, 255, 255, 0) 0%,
             rgba(255, 255, 255, 0.5) 50%,
@@ -574,39 +589,46 @@ body {
     transform: skewX(-20deg);
     transition: none;
     pointer-events: none;
-    opacity: 0;
-    /* <-- Add this line */
 }
 
 .coupon_btn:hover::after {
     animation: shine 0.7s forwards;
-    opacity: 1;
-    /* <-- Add this line */
 }
 
 @keyframes shine {
     100% {
-        left: 100%;
-        opacity: 0;
-        /* Shine choti width ke hisaab se aage nikle */
+        left: 130%;
     }
 }
 
-.span {
-    margin-left: 230px;
-    color: #ff0000;
-    font-size: 1rem;
+.profile-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid #388e3c;
+    margin-top: 15px;
 }
 
-#coupon_discount {
-    color: #ff0000;
-
+.profile-dropdown {
+    position: relative;
+    display: inline-block;
 }
 
-.total-cart-details {
-position: fixed;
-top: 300px;
-border: 1px solid #fff;
-width: 500px;
-border-radius: 20px;
+.logout-btn {
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #e53935;
+    color: #fff;
+    padding: 6px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    white-space: nowrap;
+    z-index: 10;
+    font-size: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    display: none;
 }

@@ -801,6 +801,38 @@ body {
     margin-bottom: 0 !important;
     padding-bottom: 0 !important;
 }
+
 .deal-of-the-day {
     min-height: 450px;
+}
+
+.profile-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid #388e3c;
+    margin-top: 15px;
+}
+
+.profile-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.logout-btn {
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #e53935;
+    color: #fff;
+    padding: 6px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    white-space: nowrap;
+    z-index: 10000000000;
+    font-size: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
