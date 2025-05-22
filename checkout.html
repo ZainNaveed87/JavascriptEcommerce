@@ -28,11 +28,11 @@
         <div class="nav-links">
             <a href="./login.html"><i class="fa-solid fa-user"></i></a>
             <a href="">
-           
-            <a href="./cart.html">
-                <i class="fa-solid fa-cart-shopping"></i>
-                <span class="badge badge-cart">1</span>
-            </a>
+
+                <a href="./cart.html">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="badge badge-cart">1</span>
+                </a>
         </div>
     </nav>
 
@@ -80,15 +80,149 @@
 
     <!-- cart product section ended -->
 
+    <div class="form-head">
+        <div class="form-head">
+            <h1 class="form-heading">BILLING DETAILS</h1>
+        </div>
+    </div>
+
     <!-- main form started -->
 
-    
+    <form>
+        <div class="name-info">
+            <div class="input-group">
+                <label for="first-name" class="input-label">First Name</label>
+                <input type="text" id="first-name" class="First-Name" placeholder="First Name" required>
+            </div>
+            <div class="input-group">
+                <label for="last-name" class="input-label">Last Name</label>
+                <input type="text" id="last-name" class="Last-Name" placeholder="Last Name" required>
+            </div>
+        </div>
+
+        <div class="address-info">
+            <div class="input-group">
+                <label for="address" class="input-label">Street Address</label>
+                <input type="email" id="email" class="address-Input" placeholder="Enter house number and street name" required>
+                <input type="email" id="email" class="address-Input" placeholder="Apartment, suite, unit etc. (optional)">
+            </div>
+        </div>
+
+
+        <div class="state-country">
+                <div class="input-group">
+                    <label for="cities" class="input-label">Cities</label>
+                    <select id="cities" class="city-Input" required>
+                        <option value="New York">None</option>
+                        <option value="New York">Karachi</option>
+                        <option value="London">Lahore</option>
+                        <option value="Paris">Faisalabad</option>
+                        <option value="Tokyo">Gujranwala</option>
+                        <option value="Sydney">Peshawar</option>
+                        <option value="Berlin">Islamabad</option>
+                        <option value="Toronto">Bahawalpur</option>
+                        <option value="Dubai">Sialkot</option>
+                        <option value="Mumbai">Sukkur</option>
+                        <option value="Singapore">Sheikhupura</option>
+                        <option value="Singapore">Jhang</option>
+                        <option value="Singapore">Dera Ghazi Khan</option>
+                        <option value="Singapore">Gujrat</option>
+                    </select>
+                </div>
+
+            </div>
+
+
+            <div class="contact-info">
+                <div class="input-group">
+                    <label for="email" class="input-label">Email</label>
+                    <input type="email" id="email" class="email-Input" placeholder="Enter your email address" required>
+                </div>
+                <div class="input-group">
+                    <label for="phone" class="input-label">Phone</label>
+                    <input type="tel" id="phone" class="phone-Input" placeholder="Enter your phone number" required>
+                </div>
+            </div>
+
+            
+            <div class="postcode-zip">
+                <div class="input-group">
+                    <label for="postcode" class="input-label">Postcode / ZIP</label>
+                    <input type="text" id="postcode" class="postcode-Input" placeholder="Enter your postcode or ZIP code" required>
+                </div>
+            </div>
+
+
+    </form>
 
     <!-- main form ended -->
 
+    <div class="new-customer-btn">
+        <button class="new-customer-btn">CHECKOUT</button>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <!-- side-order-list started -->
+
+    <div class="parent-product-order">
+    <div class="order-head">
+        <h1 class="order-heading">YOUR ORDER</h1>
+    </div>
+
+    <div class="product-order-list">
+        <div class="product-order-item">
+            <div class="product-img">
+                <img src="./product/arricalnecklece.webp" alt="product image" class="product-image">
+            </div>
+            <div class="product-order-info">
+                <div class="product-name">
+                    <h1 class="product-name">Arrical Necklece</h1>
+                </div>
+                <div class="product-quantity-box">
+                    <button class="qty-btn qty-minus">-</button>
+                    <span class="qty-value">1</span>
+                    <button class="qty-btn qty-plus">+</button>
+                </div>
+                <div class="product-order-subtotal">
+                    <h1 class="product-order-subtotal">Rs. 500</h1>
+                </div>
+                <div class="product-order-remove">
+                    <button class="product-order-remove-btn">Remove</button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    </div>
+
+    <!-- side-order-list ended -->
+
     <script>
-document.getElementById('toggle-coupon').addEventListener('click', function() {
-    document.getElementById('coupon-form').classList.toggle('open');
+        document.getElementById('toggle-coupon').addEventListener('click', function () {
+            document.getElementById('coupon-form').classList.toggle('open');
+        });
+    </script>
+    <script>
+document.querySelectorAll('.product-order-item').forEach(function(item) {
+    const minus = item.querySelector('.qty-minus');
+    const plus = item.querySelector('.qty-plus');
+    const value = item.querySelector('.qty-value');
+    let qty = parseInt(value.textContent, 10);
+
+    minus.addEventListener('click', function() {
+        if (qty > 1) {
+            qty--;
+            value.textContent = qty;
+        }
+    });
+    plus.addEventListener('click', function() {
+        qty++;
+        value.textContent = qty;
+    });
 });
 </script>
 
