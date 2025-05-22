@@ -26,7 +26,9 @@
     </div>
 
     <div class="nav-links">
-      <a href="./login.html"><i class="fa-solid fa-user"></i></a>
+      <div id="user-profile-container">
+        <a href="./login.html" id="login-link"><i class="fa-solid fa-user"></i></a>
+      </div>
       <a href="">
         <i class="fa-solid fa-signal"></i>
         <span class="badge badge-signal">2</span>
@@ -84,8 +86,8 @@
   <div class="popular-carousel-wrapper">
     <button class="carousel-btn left" onclick="scrollCarousel('popular', -1)">&lt;</button>
     <div id="popular_category" class="popular-carousel">
-  
-     
+
+
 
     </div>
     <button class="carousel-btn right" onclick="scrollCarousel('popular', 1)">&gt;</button>
@@ -100,9 +102,9 @@
   <div class="recentlylaunched-carousel-wrapper">
     <button class="carousel-btn left" onclick="scrollCarousel('recentlylaunched-product-container', -1)">&lt;</button>
     <div id="recentlylaunched-product-container" class="recentlylaunched-product-container">
-      
 
-      
+
+
 
     </div>
     <button class="carousel-btn right" onclick="scrollCarousel('recentlylaunched-product-container', 1)">&gt;</button>
@@ -117,35 +119,35 @@
 
   <h1 class="deals-of-the-day-head">Special Deals</h1>
 
-<div class="products">
-  <div class="deal-of-the-day">
-    <div class="deal-of-the-day-sec1">
-      <h1 class="deals-head">Deals Of The Day</h1>
-      <div class="deals-carousel-wrapper">
-        <button class="carousel-btn left" onclick="scrollCarousel('deals-row', -1)">&lt;</button>
-        <div class="deals-row" id="deals-row">
-          
-          
-        </div>
-        <button class="carousel-btn right" onclick="scrollCarousel('deals-row', 1)">&gt;</button>
-      </div>
-    </div>
+  <div class="products">
+    <div class="deal-of-the-day">
+      <div class="deal-of-the-day-sec1">
+        <h1 class="deals-head">Deals Of The Day</h1>
+        <div class="deals-carousel-wrapper">
+          <button class="carousel-btn left" onclick="scrollCarousel('deals-row', -1)">&lt;</button>
+          <div class="deals-row" id="deals-row">
 
-</div>
+
+          </div>
+          <button class="carousel-btn right" onclick="scrollCarousel('deals-row', 1)">&gt;</button>
+        </div>
+      </div>
+
+    </div>
 
     <div class="images">
 
-    <div class="deals-side-banner">
-      <img src="./product/deals banner.png" alt="side banner" class="deals-side-banner-image">
-      <button class="side-banner-category">See Category</button>
+      <div class="deals-side-banner">
+        <img src="./product/deals banner.png" alt="side banner" class="deals-side-banner-image">
+        <button class="side-banner-category">See Category</button>
 
-    </div>
+      </div>
 
-    <div class="side-banner-images">
-      <img src="./product/side-1.webp" alt="side banner" class="side-image">
-      <img src="./product/side-2.webp" alt="side banner" class="side-image">
+      <div class="side-banner-images">
+        <img src="./product/side-1.webp" alt="side banner" class="side-image">
+        <img src="./product/side-2.webp" alt="side banner" class="side-image">
+      </div>
     </div>
-</div>
   </div>
 
   <!-- deals of the day section ended -->
@@ -155,21 +157,21 @@
 
   <footer class="footer">
     <div class="first">
-    <div class="img">
-      <img src="./logo.png" alt="logo" class="footer-logo">
-    </div>
-    <div class="contact">
-      <h1 class="footer-contact">Contact Us:</h1>
-      <p class="footer-gmail">help@gmail.com</p>
-    </div>
+      <div class="img">
+        <img src="./logo.png" alt="logo" class="footer-logo">
+      </div>
+      <div class="contact">
+        <h1 class="footer-contact">Contact Us:</h1>
+        <p class="footer-gmail">help@gmail.com</p>
+      </div>
 
-    <div class="apps">
-      <i class="fa-brands fa-facebook"></i>
-      <i class="fa-brands fa-x-twitter"></i>
-      <i class="fa-brands fa-instagram"></i>
-      <i class="fa-brands fa-youtube"></i>
-      <i class="fa-brands fa-telegram"></i>
-    </div>
+      <div class="apps">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-x-twitter"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-youtube"></i>
+        <i class="fa-brands fa-telegram"></i>
+      </div>
 
     </div>
 
@@ -182,7 +184,7 @@
       <p class="categories-para">Women's Dress</p>
       <p class="categories-para">Handbags</p>
     </div>
-  
+
     <div class="Contact-Us">
       <h1 class="contactus-head">Contact Us</h1>
       <p class="contactus-para">Become A Seller</p>
@@ -207,7 +209,7 @@
       container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
     }
   </script>
-<script src="index/index.js"></script>
+  <script src="index/index.js"></script>
   <!-- javascript for carousel ended-->
 </body>
 
