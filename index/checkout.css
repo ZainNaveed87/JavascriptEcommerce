@@ -11,7 +11,7 @@
 
 body {
     min-height: 100vh;
-    background-image: url('../image.png'); 
+    background-image: url('../image.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -163,7 +163,7 @@ body {
     background-color: #a393e0;
     padding: 20px;
     border-radius: 10px;
-    justify-content: space-evenly; 
+    justify-content: space-evenly;
     align-items: center;
     gap: 0;
     flex-wrap: nowrap;
@@ -175,7 +175,7 @@ body {
     font-size: 1.4rem;
     font-weight: bolder;
     border-radius: 0;
-    margin-right: 0; 
+    margin-right: 0;
 }
 
 .cart-tab a.active {
@@ -197,7 +197,7 @@ body {
     max-width: 100%;
 }
 
-.line{
+.line {
     width: 50%;
     padding-top: 30px;
     text-align: center;
@@ -206,29 +206,29 @@ body {
     font-weight: bolder;
 }
 
-.have-coupon-head-para{
+.have-coupon-head-para {
     display: flex;
     align-items: center;
     gap: 10px;
-    /* Remove margin-bottom/margin-top if you want no extra space */
 }
 
-.have-coupon-head{
+.have-coupon-head {
     font-size: 1.2rem;
     font-family: poppins;
 }
 
-.have-coupon-para{
+.have-coupon-para {
     font-size: 1rem;
     font-weight: lighter;
     font-family: poppins;
     text-decoration: underline;
 }
-.have-coupon-para:hover{
+
+.have-coupon-para:hover {
     color: #000;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
-    
+
 }
 
 
@@ -236,8 +236,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%; 
-   
+    width: 100%;
+
 }
 
 
@@ -256,7 +256,7 @@ body {
     font-family: poppins;
     z-index: 2;
     overflow: hidden;
-    opacity: 1; 
+    opacity: 1;
     transition: opacity 0.3s;
     position: relative;
     white-space: nowrap;
@@ -272,12 +272,10 @@ body {
     left: 0;
     height: 100%;
     width: 60%;
-    background: linear-gradient(
-        120deg,
-        rgba(255,255,255,0) 0%,
-        rgba(255,255,255,0.5) 50%,
-        rgba(255,255,255,0) 100%
-    );
+    background: linear-gradient(120deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.5) 50%,
+            rgba(255, 255, 255, 0) 100%);
     transform: translateX(-120%) skewX(-20deg);
     opacity: 0;
     transition: transform 0.7s, opacity 0.3s;
@@ -330,8 +328,15 @@ body {
 }
 
 @keyframes dropdownFade {
-    from { opacity: 0; transform: translateY(-10px);}
-    to { opacity: 1; transform: translateY(0);}
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes shine {
@@ -340,14 +345,14 @@ body {
     }
 }
 
-form{
+form {
     margin-left: 20px;
     margin-top: 40px;
 }
 
 .name-info {
     display: flex;
-    gap: 16px; 
+    gap: 16px;
     justify-content: flex-start;
     align-items: flex-start;
     width: 50%;
@@ -366,7 +371,7 @@ form{
 }
 
 
-.form-heading{
+.form-heading {
     font-size: 1.4rem;
     text-align: center;
     font-family: poppins;
@@ -380,7 +385,7 @@ form{
 .Last-Name,
 .address-Input,
 .coupon-input {
-    border-radius: 20px !important; 
+    border-radius: 20px !important;
 }
 
 .First-Name,
@@ -405,7 +410,7 @@ form{
 
 .address-info {
     display: flex;
-     margin-top: 20px;
+    margin-top: 20px;
     justify-content: flex-start;
     align-items: flex-start;
 }
@@ -413,7 +418,7 @@ form{
 .address-info .input-group {
     display: flex;
     flex-direction: column;
-    gap: 10px; 
+    gap: 10px;
 }
 
 .address-Input {
@@ -435,7 +440,7 @@ form{
     box-shadow: 0 0 0 2px #a393e033;
 }
 
-.state-country{
+.state-country {
     margin-top: 20px;
 }
 
@@ -458,7 +463,7 @@ form{
 
 .city-Input:focus {
     border-color: #688cee;
-    cursor: pointer; 
+    cursor: pointer;
     box-shadow: 0 0 0 2px #a393e033;
 }
 
@@ -467,8 +472,8 @@ form{
     font-size: 1rem;
     color: #181852;
     background: #f3f3fa;
-    padding: 10px;        
-    border-radius: 8px;    
+    padding: 10px;
+    border-radius: 8px;
 }
 
 .city-Input option:checked,
@@ -476,7 +481,7 @@ form{
 .city-Input option:hover {
     background: #a393e0;
     color: #fff;
-    cursor: pointer; 
+    cursor: pointer;
 }
 
 
@@ -547,10 +552,10 @@ label {
 
 .new-customer-btn {
     display: flex;
-    justify-content: center;   
+    justify-content: center;
     align-items: center;
     margin-top: 30px;
-    width: 50%;               
+    width: 50%;
 }
 
 .new-customer-btn button {
@@ -585,12 +590,10 @@ label {
     left: 0;
     height: 100%;
     width: 60%;
-    background: linear-gradient(
-        120deg,
-        rgba(255,255,255,0) 0%,
-        rgba(255,255,255,0.5) 50%,
-        rgba(255,255,255,0) 100%
-    );
+    background: linear-gradient(120deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.5) 50%,
+            rgba(255, 255, 255, 0) 100%);
     transform: translateX(-120%) skewX(-20deg);
     opacity: 0;
     transition: transform 0.7s, opacity 0.3s;
@@ -622,27 +625,27 @@ label {
 }
 
 
-.parent-product-order{
+.parent-product-order {
     border: 1px solid #ffffff;
     width: 40%;
 }
 
 
-.product-image{
+.product-image {
     margin-top: 20px;
     width: 100px;
     height: 100px;
     border-radius: 10px;
 }
 
-.product-name{
+.product-name {
     font-size: 1.2rem;
     font-family: poppins;
     color: #ffffff;
 }
 
 
-.product-order-subtotal{
+.product-order-subtotal {
     font-size: 1.2rem;
     font-family: poppins;
     color: #ffffff;
@@ -652,20 +655,20 @@ label {
     display: flex;
     padding: 20px;
     flex-direction: row;
-    align-items: flex-start;  
-    gap: 20px;             
-    font-size: 1.2rem !important;  
-    flex-wrap: nowrap;      
-    overflow-x: auto;         
+    align-items: flex-start;
+    gap: 20px;
+    font-size: 1.2rem !important;
+    flex-wrap: nowrap;
+    overflow-x: auto;
     width: 100%;
 }
 
 .product-order-list {
     display: flex;
     flex-direction: row;
-    gap: 24px;           
-    flex-wrap: nowrap;  
-    overflow-x: auto;    
+    gap: 24px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
     width: 100%;
     padding: 16px 0;
 }
@@ -676,7 +679,7 @@ label {
     border-radius: 12px;
     box-shadow: 0 2px 8px #0001;
     padding: 16px;
-    min-width: 350px;   
+    min-width: 350px;
 }
 
 
@@ -710,12 +713,10 @@ label {
     left: 0;
     height: 100%;
     width: 60%;
-    background: linear-gradient(
-        120deg,
-        rgba(255,255,255,0) 0%,
-        rgba(255,255,255,0.5) 50%,
-        rgba(255,255,255,0) 100%
-    );
+    background: linear-gradient(120deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.5) 50%,
+            rgba(255, 255, 255, 0) 100%);
     transform: translateX(-120%) skewX(-20deg);
     opacity: 0;
     transition: transform 0.7s, opacity 0.3s;
@@ -769,7 +770,7 @@ label {
     display: inline-block;
 }
 
-.product-order-list{
+.product-order-list {
     border-bottom: 1px solid #ffffff;
 }
 
@@ -828,7 +829,7 @@ label {
 }
 
 .product-img {
-    margin-right: 20px; 
+    margin-right: 20px;
 }
 
 .product-order-info {
@@ -837,39 +838,39 @@ label {
     gap: 12px;
 }
 
-.subtotal-order-down{
+.subtotal-order-down {
     display: flex;
     justify-content: space-around;
     align-items: center;
     margin-top: 20px;
-    
+
 }
 
-.subtotal-order-total-down{
+.subtotal-order-total-down {
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-.product-down-head{
+.product-down-head {
     font-size: 1.4rem;
     font-family: poppins;
     color: #ffffff;
 }
 
-.product-down-para{
+.product-down-para {
     font-size: 1.3rem;
     font-family: poppins;
     color: #ffffff;
 }
 
-.product-down-total-head{
+.product-down-total-head {
     font-size: 1.5rem;
     font-family: poppins;
     color: #ffffff;
 }
 
-.product-down-total-para{
+.product-down-total-para {
     font-size: 1.3rem;
     font-family: poppins;
     color: #ffffff;
@@ -879,7 +880,7 @@ label {
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
-    gap: 40px; 
+    gap: 40px;
     width: 100%;
 }
 
