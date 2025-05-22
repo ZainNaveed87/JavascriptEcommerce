@@ -423,7 +423,16 @@ body {
     font-size: 1.2rem;
     color: #fff;
 }
+#coupon_discount
+{
+    color: #ff0000;
+}
 
+.span
+{
+    margin-left: 230px;
+    color: #ff0000;
+}
 .checout-btn {
     position: relative;
     overflow: hidden;
