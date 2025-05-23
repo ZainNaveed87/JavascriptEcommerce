@@ -448,6 +448,11 @@ body {
     transition: background-color 0.3s;
 }
 
+.checout-btn ,a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
 .checout-btn::after {
     content: "";
     position: absolute;
