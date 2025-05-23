@@ -334,7 +334,7 @@ body {
     position: relative;
     overflow: hidden;
     width: 200px;
-    margin-left: 40%;
+    margin-left: 45%;
     height: 50px;
     background: #181852;
     color: #fff;
@@ -379,17 +379,18 @@ body {
 
 .cart-main-row {
     display: flex;
-    gap: 32px; 
+    /* gap: 16px; */
     align-items: flex-start;
     width: 100%;
+    justify-content: flex-start;
 }
 
-.cart-main-row > div:first-child {
-    flex: 2 1 0;
-}
+
 
 .total-cart {
     flex: 1 1 0;
+    margin-top: 20px;
+    border: 1px solid #ffffff;
     max-width: 350px; 
 }
 
