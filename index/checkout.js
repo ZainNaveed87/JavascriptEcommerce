@@ -70,7 +70,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         localStorage.setItem("finalCheckout", JSON.stringify(checkoutData));
         alert("Checkout data saved successfully!");
-        // Yahan aap next step ya page redirect bhi kar sakte hain
+
+        // Slip ke liye data set karo
+        showCheckoutSlip(checkoutData);
+
+        // Slip ko image me convert kar ke download karo
+        setTimeout(() => {
+            downloadSlipAsImage();
+        }, 500); // thoda delay taake slip render ho jaye
     });
 
     document.addEventListener("click", function (e) {
@@ -105,4 +112,132 @@ document.addEventListener("DOMContentLoaded", function () {
             emailElem.readOnly = true;
         }
     }
+
+    // Call updateUserProfileIcon to show profile icon
+    updateUserProfileIcon();
+
+    // Update cart badge count
+    updateCartBadge();
 });
+
+function updateUserProfileIcon() {
+    const userContainer = document.getElementById("user-profile-container");
+    const recentBuyers = JSON.parse(localStorage.getItem("recentbuyer")) || [];
+    if (!userContainer) return;
+
+    // Get uploaded image from recentbuyer, fallback to dummy if not available
+    const profileImage =
+        (recentBuyers.length > 0 && recentBuyers[0].profileImage)
+            ? recentBuyers[0].profileImage
+            : "https://ui-avatars.com/api/?name=User&background=388e3c&color=fff&rounded=true&size=64";
+
+    if (recentBuyers.length > 0) {
+        userContainer.innerHTML = `
+            <div class="profile-dropdown">
+                <img src="${profileImage}" class="profile-circle" id="profile-img" alt="Profile" />
+                <div class="logout-btn" id="logout-btn">Logout</div>
+            </div>
+        `;
+
+        const dropdown = userContainer.querySelector('.profile-dropdown');
+        const logoutBtn = document.getElementById("logout-btn");
+        const profileImg = document.getElementById("profile-img");
+        let hideTimeout;
+
+        // Profile image click event
+        profileImg.addEventListener('click', function () {
+            window.location.href = "./profile.html";
+        });
+
+        // Show logout on hover
+        dropdown.addEventListener('mouseover', () => {
+            clearTimeout(hideTimeout);
+            logoutBtn.style.display = 'block';
+        });
+
+        dropdown.addEventListener('mouseout', (e) => {
+            if (!dropdown.contains(e.relatedTarget)) {
+                hideTimeout = setTimeout(() => {
+                    logoutBtn.style.display = 'none';
+                }, 3000); // 3 seconds
+            }
+        });
+
+        logoutBtn.addEventListener('mouseover', () => {
+            clearTimeout(hideTimeout);
+            logoutBtn.style.display = 'block';
+        });
+
+        logoutBtn.addEventListener('mouseout', (e) => {
+            if (!dropdown.contains(e.relatedTarget)) {
+                hideTimeout = setTimeout(() => {
+                    logoutBtn.style.display = 'none';
+                }, 3000);
+            }
+        });
+
+        logoutBtn.addEventListener('click', () => {
+            localStorage.removeItem("recentbuyer");
+            window.location.reload();
+        });
+    } else {
+        userContainer.innerHTML = `<a href="./login.html" id="login-link"><i class="fa-solid fa-user"></i></a>`;
+    }
+}
+
+function updateCartBadge() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const badge = document.querySelector('.badge-cart');
+    if (badge) {
+        badge.textContent = cart.length;
+    }
+}
+
+function showCheckoutSlip(data) {
+    const slip = document.getElementById("checkout-slip");
+    const slipDetails = document.getElementById("slip-details");
+    if (!slip || !slipDetails) return;
+
+    slipDetails.innerHTML = `
+        <strong>Name:</strong> ${data.billingDetails.firstName} ${data.billingDetails.lastName}<br>
+        <strong>Address:</strong> ${data.billingDetails.address}, ${data.billingDetails.city}<br>
+        <strong>Email:</strong> ${data.billingDetails.email}<br>
+        <strong>Phone:</strong> ${data.billingDetails.phone}<br>
+        <strong>Order Total:</strong> Rs: ${data.total}<br>
+        <hr>
+        <strong>Products:</strong>
+        <ul style="padding-left:18px;">
+            ${data.cartProducts.map(p => `<li>${p.name} - Rs: ${p.price}</li>`).join("")}
+        </ul>
+    `;
+    slip.style.display = "block";
+}
+
+function downloadSlipAsImage() {
+    const slip = document.getElementById("checkout-slip");
+    if (!slip) return;
+    html2canvas(slip).then(canvas => {
+        const slipImage = canvas.toDataURL(); // slip ki image
+
+        // Current order data lo
+        const checkoutData = JSON.parse(localStorage.getItem("finalCheckout"));
+        if (!checkoutData) return;
+
+        // Slip image ko order me add karo
+        checkoutData.slipImage = slipImage;
+
+        // Orders array lo ya banao
+        let orders = JSON.parse(localStorage.getItem("orders")) || [];
+        orders.push(checkoutData);
+
+        // LocalStorage me update karo
+        localStorage.setItem("orders", JSON.stringify(orders));
+
+        // Download bhi karwa do
+        const link = document.createElement('a');
+        link.download = 'checkout-slip.png';
+        link.href = slipImage;
+        link.click();
+        slip.style.display = "none";
+    });
+}

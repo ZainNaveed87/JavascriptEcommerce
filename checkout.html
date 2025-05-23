@@ -26,13 +26,16 @@
         </div>
 
         <div class="nav-links">
-            <a href="./login.html"><i class="fa-solid fa-user"></i></a>
-            <a href="">
+            <!-- Remove this old user icon link -->
+            <!-- <a href="./login.html"><i class="fa-solid fa-user"></i></a> -->
 
-                <a href="./cart.html">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <span class="badge badge-cart">1</span>
-                </a>
+            <!-- Add this instead: -->
+            <div id="user-profile-container"></div>
+
+            <a href="./cart.html">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="badge badge-cart">1</span>
+            </a>
         </div>
     </nav>
 
@@ -257,6 +260,11 @@
 
     <!-- footer ended -->
 
+    <div id="checkout-slip" style="display:none; background:#fff; padding:24px; border-radius:10px; width:350px; margin:auto; box-shadow:0 2px 8px #0001;">
+        <h2 style="color:#388e3c;">Order Receipt</h2>
+        <div id="slip-details"></div>
+        <p style="font-size:12px; color:#888;">Thank you for shopping with us!</p>
+    </div>
 
     <script>
         document.getElementById('toggle-coupon').addEventListener('click', function () {
@@ -283,6 +291,7 @@
         });
     </script>
     <script src="./index/checkout.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 
 </body>
 

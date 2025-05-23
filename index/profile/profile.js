@@ -223,3 +223,28 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Get current user (recentbuyer)
+    const recentBuyers = JSON.parse(localStorage.getItem("recentbuyer")) || [];
+    if (recentBuyers.length === 0) return;
+
+    // Get all orders for this user
+    const allOrders = JSON.parse(localStorage.getItem("orders")) || [];
+    // User ki email ya id se filter karo
+    const userEmail = recentBuyers[0].email;
+    const userOrders = allOrders.filter(order => order.billingDetails && order.billingDetails.email === userEmail);
+
+    // Count by status
+    let pending = 0, completed = 0, cancelled = 0;
+    userOrders.forEach(order => {
+        if (order.status === "Completed") completed++;
+        else if (order.status === "Cancel") cancelled++;
+        else pending++; // Default Pending
+    });
+
+    // Show counts
+    document.getElementById("pending-count").textContent = pending;
+    document.getElementById("completed-count").textContent = completed;
+    document.getElementById("cancelled-count").textContent = cancelled;
+});
