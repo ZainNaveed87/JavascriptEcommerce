@@ -105,4 +105,83 @@ document.addEventListener("DOMContentLoaded", function () {
             emailElem.readOnly = true;
         }
     }
+
+    // Call updateUserProfileIcon to show profile icon
+    updateUserProfileIcon();
+
+    // Update cart badge count
+    updateCartBadge();
 });
+
+function updateUserProfileIcon() {
+    const userContainer = document.getElementById("user-profile-container");
+    const recentBuyers = JSON.parse(localStorage.getItem("recentbuyer")) || [];
+    if (!userContainer) return;
+
+    // Get uploaded image from recentbuyer, fallback to dummy if not available
+    const profileImage =
+        (recentBuyers.length > 0 && recentBuyers[0].profileImage)
+            ? recentBuyers[0].profileImage
+            : "https://ui-avatars.com/api/?name=User&background=388e3c&color=fff&rounded=true&size=64";
+
+    if (recentBuyers.length > 0) {
+        userContainer.innerHTML = `
+            <div class="profile-dropdown">
+                <img src="${profileImage}" class="profile-circle" id="profile-img" alt="Profile" />
+                <div class="logout-btn" id="logout-btn">Logout</div>
+            </div>
+        `;
+
+        const dropdown = userContainer.querySelector('.profile-dropdown');
+        const logoutBtn = document.getElementById("logout-btn");
+        const profileImg = document.getElementById("profile-img");
+        let hideTimeout;
+
+        // Profile image click event
+        profileImg.addEventListener('click', function () {
+            window.location.href = "./profile.html";
+        });
+
+        // Show logout on hover
+        dropdown.addEventListener('mouseover', () => {
+            clearTimeout(hideTimeout);
+            logoutBtn.style.display = 'block';
+        });
+
+        dropdown.addEventListener('mouseout', (e) => {
+            if (!dropdown.contains(e.relatedTarget)) {
+                hideTimeout = setTimeout(() => {
+                    logoutBtn.style.display = 'none';
+                }, 3000); // 3 seconds
+            }
+        });
+
+        logoutBtn.addEventListener('mouseover', () => {
+            clearTimeout(hideTimeout);
+            logoutBtn.style.display = 'block';
+        });
+
+        logoutBtn.addEventListener('mouseout', (e) => {
+            if (!dropdown.contains(e.relatedTarget)) {
+                hideTimeout = setTimeout(() => {
+                    logoutBtn.style.display = 'none';
+                }, 3000);
+            }
+        });
+
+        logoutBtn.addEventListener('click', () => {
+            localStorage.removeItem("recentbuyer");
+            window.location.reload();
+        });
+    } else {
+        userContainer.innerHTML = `<a href="./login.html" id="login-link"><i class="fa-solid fa-user"></i></a>`;
+    }
+}
+
+function updateCartBadge() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const badge = document.querySelector('.badge-cart');
+    if (badge) {
+        badge.textContent = cart.length;
+    }
+}
