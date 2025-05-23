@@ -524,3 +524,82 @@ aside .sidebar a span.msg_count {
     font-size: 2rem;
     font-weight: 800;
 }
+#orders-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: flex-start;
+    padding: 24px 0;
+}
+
+#orders-container > div {
+    flex: 0 1 calc(50% - 32px);
+    box-sizing: border-box;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 16px #0002;
+    margin-bottom: 0;
+    padding: 22px 18px 18px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.2s;
+    border: 1px solid #e0e0e0;
+}
+
+#orders-container > div:hover {
+    box-shadow: 0 8px 24px #388e3c33;
+    border-color: #388e3c;
+}
+
+#orders-container h3 {
+    color: #388e3c;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+#orders-container img {
+    width: 95%;
+    border-radius: 8px;
+    box-shadow: 0 1px 6px #0001;
+    margin-bottom: 12px;
+    border: 1px solid #eee;
+}
+
+#orders-container ul {
+    margin: 6px 0 0 0;
+    padding-left: 18px;
+}
+
+#orders-container label {
+    margin-top: 12px;
+    display: block;
+    font-size: 15px;
+}
+
+.order-status-dropdown {
+    margin-left: 8px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid #388e3c;
+    background: #f8fff8;
+    color: #388e3c;
+    font-weight: 500;
+    transition: border 0.2s;
+}
+
+.order-status-dropdown:focus {
+    border-color: #2e7031;
+    outline: none;
+}
+
+.order-status-dropdown option[value="Pending"] {
+    color: #ff9800;
+}
+.order-status-dropdown option[value="Completed"] {
+    color: #388e3c;
+}
+.order-status-dropdown option[value="Cancel"] {
+    color: #e53935;
+}
