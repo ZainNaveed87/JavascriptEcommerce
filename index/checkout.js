@@ -70,7 +70,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         localStorage.setItem("finalCheckout", JSON.stringify(checkoutData));
         alert("Checkout data saved successfully!");
-        // Yahan aap next step ya page redirect bhi kar sakte hain
+
+        // Slip ke liye data set karo
+        showCheckoutSlip(checkoutData);
+
+        // Slip ko image me convert kar ke download karo
+        setTimeout(() => {
+            downloadSlipAsImage();
+        }, 500); // thoda delay taake slip render ho jaye
     });
 
     document.addEventListener("click", function (e) {
@@ -184,4 +191,36 @@ function updateCartBadge() {
     if (badge) {
         badge.textContent = cart.length;
     }
+}
+
+function showCheckoutSlip(data) {
+    const slip = document.getElementById("checkout-slip");
+    const slipDetails = document.getElementById("slip-details");
+    if (!slip || !slipDetails) return;
+
+    slipDetails.innerHTML = `
+        <strong>Name:</strong> ${data.billingDetails.firstName} ${data.billingDetails.lastName}<br>
+        <strong>Address:</strong> ${data.billingDetails.address}, ${data.billingDetails.city}<br>
+        <strong>Email:</strong> ${data.billingDetails.email}<br>
+        <strong>Phone:</strong> ${data.billingDetails.phone}<br>
+        <strong>Order Total:</strong> Rs: ${data.total}<br>
+        <hr>
+        <strong>Products:</strong>
+        <ul style="padding-left:18px;">
+            ${data.cartProducts.map(p => `<li>${p.name} - Rs: ${p.price}</li>`).join("")}
+        </ul>
+    `;
+    slip.style.display = "block";
+}
+
+function downloadSlipAsImage() {
+    const slip = document.getElementById("checkout-slip");
+    if (!slip) return;
+    html2canvas(slip).then(canvas => {
+        const link = document.createElement('a');
+        link.download = 'checkout-slip.png';
+        link.href = canvas.toDataURL();
+        link.click();
+        slip.style.display = "none"; // slip ko wapas hide kar dein
+    });
 }
