@@ -22,13 +22,11 @@ body {
     width: 200px;
 }
 
-.search {
+.navbar-search {
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-#search {
+#navbar-search {
     width: 500px;
     height: 50px;
     font-family: poppins;
@@ -158,20 +156,26 @@ body {
 }
 
 
-.side-navbar{
+.side-navbar {
     border: 1px solid #ffffff;
     border-radius: 14px;
     width: 300px;
-   margin-top: 20px;
-   margin-left: 20px;
+    height: 100vh;         
+    margin-top: 0;         
+    margin-left: 20px;
+    background: #2f2f99f2; 
+    opacity: 0.9;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
 }
 
 .categories-head{
     font-family: poppins;
     font-size: 1.3rem;
     padding-left: 20px;
-    margin-top: 10px;
-    color: #000000;
+    margin-top: 20px;
+    color: #ffffff;
 }
 
 #search-bar{
@@ -198,7 +202,7 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
-.search-img{
+.category-search-img{
     width: 30px;
     border-radius: 10px;
     height: 30px;
@@ -234,8 +238,9 @@ body {
 .price-head{
     font-family: poppins;
     font-size: 1.3rem;
-    padding-left: 18px; /* Optional: aligns the heading with the list */
-    color: #000000;
+    padding-left: 18px; 
+    margin-top: 10px;
+    color: #ffffff;
 }
 
 .price-list {
@@ -244,7 +249,7 @@ body {
     gap: 10px;
     margin-top: 20px;
     list-style: none;
-    padding-left: 18px; /* Add this for a little left space */
+    padding-left: 18px;
 }
 
 .price-list li {
@@ -266,32 +271,12 @@ body {
     cursor: pointer;
 }
 
-.price-min-max{
+.sidebar-apply-btn{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+   margin-left: 30px;
+    margin-top: 30px; 
 }
 
-#min-price,
-#max-price {
-    width: 50px;
-    height: 30px;
-    font-size: 0.87rem;
-    text-align: center;
-    border: 1px solid #181852;
-    border-radius: 5px;
-    background: #fff;
-    color: #181852;
-    outline: none;
-    transition: border-color 0.3s;
-}
-
-#min-price:focus,
-#max-price:focus {
-    border-color: #a393e0;
-    box-shadow: 0 0 0 2px #a393e033;
-}
 
 .apply-btn {
     width: 120px;
@@ -338,40 +323,92 @@ body {
     transition: transform 0.7s, opacity 0.3s;
 }
 
-.rating-head {
-    font-family: poppins;
-    font-size: 1.3rem;
-    margin-top: 10px;
-    padding-left: 18px; 
-    color: #000000;
-}
-
-.rating-list {
+.side-navbar-row {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
-    list-style: none;
-    padding-left: 18px; 
+    gap: 32px; 
 }
 
-.rating-list li {
-    display: flex;
-    align-items: center;
-    gap: 0.4em;
-}
-
-.rating-checkbox {
-    width: 14px;
-    height: 14px;
-    accent-color: #000000; 
-    vertical-align: middle;
-}
-
-.rating-list label {
-    color: #fff;
+.section-title {
     font-family: poppins;
-    font-size: 1rem;
-    cursor: pointer;
+    font-size: 2rem;
+    color: #fff;
+    margin: 30px 0 20px 20px;
+    letter-spacing: 1px;
+}
+
+.product-section {
+    width: 50%;
+    padding: 0 20px 40px 20px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+    gap: 32px;
     width: 100%;
 }
+
+.product-card {
+    max-width: 320px; 
+    width: 100%;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 16px;
+    border: 1px solid #ffffff;
+    overflow: hidden; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s;
+    box-sizing: border-box;
+}
+
+.product-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    overflow: hidden !important;
+    box-shadow: 0 6px 24px #0003;
+}
+
+.product-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block; 
+}
+
+.product-info {
+    padding: 16px;
+    width: 100%;
+    text-align: center;
+}
+
+.product-category {
+    color: #a393e0;
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+    font-family: poppins;
+}
+
+.product-title {
+    color: #fff;
+    font-size: 1.2rem;
+    margin: 0 0 8px 0;
+    font-family: poppins;
+}
+
+.product-desc {
+    color: #d1d1e0;
+    font-size: 0.98rem;
+    margin-bottom: 10px;
+    font-family: poppins;
+}
+
+.product-price {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: poppins;
+}
+

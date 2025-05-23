@@ -20,8 +20,8 @@
             <img id="logo" src="./logo.png" alt="Logo">
         </div>
 
-        <div class="search">
-            <input type="search" name="search" id="search" placeholder="Search for products">
+        <div class="navbar-search">
+            <input type="search" name="search" id="navbar-search" placeholder="Search for products">
             <button id="search-btn"><img class="search-img" src="./search.png" alt="search"></button>
         </div>
 
@@ -62,7 +62,7 @@
 
                 <div class="categories-search">
                     <input type="search" name="search" id="search-bar" placeholder="Find a categories">
-                    <button id="search-btn"><img class="search-img" src="./search.png" alt="search"></button>
+                    <button id="search-btn"><img class="category-search-img" src="./search.png" alt="search"></button>
                 </div>
                 <ul class="categories-list">
                     <li>
@@ -101,32 +101,50 @@
                     </li>
                 </ul>
 
-                <div class="price-min-max">
-                <input type="number" name="min" id="min-price" min="" >
-                <input type="number" name="max" id="max-price" max="" >
+                <div class="sidebar-apply-btn">
                 <button class="apply-btn">Apply</button>
                 </div>
             </div>
-
-             <div class="side-navbar-rating">
-                <h2 class="rating-head">Filter By Rating</h2>
-                <ul class="rating-list">
-                    <li>
-                        <input type="checkbox" class="rating-checkbox" id="rating-5">
-                        <label for="rating-5">⭐⭐⭐⭐⭐</label>
-                    </li>
-                    <li>
-                        <input type="checkbox" class="rating-checkbox" id="rating-4">
-                        <label for="rating-4">⭐⭐⭐⭐</label>
-                    </li>
-                    <li>
-                        <input type="checkbox" class="rating-checkbox" id="rating-3">
-                        <label for="rating-3">⭐⭐⭐</label>
-                    </li>
-                </ul>
-            </div>
-
-
+        </div>
         </div>
 
     <!-- side-navbar-ended -->
+
+    <!-- product-section-started -->
+
+    <div class="product-section">
+        <h2 class="section-title">Recently Launched</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img class="product-image" src="./product/Air_Jordan_1_Banned.jpg" alt="Air Jordan 1 Banned">
+                <div class="product-info">
+                    <p class="product-category">Shoes</p>
+                    <h3 class="product-title">Air Jordan Shoes</h3>
+                    <p class="product-desc">It is a shoes</p>
+                    <p class="product-price">Rs:5000</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <img class="product-image" src="./product/arricalnecklece.webp" alt="Arrical Necklace">
+                <div class="product-info">
+                    <p class="product-category">Jewellery</p>
+                    <h3 class="product-title">Arrical Necklace</h3>
+                    <p class="product-desc">Elegant necklace for all occasions.</p>
+                    <p class="product-price">Rs:500</p>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <img class="product-image" src="./product/arricalnecklece.webp" alt="Arrical Necklace">
+                <div class="product-info">
+                    <p class="product-category">Jewellery</p>
+                    <h3 class="product-title">Arrical Necklace</h3>
+                    <p class="product-desc">Elegant necklace for all occasions.</p>
+                    <p class="product-price">Rs:500</p>
+                </div>
+            </div>
+            <!-- Add more product cards as needed -->
+        </div>
+    </div>
+
+    <!-- product-section-ended -->
