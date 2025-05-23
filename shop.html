@@ -57,155 +57,230 @@
 
     <div class="setting-sidenavbar-products">
 
-    <div class="side-navbar">
-        <div class="side-navbar-row">
-            <div class="side-navbar-category">
-                <h2 class="categories-head">All Categories</h2>
+        <div class="side-navbar">
+            <div class="side-navbar-row">
+                <div class="side-navbar-category">
+                    <h2 class="categories-head">All Categories</h2>
 
-                <div class="categories-search">
-                    <input type="search" name="search" id="search-bar" placeholder="Find a categories">
-                    <button id="search-btn"><img class="category-search-img" src="./search.png" alt="search"></button>
+                    <div class="categories-search">
+                        <input type="search" name="search" id="search-bar" placeholder="Find a categories">
+                        <button id="search-btn"><img class="category-search-img" src="./search.png"
+                                alt="search"></button>
+                    </div>
+                    <ul class="categories-list">
+                        <li>
+                            <input type="checkbox" class="category-checkbox" id="jewellery">
+                            <label for="jewellery"><a href="#">Jewellery</a></label>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="category-checkbox" id="women-fashion">
+                            <label for="women-fashion"><a href="#">Women Fashion</a></label>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="category-checkbox" id="men-shoes">
+                            <label for="men-shoes"><a href="#">Men Shoes</a></label>
+                        </li>
+                    </ul>
                 </div>
-                <ul class="categories-list">
-                    <li>
-                        <input type="checkbox" class="category-checkbox" id="jewellery">
-                        <label for="jewellery"><a href="#">Jewellery</a></label>
-                    </li>
-                    <li>
-                        <input type="checkbox" class="category-checkbox" id="women-fashion">
-                        <label for="women-fashion"><a href="#">Women Fashion</a></label>
-                    </li>
-                    <li>
-                        <input type="checkbox" class="category-checkbox" id="men-shoes">
-                        <label for="men-shoes"><a href="#">Men Shoes</a></label>
-                    </li>
-                </ul>
-            </div>
 
-            <div class="side-navbar-price">
-                <h2 class="price-head">Filter By Price</h2>
-                <ul class="price-list">
-                    <li>
-                        <input type="checkbox" class="price-checkbox" id="price-1">
-                        <label for="price-1">Rs:0 - Rs:500</label>
-                    </li>
-                    <li>
-                        <input type="checkbox" class="price-checkbox" id="price-2">
-                        <label for="price-2">Rs:500 - Rs:1000</label>
-                    </li>
-                    <li>
-                        <input type="checkbox" class="price-checkbox" id="price-3">
-                        <label for="price-3">Rs:1,000 - Rs:1,500</label>
-                    </li>
-                    <li>
-                        <input type="checkbox" class="price-checkbox" id="price-4">
-                        <label for="price-4">Rs:1,500 - Rs:2,000</label>
-                    </li>
-                </ul>
+                <div class="side-navbar-price">
+                    <h2 class="price-head">Filter By Price</h2>
+                    <ul class="price-list">
+                        <li>
+                            <input type="checkbox" class="price-checkbox" id="price-1">
+                            <label for="price-1">Rs:0 - Rs:500</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="price-checkbox" id="price-2">
+                            <label for="price-2">Rs:500 - Rs:1000</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="price-checkbox" id="price-3">
+                            <label for="price-3">Rs:1,000 - Rs:1,500</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="price-checkbox" id="price-4">
+                            <label for="price-4">Rs:1,500 - Rs:2,000</label>
+                        </li>
+                    </ul>
 
-                <div class="sidebar-apply-btn">
-                    <button class="apply-btn">Apply</button>
+                    <div class="sidebar-apply-btn">
+                        <button class="apply-btn">Apply</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- side-navbar-ended -->
+        <!-- side-navbar-ended -->
 
-    <!-- product-section-started -->
+        <!-- product-section-started -->
 
-    <div class="product-section">
-        <div class="product-grid">
-            <div class="product-card">
-                <img class="product-image" src="./product/Air_Jordan_1_Banned.jpg" alt="Air Jordan 1 Banned">
-                <div class="product-info">
-                    <p class="product-category">Shoes</p>
-                    <h3 class="product-title">Air Jordan Shoes</h3>
-                    <p class="product-desc">It is a shoes</p>
-                    <p class="product-price">Rs:5000</p>
+        <div class="product-section">
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img class="product-image" src="./product/Air_Jordan_1_Banned.jpg" alt="Air Jordan 1 Banned">
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Shoes</p>
+                        <h3 class="product-title">Air Jordan Shoes</h3>
+                        <p class="product-desc">It is a shoes</p>
+                        <p class="product-price">Rs:5000</p>
+                    </div>
                 </div>
+
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img class="product-image" src="./product/arricalnecklece.webp" alt="Arrical Necklace">
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Jewellery</p>
+                        <h3 class="product-title">Arrical Necklace</h3>
+                        <p class="product-desc">Elegant necklace for all occasions.</p>
+                        <p class="product-price">Rs:500</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img class="product-image" src="./product/arricalnecklece.webp" alt="Arrical Necklace">
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Jewellery</p>
+                        <h3 class="product-title">Arrical Necklace</h3>
+                        <p class="product-desc">Elegant necklace for all occasions.</p>
+                        <p class="product-price">Rs:500</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img class="product-image" src="./product/arricalnecklece.webp" alt="Arrical Necklace">
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Jewellery</p>
+                        <h3 class="product-title">Arrical Necklace</h3>
+                        <p class="product-desc">Elegant necklace for all occasions.</p>
+                        <p class="product-price">Rs:500</p>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="product-card">
-                <img class="product-image" src="./product/arricalnecklece.webp" alt="Arrical Necklace">
-                <div class="product-info">
-                    <p class="product-category">Jewellery</p>
-                    <h3 class="product-title">Arrical Necklace</h3>
-                    <p class="product-desc">Elegant necklace for all occasions.</p>
-                    <p class="product-price">Rs:500</p>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img class="product-image" src="./product/Air_Jordan_1_Banned.jpg" alt="Air Jordan 1 Banned">
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Shoes</p>
+                        <h3 class="product-title">Air Jordan Shoes</h3>
+                        <p class="product-desc">It is a shoes</p>
+                        <p class="product-price">Rs:5000</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="product-card">
-                <img class="product-image" src="./product/arricalnecklece.webp" alt="Arrical Necklace">
-                <div class="product-info">
-                    <p class="product-category">Jewellery</p>
-                    <h3 class="product-title">Arrical Necklace</h3>
-                    <p class="product-desc">Elegant necklace for all occasions.</p>
-                    <p class="product-price">Rs:500</p>
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img class="product-image" src="./product/arricalnecklece.webp" alt="Arrical Necklace">
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Jewellery</p>
+                        <h3 class="product-title">Arrical Necklace</h3>
+                        <p class="product-desc">Elegant necklace for all occasions.</p>
+                        <p class="product-price">Rs:500</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="product-card">
-                <img class="product-image" src="./product/arricalnecklece.webp" alt="Arrical Necklace">
-                <div class="product-info">
-                    <p class="product-category">Jewellery</p>
-                    <h3 class="product-title">Arrical Necklace</h3>
-                    <p class="product-desc">Elegant necklace for all occasions.</p>
-                    <p class="product-price">Rs:500</p>
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img class="product-image" src="./product/arricalnecklece.webp" alt="Arrical Necklace">
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Jewellery</p>
+                        <h3 class="product-title">Arrical Necklace</h3>
+                        <p class="product-desc">Elegant necklace for all occasions.</p>
+                        <p class="product-price">Rs:500</p>
+                    </div>
                 </div>
-            </div>
 
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img class="product-image" src="./product/arricalnecklece.webp" alt="Arrical Necklace">
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Jewellery</p>
+                        <h3 class="product-title">Arrical Necklace</h3>
+                        <p class="product-desc">Elegant necklace for all occasions.</p>
+                        <p class="product-price">Rs:500</p>
+                    </div>
+                </div>
+
+            </div>
         </div>
-        
-        <div class="product-grid">
-            <div class="product-card">
-                <img class="product-image" src="./product/Air_Jordan_1_Banned.jpg" alt="Air Jordan 1 Banned">
-                <div class="product-info">
-                    <p class="product-category">Shoes</p>
-                    <h3 class="product-title">Air Jordan Shoes</h3>
-                    <p class="product-desc">It is a shoes</p>
-                    <p class="product-price">Rs:5000</p>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img class="product-image" src="./product/arricalnecklece.webp" alt="Arrical Necklace">
-                <div class="product-info">
-                    <p class="product-category">Jewellery</p>
-                    <h3 class="product-title">Arrical Necklace</h3>
-                    <p class="product-desc">Elegant necklace for all occasions.</p>
-                    <p class="product-price">Rs:500</p>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img class="product-image" src="./product/arricalnecklece.webp" alt="Arrical Necklace">
-                <div class="product-info">
-                    <p class="product-category">Jewellery</p>
-                    <h3 class="product-title">Arrical Necklace</h3>
-                    <p class="product-desc">Elegant necklace for all occasions.</p>
-                    <p class="product-price">Rs:500</p>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img class="product-image" src="./product/arricalnecklece.webp" alt="Arrical Necklace">
-                <div class="product-info">
-                    <p class="product-category">Jewellery</p>
-                    <h3 class="product-title">Arrical Necklace</h3>
-                    <p class="product-desc">Elegant necklace for all occasions.</p>
-                    <p class="product-price">Rs:500</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
 
     </div>
 
 
     <!-- product-section-ended -->
-     
-    </body>
-    </html>
+
+
+    <!-- footer started -->
+
+    <footer class="footer">
+        <div class="first">
+            <div class="img">
+                <img src="./logo.png" alt="logo" class="footer-logo">
+            </div>
+            <div class="contact">
+                <h1 class="footer-contact">Contact Us:</h1>
+                <p class="footer-gmail">help@gmail.com</p>
+            </div>
+
+            <div class="apps">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-x-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-youtube"></i>
+                <i class="fa-brands fa-telegram"></i>
+            </div>
+
+        </div>
+
+        <div class="categories">
+            <h1 class="categories-head">Categories</h1>
+            <p class="categories-para">Watches</p>
+            <p class="categories-para">Shoes</p>
+            <p class="categories-para">jewellery</p>
+            <p class="categories-para">Electronics</p>
+            <p class="categories-para">Women's Dress</p>
+            <p class="categories-para">Handbags</p>
+        </div>
+
+        <div class="Contact-Us">
+            <h1 class="contactus-head">Contact Us</h1>
+            <p class="contactus-para">Become A Seller</p>
+            <p class="contactus-para">Contract Manufacturing</p>
+            <p class="contactus-para">Terms & Condition</p>
+            <p class="contactus-para">Career With Us</p>
+            <p class="contactus-para">Consumer Enquiry</p>
+        </div>
+    </footer>
+
+    <!-- footer ended -->
+
+
+    <script src="./index/shop.js"></script>
+
+
+</body>
+
+</html>
