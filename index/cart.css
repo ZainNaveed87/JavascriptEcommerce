@@ -375,14 +375,22 @@ body {
     }
 }
 
+
+
+.cart-main-row {
+    display: flex;
+    gap: 32px; 
+    align-items: flex-start;
+    width: 100%;
+}
+
+.cart-main-row > div:first-child {
+    flex: 2 1 0;
+}
+
 .total-cart {
-    position: relative;
-    left: 55%;
-    bottom: 410px;
-    width: 40%;
-    border-radius: 10px;
-    margin-top: auto;
-    /* Optional: width, background, etc. */
+    flex: 1 1 0;
+    max-width: 350px; 
 }
 
 .total-cart-details {
