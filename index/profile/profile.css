@@ -198,3 +198,183 @@ body {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     display: none;
 }
+
+/* Yeh CSS aap profile.html ke <style> tag me ya CSS file me daal sakte hain */
+.styled-table {
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1em;
+    font-family: 'Segoe UI', sans-serif;
+    min-width: 600px;
+    width: 100%;
+    box-shadow: 0 0 10px #a259ff;
+    border-radius: 14px;
+    overflow: hidden;
+    background: transparent;
+    /* transparent purple glass */
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+}
+
+.styled-table thead tr {
+    background-color: rgba(255, 255, 255, 0.18);
+    /* semi-transparent */
+    color: #222;
+    text-align: left;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    background: transparent;
+    /* transparent cells */
+
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    background: transparent;
+    /* subtle glass row */
+
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background: rgba(255, 255, 255, 0.09);
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #388e3c;
+
+
+}
+
+.styled-table button {
+    background: #181852;
+    color: #fff;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.styled-table button:hover {
+    background: #256029;
+
+}
+
+.styled-table tbody tr:hover {
+    background: inherit !important;
+}
+
+.table-container {
+    margin-top: 40px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 18px;
+    padding: 24px;
+    background: rgba(80, 36, 143, 0.18);
+    /* purple glass */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1.5px solid rgba(120, 60, 200, 0.18);
+
+}
+
+.orders-table-section {
+    background-color: transparent;
+}
+
+.styled-table button.edit {
+    position: relative;
+    overflow: hidden;
+    background: #181852;
+    color: #fff;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(162, 89, 255, 0.18);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.styled-table button.edit::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.1) 100%);
+    transform: skewX(-25deg);
+    transition: left 0.5s;
+    pointer-events: none;
+}
+
+.styled-table button.edit:hover::after {
+    left: 120%;
+}
+
+.styled-table button.edit:hover {
+    box-shadow: 0 4px 16px rgba(162, 89, 255, 0.25);
+}
+
+.edit-button {
+    position: relative;
+    overflow: hidden;
+    background: #181852;
+    color: #fff;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 17px;
+    margin-bottom: 25px;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 2px 8px rgba(162, 89, 255, 0.18);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.edit-button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.1) 100%);
+    transform: skewX(-25deg);
+    transition: left 0.5s;
+    pointer-events: none;
+}
+
+.edit-button:hover::after {
+    left: 120%;
+}
+
+.edit-button:hover {}
+
+.modal-content h3 {
+    color: black;
+}
+
+.modal-content button {
+    background: #181852;
+    color: #fff;
+
+}
+
+
+
+#order_para
+{
+    color: #FFFFFF;
+}

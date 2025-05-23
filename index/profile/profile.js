@@ -248,3 +248,60 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("completed-count").textContent = completed;
     document.getElementById("cancelled-count").textContent = cancelled;
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const recentBuyers = JSON.parse(localStorage.getItem("recentbuyer")) || [];
+    if (recentBuyers.length === 0) return;
+
+    const userEmail = recentBuyers[0].email;
+    const allOrders = JSON.parse(localStorage.getItem("orders")) || [];
+    const userOrders = allOrders.filter(order => order.billingDetails && order.billingDetails.email === userEmail);
+
+    const tbody = document.querySelector("#user-orders-table tbody");
+    if (!tbody) return;
+
+    tbody.innerHTML = "";
+
+    userOrders.forEach(order => {
+        // Calculate total quantity for this order
+        const totalQuantity = order.cart
+            ? order.cart.reduce((sum, item) => sum + (item.quantity || 1), 0)
+            : 0;
+
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+            <td>${order.billingDetails.firstName || ""}</td>
+            <td>${order.billingDetails.address || ""}</td>
+            <td style="text-align:center;">${order.cartProducts.length}</td>
+            <td>
+                <button class="edit" onclick="downloadReceipt(
+                    '${order.billingDetails.name}',
+                    '${order.billingDetails.email}',
+                    '${order.billingDetails.address}',
+                    ${totalQuantity},
+                    '${order.status}',
+                    '${order.date || ""}',
+                    '${order.slipImage || ""}'
+                )">
+                    Download
+                </button>
+            </td>
+            <td>${order.status || "Pending"}</td>
+        `;
+        tbody.appendChild(tr);
+    });
+});
+
+// Receipt download function (global scope me add karein)
+function downloadReceipt(name, email, address, quantity, status, date, slipImage) {
+    if (slipImage) {
+        const a = document.createElement("a");
+        a.href = slipImage;
+        a.download = `receipt_${date}.png`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    } else {
+        alert("Receipt image not found!");
+    }
+}
