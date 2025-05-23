@@ -208,3 +208,18 @@ function updateUserProfileIcon() {
 document.addEventListener("DOMContentLoaded", function () {
     updateUserProfileIcon();
 });
+document.addEventListener("DOMContentLoaded", function () {
+    // Show order count for current user
+    const ordersElem = document.getElementById("orders_number");
+    const recentBuyers = JSON.parse(localStorage.getItem("recentbuyer")) || [];
+    const finalCheckout = JSON.parse(localStorage.getItem("finalCheckout"));
+    if (ordersElem && recentBuyers.length > 0 && finalCheckout) {
+        const userEmail = recentBuyers[0].email;
+        // Check if this order belongs to the current user
+        if (finalCheckout.billingDetails && finalCheckout.billingDetails.email === userEmail) {
+            ordersElem.innerHTML = `<span>1</span> Orders`;
+        } else {
+            ordersElem.innerHTML = `<span>0</span> Orders`;
+        }
+    }
+});

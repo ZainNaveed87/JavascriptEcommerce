@@ -211,5 +211,22 @@ document.addEventListener("DOMContentLoaded", function () {
     updateUserProfileIcon();
 });
 
+document.getElementById("proceed_checkout").addEventListener("click", function () {
+    // Subtotal aur total ki value lo
+    const subtotal = document.getElementById("subtotal").textContent;
+    const total = document.getElementById("full_total").textContent;
+
+    // Array banao
+    const checkoutSummary = [
+        { label: "subtotal", value: subtotal },
+        { label: "total", value: total }
+    ];
+
+    // LocalStorage me save karo
+    localStorage.setItem("checkoutSummary", JSON.stringify(checkoutSummary));
+window.location.href = "./checkout.html";
+  
+});
+
 
 
