@@ -217,10 +217,27 @@ function downloadSlipAsImage() {
     const slip = document.getElementById("checkout-slip");
     if (!slip) return;
     html2canvas(slip).then(canvas => {
+        const slipImage = canvas.toDataURL(); // slip ki image
+
+        // Current order data lo
+        const checkoutData = JSON.parse(localStorage.getItem("finalCheckout"));
+        if (!checkoutData) return;
+
+        // Slip image ko order me add karo
+        checkoutData.slipImage = slipImage;
+
+        // Orders array lo ya banao
+        let orders = JSON.parse(localStorage.getItem("orders")) || [];
+        orders.push(checkoutData);
+
+        // LocalStorage me update karo
+        localStorage.setItem("orders", JSON.stringify(orders));
+
+        // Download bhi karwa do
         const link = document.createElement('a');
         link.download = 'checkout-slip.png';
-        link.href = canvas.toDataURL();
+        link.href = slipImage;
         link.click();
-        slip.style.display = "none"; // slip ko wapas hide kar dein
+        slip.style.display = "none";
     });
 }
