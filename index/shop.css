@@ -504,3 +504,36 @@ body {
     cursor: pointer;
     text-decoration: underline;
 }
+
+
+@media screen and (max-width: 640px) {
+    #nav-1 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #navbar-search {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    
+
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    .product-image {
+        height: 150px;
+    }
+
+    .product-card {
+        width: 100%;
+    }
+
+    .side-navbar {
+        width: 100%;
+        margin-left: 0;
+    }
+    
+}

@@ -9,3 +9,5 @@ document.querySelectorAll('.product-image-wrapper').forEach(wrapper => {
         setTimeout(() => btn.style.display = 'none', 200);
     });
 });
+
+
