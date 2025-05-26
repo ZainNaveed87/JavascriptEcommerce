@@ -877,8 +877,6 @@ body {
     .popular-carousel-wrapper,
     .recentlylaunched-carousel-wrapper,
     .deals-carousel-wrapper {
-        flex-direction: column;
-        align-items: center;
          background: none;
          backdrop-filter: blur(none);
     -webkit-backdrop-filter: blur(none);
