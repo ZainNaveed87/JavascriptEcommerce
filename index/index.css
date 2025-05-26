@@ -1145,7 +1145,9 @@ body {
     .recentlylaunched-carousel-wrapper,
     .deals-carousel-wrapper {
         width: 50vw;
+        transform: none;
         background: none;
+        
     }
 
     .banner-row {
