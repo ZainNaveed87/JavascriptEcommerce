@@ -1136,6 +1136,7 @@ body {
     .popular-carousel-wrapper,
     .recentlylaunched-carousel-wrapper,
     .deals-carousel-wrapper {
+        width: 50vw;
         flex-direction: column;
         align-items: center;
     }
