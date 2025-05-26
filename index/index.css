@@ -1141,6 +1141,13 @@ body {
         align-items: center;
     }
 
+    .popular-carousel-wrapper,
+    .recentlylaunched-carousel-wrapper,
+    .deals-carousel-wrapper {
+        width: 50vw;
+        background: none;
+    }
+
     .banner-row {
         gap: 20px;
         margin-left: 30%;
