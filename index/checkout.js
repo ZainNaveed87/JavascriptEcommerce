@@ -241,3 +241,12 @@ function downloadSlipAsImage() {
         slip.style.display = "none";
     });
 }
+
+// Update cart products to include sellerKey and status
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+cart = cart.map(product => ({
+    ...product,
+    sellerKey: product.sellerKey || "",
+    status: product.status || "Pending"
+}));
+localStorage.setItem("cart", JSON.stringify(cart));

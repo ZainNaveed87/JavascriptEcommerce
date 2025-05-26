@@ -58,84 +58,71 @@ function registration() {
     }
     else {
         let seller_or_buyer = prompt("Are you a seller or buyer? (Enter 'seller' or 'buyer')").toLowerCase();
-        if(seller_or_buyer == "buyer")
-        {
-        var existingUsers = JSON.parse(localStorage.getItem("user")) || [];
+        if (seller_or_buyer == "buyer") {
+            var existingUsers = JSON.parse(localStorage.getItem("user")) || [];
 
-        var user = {
-            username: username.value,
-            email: email.value,
-            password: password.value,
-            seller_or_buyer: seller_or_buyer
-        };
-       
-        var IsEmailExist = existingUsers.some(function(existingUsers)
-        {
-            return existingUsers.email === user.email
+            var user = {
+                username: username.value,
+                email: email.value,
+                password: password.value,
+                seller_or_buyer: seller_or_buyer
+            };
+
+            var IsEmailExist = existingUsers.some(function (existingUsers) {
+                return existingUsers.email === user.email
+            }
+            )
+
+
+            if (IsEmailExist) {
+                email_label.innerHTML = "Email already exists";
+                email_label.style.color = "red";
+            }
+            else {
+
+
+
+                existingUsers.push(user);
+                localStorage.setItem("user", JSON.stringify(existingUsers));
+                alert("Registration successful");
+                window.location.href = "login.html";
+
+            }
         }
-    )
-       
+        else if (seller_or_buyer == "seller") {
+            var existingUsers = JSON.parse(localStorage.getItem("seller")) || [];
 
-        if(IsEmailExist)
-        {
-            email_label.innerHTML = "Email already exists";
-            email_label.style.color = "red"; 
+            // Unique key generate karo
+            var uniqueKey = "SELLER-" + Date.now() + "-" + Math.random().toString(36).substr(2, 9);
+
+            var user = {
+                username: username.value,
+                email: email.value,
+                password: password.value,
+                seller_or_buyer: seller_or_buyer,
+                sellerKey: uniqueKey // <-- yeh line add ki
+            };
+
+            var IsEmailExist = existingUsers.some(function (existingUsers) {
+                return existingUsers.email === user.email
+            });
+
+            if (IsEmailExist) {
+                email_label.innerHTML = "Email already exists";
+                email_label.style.color = "red";
+            }
+            else {
+                existingUsers.push(user);
+                localStorage.setItem("seller", JSON.stringify(existingUsers));
+                alert("Registration successful");
+                window.location.href = "login.html";
+            }
         }
-        else
-        {
 
-        
-
-            existingUsers.push(user);
-            localStorage.setItem("user", JSON.stringify(existingUsers));
-            alert("Registration successful");
-            window.location.href = "login.html";
-            
     }
 }
-else if(seller_or_buyer == "seller")
-{
-    
-    let seller_or_buyer = prompt("Are you a seller or buyer? (Enter 'seller' or 'buyer')").toLowerCase();
-    if(seller_or_buyer == "seller")
-    {
-    var existingUsers = JSON.parse(localStorage.getItem("seller")) || [];
 
-    var user = {
-        username: username.value,
-        email: email.value,
-        password: password.value,
-        seller_or_buyer: seller_or_buyer
-    };
-   
-    var IsEmailExist = existingUsers.some(function(existingUsers)
-    {
-        return existingUsers.email === user.email
-    }
-)
-   
-
-    if(IsEmailExist)
-    {
-        email_label.innerHTML = "Email already exists";
-        email_label.style.color = "red"; 
-    }
-    else
-    {
-
-    
-
-        existingUsers.push(user);
-        localStorage.setItem("seller", JSON.stringify(existingUsers));
-        alert("Registration successful");
-        window.location.href = "login.html";
-        
-}
-}
-
-}
-    }
-}
+// Change_icon function yahan likhein
 function Change_icon() {
     var password = document.getElementById("pass");
     var icon = document.getElementById("eye_icon");

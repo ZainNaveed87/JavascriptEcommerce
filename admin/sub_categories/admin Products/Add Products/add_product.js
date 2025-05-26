@@ -15,9 +15,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         function handleDiscountAndSave(product) {
             // Prompt for discount
-            const wantsDiscount = prompt("Kya aap is product par discount dena chahtay hain? (yes/no)").toLowerCase();
+            const wantsDiscount = prompt("Do you want to give a discount on this? (yes/no)").toLowerCase();
             if (wantsDiscount === "yes") {
-                let discountPercent = prompt("Do you want to give a discount on this(e.g. 10 for 10%)");
+                let discountPercent = prompt("So write your discount value like this (e.g. 10 for 10%)");
                 discountPercent = parseFloat(discountPercent);
                 if (!isNaN(discountPercent) && discountPercent > 0 && discountPercent < 100) {
                     const discountAmount = Math.round((price * discountPercent) / 100);
