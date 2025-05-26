@@ -843,7 +843,7 @@ body {
     body {
         width: 100vw;
         height: 100vh;
-
+     
     }
 
     .none {
@@ -868,9 +868,9 @@ body {
 
     .search {
         width: 150vw;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+       display: flex;
+       justify-content: center;
+         align-items: center;
         margin-left: 50%;
     }
 
@@ -982,7 +982,7 @@ body {
         margin-left: 20%;
     }
 
-
+    
 
     .product-head {
         font-size: 1.2rem;
@@ -1040,21 +1040,21 @@ body {
         align-items: center;
     }
 
-    #popular-h1 {
+    #popular-h1{
         margin-left: 70%;
     }
 
-    .popular-carousel-wrapper {
+    .popular-carousel-wrapper{
         margin-top: 40px;
         margin-left: 30%;
     }
 
 
-    .recentlylaunched-h1 {
+    .recentlylaunched-h1{
         margin-left: 70%;
     }
 
-    .recentlylaunched-carousel-wrapper {
+    .recentlylaunched-carousel-wrapper{
         margin-top: 40px;
         margin-left: 30%;
     }
@@ -1070,17 +1070,16 @@ body {
         margin-left: 20%;
     }
 
-    .deal-of-the-day-sec1 {
+    .deal-of-the-day-sec1{
         width: 400px;
         height: 300px;
     }
-
     .deals-side-banner {
         width: 100vw;
         bottom: 200px;
     }
 
-    .deals-carousel-wrapper {
+    .deals-carousel-wrapper{
         margin-top: 50px;
     }
 
@@ -1101,15 +1100,15 @@ body {
     }
 
 
-    .footer {
-        width: 211vw;
-        margin-top: 140px;
-    }
+.footer{
+    width: 211vw;
+    margin-top: 140px;
+}
 
 }
 
 @media screen and (max-width: 640px) {
-
+    
     body {
         width: 100vw;
         height: 100vh;
@@ -1140,21 +1139,18 @@ body {
         width: 50vw;
         flex-direction: column;
         align-items: center;
-        transform: none;
         background: none;
-        transition: none;
-        backdrop-filter: blur(none);
-        -webkit-backdrop-filter: blur(none);
+         backdrop-filter: blur(none);
+    -webkit-backdrop-filter: blur(none);
     }
 
     .popular-carousel-wrapper,
     .recentlylaunched-carousel-wrapper,
     .deals-carousel-wrapper {
         width: 50vw;
-        transform: none;
         background: none;
-        backdrop-filter: blur(none);
-        -webkit-backdrop-filter: blur(none);
+         backdrop-filter: blur(none);
+    -webkit-backdrop-filter: blur(none);
     }
 
     .banner-row {
@@ -1164,35 +1160,34 @@ body {
         align-items: center;
     }
 
-    .banner-none {
+    .banner-none{
         display: none;
     }
 
-    #popular-h1 {
+    #popular-h1{
         margin-left: 70%;
     }
 
-    .popular-carousel-wrapper {
+    .popular-carousel-wrapper{
         margin-top: 40px;
         margin-left: 30%;
     }
 
-    .recentlylaunched-h1 {
+    .recentlylaunched-h1{
         margin-left: 70%;
     }
-
-    .recentlylaunched-carousel-wrapper {
+    .recentlylaunched-carousel-wrapper{
         margin-top: 40px;
         margin-left: 30%;
     }
 
-    .side-banner-category {
+    .side-banner-category{
         left: 20%;
     }
 
-    .footer {
+    .footer{
         width: 165vw;
     }
-
+    
 
 }
