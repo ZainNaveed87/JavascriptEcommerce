@@ -877,22 +877,8 @@ body {
     .popular-carousel-wrapper,
     .recentlylaunched-carousel-wrapper,
     .deals-carousel-wrapper {
-         background: none;
-         backdrop-filter: blur(none);
-    -webkit-backdrop-filter: blur(none);
-    }
-
-    .popular-carousel-wrapper,
-    .recentlylaunched-carousel-wrapper,
-    .deals-carousel-wrapper {
-        width: 50vw;
-        background: none;
-         backdrop-filter: blur(none);
-    -webkit-backdrop-filter: blur(none);
-    }
-
-    .carousel-btn {
-        display: none;
+        flex-direction: column;
+        align-items: center;
     }
 
     .banner-row {
@@ -1153,18 +1139,13 @@ body {
         width: 50vw;
         flex-direction: column;
         align-items: center;
-        background: none;
-         backdrop-filter: blur(none);
-    -webkit-backdrop-filter: blur(none);
     }
 
     .popular-carousel-wrapper,
     .recentlylaunched-carousel-wrapper,
     .deals-carousel-wrapper {
         width: 50vw;
-        background: none;
-         backdrop-filter: blur(none);
-    -webkit-backdrop-filter: blur(none);
+        margin-left: 30%;
     }
 
     .banner-row {
