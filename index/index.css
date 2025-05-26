@@ -879,6 +879,22 @@ body {
     .deals-carousel-wrapper {
         flex-direction: column;
         align-items: center;
+         background: none;
+         backdrop-filter: blur(none);
+    -webkit-backdrop-filter: blur(none);
+    }
+
+    .popular-carousel-wrapper,
+    .recentlylaunched-carousel-wrapper,
+    .deals-carousel-wrapper {
+        width: 50vw;
+        background: none;
+         backdrop-filter: blur(none);
+    -webkit-backdrop-filter: blur(none);
+    }
+
+    .carousel-btn {
+        display: none;
     }
 
     .banner-row {
