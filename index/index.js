@@ -107,7 +107,8 @@ function add_to_cart(productIndex) {
             id: product.id,
             name: product.name,
             price: product.price,
-            image: product.image
+            image: product.image,
+            sellerKey: product.sellerKey // <-- Yeh line add karein
         });
         localStorage.setItem("cart", JSON.stringify(cart));
         alert("Product added to cart!");

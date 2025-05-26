@@ -8,9 +8,10 @@ function updateCartIcon() {
 
 document.addEventListener("DOMContentLoaded", function () {
     updateCartIcon();
+    updateUserProfileIcon();
+    cart_products();
+    updateSubtotalAll();
 });
-updateCartIcon();
-
 
 function cart_products() {
     var cartproducts = document.getElementById("cart_products");
@@ -20,7 +21,6 @@ function cart_products() {
         // Table header
         cartproducts.innerHTML = `
             <table class="cart-table" style="width:100%; border-collapse:collapse;">
-              
                 <tbody id="cart-table-body"></tbody>
             </table>
         `;
@@ -34,6 +34,7 @@ function cart_products() {
                             <div>
                                 <h1 class="cart-product-name-head">${product.name}</h1>
                                 <p class="cart-product-name-para">Product Description</p>
+                                <!-- <p class="cart-product-seller">Seller Key: ${product.sellerKey || ''}</p> -->
                             </div>
                         </div>
                     </td>
@@ -61,8 +62,6 @@ function cart_products() {
         cartproducts.innerHTML = "<p>Your cart is empty.</p>";
     }
 }
-cart_products();
-updateSubtotalAll();
 
 function clear_cart() {
     localStorage.removeItem("cart");
@@ -94,10 +93,6 @@ function updateSubtotal(button) {
     row.querySelector('.cart-subtotal').textContent = `Rs. ${subtotal}`;
 }
 
-function subtotal() {
-
-}
-
 function updateSubtotalAll() {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     let rows = document.querySelectorAll("#cart_products .cart-product-quantity .qty-input");
@@ -115,7 +110,6 @@ function updateSubtotalAll() {
 
 function coupon() {
     let coupon = document.getElementById("coupon").value;
-
 }
 
 function applyCoupon() {
@@ -207,10 +201,6 @@ function updateUserProfileIcon() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    updateUserProfileIcon();
-});
-
 document.getElementById("proceed_checkout").addEventListener("click", function () {
     // Subtotal aur total ki value lo
     const subtotal = document.getElementById("subtotal").textContent;
@@ -224,9 +214,44 @@ document.getElementById("proceed_checkout").addEventListener("click", function (
 
     // LocalStorage me save karo
     localStorage.setItem("checkoutSummary", JSON.stringify(checkoutSummary));
-window.location.href = "./checkout.html";
-  
+    window.location.href = "./checkout.html";
 });
 
+// --- DYNAMIC ADD TO CART FUNCTION ---
+// Call this from your product card/button, pass the full product object (with sellerKey)
+function addToCart(product) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.push(product); // product me sellerKey already hai
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartIcon();
+}
+
+function add_to_cart(productIndex) {
+    let recentBuyers = JSON.parse(localStorage.getItem("recentbuyer")) || [];
+    if (recentBuyers.length == 0) {
+        alert("Please login to add items to cart");
+        window.location.href = "../../login.html";
+        return;
+    } else {
+        // Product fetch karo
+        const products = JSON.parse(localStorage.getItem("products")) || [];
+        const product = products[productIndex];
+
+        // Cart array me add karo
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        cart.push({
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            image: product.image,
+            sellerKey: product.sellerKey // <-- Yeh line add karein
+        });
+        localStorage.setItem("cart", JSON.stringify(cart));
+        alert("Product added to cart!");
+
+        // Cart icon update karo
+        updateCartIcon();
+    }
+}
 
 

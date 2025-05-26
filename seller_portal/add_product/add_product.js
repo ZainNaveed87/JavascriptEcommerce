@@ -13,21 +13,31 @@ document.addEventListener("DOMContentLoaded", function () {
         const imageInput = document.getElementById("Product_Image");
         let image = "";
 
-        // Get current seller
-        const currentSeller = JSON.parse(localStorage.getItem("currentSeller")) || {};
-        console.log(currentSeller); // Debug
-        console.log(currentSeller.username); // Debug
-
-        if (imageInput && imageInput.files && imageInput.files[0]) {
-            const reader = new FileReader();
-            reader.onload = function (event) {
-                image = event.target.result;
-                saveProduct({ name, price, description, quantity, category, image, sellerName: currentSeller.username });
-            };
-            reader.readAsDataURL(imageInput.files[0]);
-        } else {
-            saveProduct({ name, price, description, quantity, category, image, sellerName: currentSeller.username });
+        if (!imageInput.files || !imageInput.files[0]) {
+            alert("Please select a product image.");
+            imageInput.focus();
+            return;
         }
+
+        // Get current seller (last from recentseller array)
+        const recentSellers = JSON.parse(localStorage.getItem("recentseller")) || [];
+        const currentSeller = recentSellers.length > 0 ? recentSellers[recentSellers.length - 1] : {};
+
+        const reader = new FileReader();
+        reader.onload = function (event) {
+            image = event.target.result;
+            saveProduct({
+                name,
+                price,
+                description,
+                quantity,
+                category,
+                image,
+                sellerName: currentSeller.username,
+                sellerKey: currentSeller.sellerKey
+            });
+        };
+        reader.readAsDataURL(imageInput.files[0]);
     });
 
     function saveProduct(product) {
@@ -39,16 +49,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
- // Show current seller name in header
-    var currentSeller = JSON.parse(localStorage.getItem("currentSeller")) || {};
-    var adminNameElement = document.getElementById("admin_name");
-    if (currentSeller && currentSeller.username) {
-        adminNameElement.innerHTML = `Hello, ${currentSeller.username}`;
-    } else {
-        adminNameElement.innerHTML = "Hello, Seller";
-    }
+// Show current seller name in header
+var currentSeller = JSON.parse(localStorage.getItem("currentSeller")) || {};
+var adminNameElement = document.getElementById("admin_name");
+if (currentSeller && currentSeller.username) {
+    adminNameElement.innerHTML = `Hello, ${currentSeller.username}`;
+} else {
+    adminNameElement.innerHTML = "Hello, Seller";
+}
 
-      function logout() {
+function logout() {
     if (confirm("Are you sure you want to logout?")) {
         localStorage.removeItem("currentSeller");
         window.location.href = "../../login.html";

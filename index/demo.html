@@ -20,7 +20,7 @@
 
     body {
       min-height: 100vh;
-      background-image: url('./image.png');
+      background-image: url('/mnt/data/image.png');
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center center;
@@ -42,49 +42,21 @@
       font-family: poppins;
       text-align: center;
       border-radius: 10px;
+      border: 1px solid #000000;
     }
 
     #search-btn {
-  position: absolute;
-  width: 60px;
-  height: 40px;
-  left: 228px;
-  right: 20px;
-  color: #fff;
-  background: linear-gradient(120deg, #181852 80%, #3a3a90 100%);
-  border-radius: 6px;
-  border: none;
-  margin-left: 10px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 2px 8px #18185255;
-  overflow: hidden;
-}
+      width: 50px;
+      height: 50px;
+      background-color: #688cee;
+      color: #000000;
+      border-radius: 6px;
+      border: none;
+      margin-left: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
 
-#search-btn::after {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(120deg, rgba(80,80,120,0.25) 0%, rgba(80,80,120,0) 60%);
-  transform: rotate(25deg);
-  pointer-events: none;
-  transition: opacity 0.3s;
-  opacity: 0;
-}
-
-#search-btn:hover::after {
-  opacity: 1;
-  animation: shine 0.7s linear;
-}
-
-@keyframes shine {
-  0% { left: -80%; opacity: 0.2; }
-  60% { left: 100%; opacity: 0.5; }
-  100% { left: 180%; opacity: 0; }
-}
     .search-img {
       width: 50px;
       height: 50px;
@@ -199,7 +171,7 @@
       flex-direction: column;
       justify-content: flex-start;
       transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-      height: 500px;
+      max-height: calc(100vh - 40px);
       overflow-y: auto;
       position: absolute;
       left: 20px;
@@ -226,40 +198,6 @@
       width: 24px;
       height: 24px;
     }
-    #search-bar
-    {
-        position: relative;
-        width: 100%;
-        height: 40px;
-        border-radius: 10px;
-        border: 1px solid #000000;
-        padding-left: 10px;
-        font-family: poppins;
-    }
-    .categories-list
-    {
-        position: absolute;
-        top: 130px;
-    }
-.categories-list a
-{
-         text-decoration: none;
-color: #FFFFFF;
-}
-.category-checkbox
-{
-    width: 15px;
-    height: 15px;
-}
-.category_names
-{
-    margin-left: 10px;
-}
-.nav-search-btn
-{
-border-radius: 0px;
-border: none;
-}
   </style>
 </head>
 <body>
@@ -270,7 +208,7 @@ border: none;
     </div>
     <div class="navbar-search">
       <input type="search" name="search" id="navbar-search" placeholder="Search for products">
-      <button id="nav-search-btn"><img class="search-img" src="./search.png" alt="search"></button>
+      <button id="search-btn"><img class="search-img" src="./search.png" alt="search"></button>
     </div>
     <div class="nav-links">
       <a href="./login.html"><i class="fa-solid fa-user"></i></a>
@@ -303,21 +241,21 @@ border: none;
     </button>
     <div class="side-navbar-row">
       <div class="side-navbar-category">
-        <h2 style="color: #FFFFFF; text-align: center; margin-top: 30px;" class="categories-head">All Categories</h2>
+        <h2 class="categories-head">All Categories</h2>
         <div class="categories-search">
           <input type="search" name="search" id="search-bar" placeholder="Find a categories">
           <button id="search-btn">
-            <i class="fa-brands fa-searchengin"></i>
+            <img class="category-search-img" src="./search.png" alt="search">
           </button>
         </div>
         <ul class="categories-list">
-          <li><input type="checkbox" class="category-checkbox" id="jewellery"><label for="jewellery"><a href="#" class="category_names">Jewellery</a></label></li>
-          <li><input type="checkbox" class="category-checkbox" id="women-fashion"><label for="women-fashion"><a href="#" class="category_names">Women Fashion</a></label></li>
-          <li><input type="checkbox" class="category-checkbox" id="men-shoes"><label for="men-shoes"><a href="#" class="category_names">Men Shoes</a></label></li>
+          <li><input type="checkbox" class="category-checkbox" id="jewellery"><label for="jewellery"><a href="#">Jewellery</a></label></li>
+          <li><input type="checkbox" class="category-checkbox" id="women-fashion"><label for="women-fashion"><a href="#">Women Fashion</a></label></li>
+          <li><input type="checkbox" class="category-checkbox" id="men-shoes"><label for="men-shoes"><a href="#">Men Shoes</a></label></li>
         </ul>
       </div>
 
-      <!-- <div class="side-navbar-price">
+      <div class="side-navbar-price">
         <h2 class="price-head">Filter By Price</h2>
         <ul class="price-list">
           <li><input type="checkbox" class="price-checkbox" id="price-1"><label for="price-1">Rs:0 - Rs:500</label></li>
@@ -328,7 +266,7 @@ border: none;
         <div class="sidebar-apply-btn">
           <button class="apply-btn">Apply</button>
         </div>
-      </div> -->
+      </div>
     </div>
   </div>
 

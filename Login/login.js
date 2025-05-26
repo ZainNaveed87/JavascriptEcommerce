@@ -87,6 +87,17 @@ function login() {
     if (userFound) {
         // Yahan seller ka object currentSeller key me save kar dein
         localStorage.setItem("currentSeller", JSON.stringify(userFound));
+
+        // --- Yeh code add karein: recentseller array update ---
+        let recentSellers = JSON.parse(localStorage.getItem("recentseller")) || [];
+        // Sirf name aur sellerKey save karna ho to:
+        recentSellers.push({
+            username: userFound.username,
+            sellerKey: userFound.sellerKey // registration ke waqt save hui thi
+        });
+        localStorage.setItem("recentseller", JSON.stringify(recentSellers));
+        // ------------------------------------------------------
+
         alert("Login successful!");
         window.location.href = "./seller_portal/seller.html";
     } else {

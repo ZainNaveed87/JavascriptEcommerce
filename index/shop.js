@@ -1,11 +1,12 @@
-document.querySelectorAll('.product-image-wrapper').forEach(wrapper => {
-    const btn = wrapper.querySelector('.add-to-cart-btn');
-    wrapper.addEventListener('mouseenter', () => {
-        btn.style.display = 'block';
-        setTimeout(() => btn.style.opacity = '1', 10);
-    });
-    wrapper.addEventListener('mouseleave', () => {
-        btn.style.opacity = '0';
-        setTimeout(() => btn.style.display = 'none', 200);
+document.addEventListener("DOMContentLoaded", function () {
+    const products = JSON.parse(localStorage.getItem("products")) || [];
+    const container = document.getElementById("shop-products"); // <div id="shop-products"></div> in HTML
+
+    container.innerHTML = ""; // Clear previous
+
+    products.forEach((product, idx) => {
+        const card = document.createElement("div");
+        card.className = "product-card";
     });
 });
+
