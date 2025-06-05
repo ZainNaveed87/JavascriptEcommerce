@@ -462,7 +462,7 @@ body {
             rgba(255, 255, 255, 0.5) 50%,
             rgba(255, 255, 255, 0) 100%);
     transform: skewX(-20deg);
-    pointer-events: none;
+    pointer-events: non;
 }
 
 .add-to-cart-btn:hover::after {
