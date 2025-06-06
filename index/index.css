@@ -460,13 +460,13 @@ body {
     background: linear-gradient(120deg,
             rgba(255, 255, 255, 0) 0%,
             rgba(255, 255, 255, 0.5) 50%,
-            rgba(255, 255, 255, 0) 100%);
+            rgba(150, 60, 60, 0) 100%);
     transform: skewX(-20deg);
     pointer-events: none;
 }
 
 .add-to-cart-btn:hover::after {
-    animation: shine 0.7s forwards;
+    animation: shine 0.7s forward;
 }
 
 @keyframes shine {
