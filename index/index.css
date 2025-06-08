@@ -469,7 +469,7 @@ body {
     animation: shine 0.7s forwards;
 }
 
-@keyframes shine {
+@keyframes shie {
     100% {
         left: 130%;
     }
