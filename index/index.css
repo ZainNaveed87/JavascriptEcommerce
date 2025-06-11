@@ -483,7 +483,7 @@ body {
 .recentlylaunched-product-image {
     width: 250px;
     height: 200px;
-    object-fit: cover;
+    object-fit: cover
     border-radius: 12px;
     margin-top: 0;
 }
